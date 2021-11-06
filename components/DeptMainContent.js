@@ -1,4 +1,14 @@
+import { useEffect, useState } from "react";
+
 function DeptMainContent() {
+  const [vision, setVision] = useState(null);
+  const [mission, setMission] = useState(null);
+
+  useEffect(() => {
+    setVision();
+    setMission();
+  }, []);
+
   return (
     <>
       {/* Dept Nav Bar */}
@@ -162,7 +172,7 @@ function DeptMainContent() {
         </div>
         {/* Dept Right Sidebar */}
         <div className="col-span-full lg:col-start-10 lg:col-end-12 h-auto lg:absolute lg:w-full text-blue-ramaiah">
-          <div className="border-2 border-white text-center mb-5">
+          <div className=" text-center mb-5 w-[85%] m-auto lg:w-full">
             {/*syllabus*/}
             <div className="bg-gradient-to-r to-orange-ramaiah from-pink-ramaiah rounded-t-xl text-white p-1 font-heading">
               Syllabus
@@ -184,7 +194,7 @@ function DeptMainContent() {
               </ul>
             </div>
           </div>
-          <div className="border-2 border-white text-center mb-5">
+          <div className=" text-center mb-5 w-[85%] m-auto lg:w-full">
             {/*syllabus*/}
             <div className="bg-gradient-to-r to-orange-ramaiah from-pink-ramaiah rounded-t-xl text-white p-1 font-heading">
               Syllabus
@@ -206,7 +216,7 @@ function DeptMainContent() {
               </ul>
             </div>
           </div>
-          <div className="border-2 border-white text-center mb-5">
+          <div className=" text-center mb-5 w-[85%] m-auto lg:w-full">
             {/*syllabus*/}
             <div className="bg-gradient-to-r to-orange-ramaiah from-pink-ramaiah rounded-t-xl text-white p-1 font-heading">
               Syllabus
