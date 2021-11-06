@@ -1,4 +1,14 @@
+import { useEffect, useState } from "react";
+
 function DeptMainContent() {
+  const [vision, setVision] = useState(null);
+  const [mission, setMission] = useState(null);
+
+  useEffect(() => {
+    setVision();
+    setMission();
+  }, []);
+
   return (
     <>
       {/* Dept Nav Bar */}
