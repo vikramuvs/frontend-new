@@ -1,13 +1,11 @@
 import { useEffect, useState } from "react";
 
-function DeptMainContent() {
-  const [vision, setVision] = useState(null);
-  const [mission, setMission] = useState(null);
+function DeptMainContent({ data }) {
+  const [vision, setVision] = useState(data[0].vision);
+  const [mission, setMission] = useState(data[0].mission);
+  const [profile, setProfile] = useState(data[0].profile);
 
-  useEffect(() => {
-    setVision();
-    setMission();
-  }, []);
+  // console.log(data);
 
   return (
     <>
@@ -51,17 +49,21 @@ function DeptMainContent() {
         {/* Dept Main Content*/}
         <div className="col-span-full m-2 p-2 lg:col-start-4 lg:col-end-10 h-auto text-blue-ramaiah border-gray-100 border-2 bg-white">
           <div>
-            <div className="font-heading text-lg"> VISION</div> <br /> To be a
+            {/* <div className="font-heading text-lg"> VISION</div> <br /> To be a
             leading Biotechnology Engineering department that imparts quality
             technical education with strong research component, to develop
-            solutions in the field of food, health and environment.
+            solutions in the field of food, health and environment. */}
+            <div className="font-heading text-lg"> VISION</div> <br /> {vision}
             <br />
-            <div className="font-heading pt-2 text-lg">MISSION</div> <br /> To
+            {/* <div className="font-heading pt-2 text-lg">MISSION</div> <br /> To
             provide quality technical education in a conducive learning
             environment to produce professionals, researchers with a zeal for
-            lifelong learning and a commitment to society.
-            <div className="font-heading pt-2 text-lg">DEPARTMENT PROFILE</div>
+            lifelong learning and a commitment to society. */}
+            <div className="font-heading pt-2 text-lg">MISSION</div> <br />{" "}
+            {mission}
+            {/* <div className="font-heading pt-2 text-lg">DEPARTMENT PROFILE</div>
             <br />
+            {profile}
             The department of Biotechnology established in 2002 offers a four
             year B.E. Biotechnology Program with an intake of 60 students and a
             two years PG Program, M.Tech in Biotechnology with an intake of 18
@@ -91,7 +93,10 @@ function DeptMainContent() {
             Myers Squibb India Ltd, Novozymes South Asia Pvt Ltd, Himalaya Drug
             Company, Beckman Coulter, Sami Labs, Sartorius Stedim, Genotypic
             Technology, Aristogene Biosciences, GangaGen, Connexios Life
-            Sciences, Acquity Labs &nbsp; Celest Pharma.
+            Sciences, Acquity Labs &nbsp; Celest Pharma. */}
+            <div className="font-heading pt-2 text-lg">DEPARTMENT PROFILE</div>
+            <br />
+            {profile}
             <br />
             <div className="font-heading pt-2 text-lg">DEPARTMENT HISTORY</div>
             <br />

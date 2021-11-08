@@ -1,11 +1,11 @@
+import FacultyMainContent from "../components/FacultyMainContent";
 import Head from "next/head";
 import DeptBanner from "../components/DeptBanner";
 import Header from "../components/Header";
 import DeptStats from "../components/DeptStats";
-import DeptMainContent from "../components/DeptMainContent";
 import Footer from "../components/Footer";
 
-export default function Home(props) {
+function faculty({ facultyProfile }) {
   return (
     <>
       <Head>
@@ -16,7 +16,7 @@ export default function Home(props) {
         <Header />
         <DeptBanner />
         <DeptStats />
-        <DeptMainContent data={props.visionData} />
+        <FacultyMainContent data={facultyProfile} />
         <Footer />
       </div>
     </>
@@ -24,12 +24,14 @@ export default function Home(props) {
 }
 
 export async function getStaticProps() {
-  const res = await fetch("http://localhost:8080/api/v1/vision_mission/");
+  const res = await fetch("http://localhost:8080/api/v1/fd_responses/");
   const json = await res.json();
   //const json = await res.json();
   //console.log(res);
 
   return {
-    props: { visionData: json }, // will be passed to the page component as props
+    props: { facultyProfile: json }, // will be passed to the page component as props
   };
 }
+
+export default faculty;
