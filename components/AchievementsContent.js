@@ -1,0 +1,184 @@
+import { useState } from "react";
+
+export default function AchievementsContent({ st_achieve, fa_achieve, pat }) {
+  //   const [facultyData, setfacultyData] = useState(data[0].fa);
+  //   const [mission, setMission] = useState(data[0].mission);
+  //   const [profile, setProfile] = useState(data[0].profile);
+
+  //console.log(st_achieve);
+
+  return (
+    <>
+      {/* Dept Nav Bar */}
+      <div className="grid grid-cols-12 bg-blue-ramaiah lg:bg-transparent lg:relative font-body">
+        <div className="col-span-full h-8 lg:bg-blue-ramaiah  bg-opacity-30 text-blue-ramaiah space-x-3 m-auto lg:col-start-2 lg:col-end-4 lg:inline-flex lg:flex-col lg:h-auto lg:w-full lg:absolute">
+          <div className="lg:w-full lg:flex lg:flex-col text-center">
+            <a
+              href=""
+              className="lg:hover:font-bold active:bg-opacity-100 active:border-b-2 border-white bg-gray-deptHeader bg-opacity-75 lg:p-2 lg:m-2"
+            >
+              Overview
+            </a>
+            <a
+              href=""
+              className="sm:hover:font-bold bg-gray-deptHeader bg-opacity-75 lg:p-2 lg:m-2"
+            >
+              Faculty
+            </a>
+            <a
+              href=""
+              className="lg:hover:font-bold bg-gray-deptHeader bg-opacity-75 lg:p-2 lg:m-2"
+            >
+              Research
+            </a>
+            <a
+              href=""
+              className="sm:hover:font-bold bg-gray-deptHeader bg-opacity-75 lg:p-2 lg:m-2"
+            >
+              BOS|BOE
+            </a>
+            <a
+              href=""
+              className="sm:hover:font-bold bg-gray-deptHeader bg-opacity-75 lg:p-2 lg:m-2"
+            >
+              Achievements
+            </a>
+          </div>
+        </div>
+
+        {/* Dept Main Content*/}
+        <div className="col-span-full m-2 p-2 lg:col-start-4 lg:col-end-10 h-auto text-blue-ramaiah border-gray-100 border-2 bg-white">
+          <h2 className="text-2xl font-heading">Students' Achievements</h2>
+          <br />
+          <div className="grid grid-cols-3 gap-2">
+            {st_achieve.map((stAchieve, i) => {
+              return (
+                <div
+                  key={stAchieve.id}
+                  className="col-span-1 w-full bg-gray-deptHeader shadow-md text-center"
+                >
+                  <div className="text-pink-ramaiah font-heading text-lg">
+                    {stAchieve.title}
+                  </div>
+                  <div className="">
+                    {stAchieve.date} / {stAchieve.place}
+                  </div>
+                  <div className="text-left p-2 text-gray-700">
+                    {stAchieve.description}
+                  </div>
+                </div>
+              );
+            })}
+          </div>{" "}
+          <br />
+          <h2 className="text-2xl font-heading">Faculty's Achievements</h2>
+          <br />
+          <div className="grid grid-cols-3 gap-2">
+          {fa_achieve.map((faAchieve, i) => {
+            return (
+              <div
+                key={faAchieve.id}
+                className="col-span-1 w-full bg-gray-deptHeader shadow-md text-center"
+              >
+                <div className="text-pink-ramaiah font-heading text-lg">
+                  {faAchieve.name}
+                </div>
+                <div className="">{faAchieve.duration}</div>
+                <div className="text-left p-2 text-gray-700">
+                  {faAchieve.achievements}
+                </div>
+              </div>
+            );
+          })}
+          <br />
+          <h2 className="text-2xl font-heading">Patents</h2>
+          <br />
+          {pat.map((patent, i) => {
+            return (
+              <div
+                key={patent.id}
+                className="w-full border-gray-400 flex bg-gray-deptHeader space-x-2 shadow-md p-4 place-items-start border-[1px] mb-2"
+              >
+                <div className="">{patent.owner_name}</div>
+                <div className="">{patent.patent_number}</div>
+                <div className="">{patent.patent_title}</div>
+                <div className="">{patent.applied_year}</div>
+                <div className="">{patent.status_filed_granted}</div>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Dept Right Sidebar */}
+        <div className="col-span-full lg:col-start-10 lg:col-end-12 h-auto lg:absolute lg:w-full text-blue-ramaiah">
+          <div className=" text-center mb-5 w-[85%] m-auto lg:w-full">
+            {/*syllabus*/}
+            <div className="bg-gradient-to-r to-orange-ramaiah from-pink-ramaiah rounded-t-xl text-white p-1 font-heading">
+              Syllabus
+            </div>
+            <div className="lg:bg-gray-600 lg:bg-opacity-30 bg-white rounded-b-2xl">
+              <ul className="list-disc">
+                <li>
+                  <a>1</a>
+                </li>
+                <li>
+                  <a>1</a>
+                </li>
+                <li>
+                  <a>1</a>
+                </li>
+                <li>
+                  <a>1</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className=" text-center mb-5 w-[85%] m-auto lg:w-full">
+            {/*syllabus*/}
+            <div className="bg-gradient-to-r to-orange-ramaiah from-pink-ramaiah rounded-t-xl text-white p-1 font-heading">
+              Syllabus
+            </div>
+            <div className="lg:bg-gray-600 lg:bg-opacity-30 bg-white rounded-b-2xl">
+              <ul className="list-disc">
+                <li>
+                  <a>1</a>
+                </li>
+                <li>
+                  <a>1</a>
+                </li>
+                <li>
+                  <a>1</a>
+                </li>
+                <li>
+                  <a>1</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className=" text-center mb-5 w-[85%] m-auto lg:w-full">
+            {/*syllabus*/}
+            <div className="bg-gradient-to-r to-orange-ramaiah from-pink-ramaiah rounded-t-xl text-white p-1 font-heading">
+              Syllabus
+            </div>
+            <div className="lg:bg-gray-600 lg:bg-opacity-30 bg-white rounded-b-2xl">
+              <ul className="list-disc">
+                <li>
+                  <a>1</a>
+                </li>
+                <li>
+                  <a>1</a>
+                </li>
+                <li>
+                  <a>1</a>
+                </li>
+                <li>
+                  <a>1</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}
