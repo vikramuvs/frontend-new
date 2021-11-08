@@ -1,6 +1,6 @@
-import { useState } from "react";
+import SideBarSyllabus from "./SideBarSyllabus";
 
-export default function AchievementsContent({ st_achieve, fa_achieve, pat }) {
+export default function ActivitiesContent({ ivData, sswData, seoData }) {
   //   const [facultyData, setfacultyData] = useState(data[0].fa);
   //   const [mission, setMission] = useState(data[0].mission);
   //   const [profile, setProfile] = useState(data[0].profile);
@@ -54,68 +54,78 @@ export default function AchievementsContent({ st_achieve, fa_achieve, pat }) {
 
         {/* Dept Main Content*/}
         <div className="col-span-full m-2 p-2 lg:col-start-4 lg:col-end-10 h-auto text-blue-ramaiah border-gray-100 border-2 bg-white">
-          <h2 className="text-2xl font-heading">Students' Achievements</h2>
+          <h2 className="text-2xl font-heading">Industry Visits</h2>
           <br />
-          <div className="grid lg:grid-cols-3 gap-2">
-            {st_achieve.map((stAchieve, i) => {
+          <div className="grid">
+            {ivData.map((iv, i) => {
               return (
                 <div
-                  key={stAchieve.id}
-                  className="col-span-1 w-full bg-gray-deptHeader shadow-md text-center"
+                  key={iv.id}
+                  className="col-span-1 w-full bg-gray-deptHeader shadow-md flex p-4 border-b-[1px] border-pink-ramaiah"
                 >
-                  <div className="text-pink-ramaiah font-heading text-lg">
-                    {stAchieve.title}
+                  <div className="text-black text-lg flex-grow">
+                    {iv.industry_visited}
                   </div>
-                  <div className="">
-                    {stAchieve.date} / {stAchieve.place}
-                  </div>
-                  <div className="text-left p-2 text-gray-700">
-                    {stAchieve.description}
+                  <div className="text-right text-black place-self-end flex-shrink text-lg">
+                    {iv.date.substring(0, 10)}
                   </div>
                 </div>
               );
             })}
           </div>{" "}
           <br />
-          <h2 className="text-2xl font-heading">Faculty's Achievements</h2>
+          <h2 className="text-2xl font-heading">Seminars/Worskshops</h2>
           <br />
-          <div className="grid lg:grid-cols-3 gap-2">
-            {fa_achieve.map((faAchieve, i) => {
+          <div className="grid">
+            {sswData.map((ssw, i) => {
               return (
                 <div
-                  key={faAchieve.id}
-                  className="col-span-1 w-full bg-gray-deptHeader shadow-md text-center"
+                  key={ssw.id}
+                  className="col-span-full bg-gray-deptHeader shadow-md flex p-2 border-b-[1px] border-pink-ramaiah"
                 >
-                  <div className="text-pink-ramaiah font-heading text-lg">
-                    {faAchieve.name}
+                  <div className="lg:min-w-[15%] lg:max-w-[15%]">
+                    {ssw.duration_from}
                   </div>
-                  <div className="">{faAchieve.duration}</div>
-                  <div className="text-left p-2 text-gray-700">
-                    {faAchieve.achievements}
+                  <div className="lg:min-w-[15%] lg:max-w-[15%]">
+                    {ssw.duration_till}
+                  </div>
+                  <div className="lg:min-w-[38%] lg:max-w-[38%] flex-grow">
+                    {ssw.title}
+                  </div>
+                  <div className="lg:min-w-[15%] lg:max-w-[15%] text-center">
+                    {ssw.type}
+                  </div>
+                  <div className="lg:min-w-[17%] lg:max-w-[17%] text-right">
+                    {ssw.broad_area}
                   </div>
                 </div>
               );
             })}
-            <br />
           </div>
-          <h2 className="text-2xl font-heading">Patents</h2>
           <br />
-          <div className="grid lg:grid-cols-3 gap-2">
-            {pat.map((patent, i) => {
+          <h2 className="text-2xl font-heading">
+            Invited Talks / Guest Lectures
+          </h2>
+          <br />
+          <div className="grid">
+            {seoData.map((seo, i) => {
               return (
                 <div
-                  key={patent.id}
-                  className="col-span-1 w-full bg-gray-deptHeader shadow-md text-center"
+                  key={seo.id}
+                  className="col-span-full bg-gray-deptHeader shadow-md flex p-2 border-b-[1px] border-pink-ramaiah"
                 >
-                  <div className="text-pink-ramaiah font-heading text-lg">
-                    {patent.owner_name}
+                  <div className="lg:min-w-[15%] lg:max-w-[15%]">
+                    {seo.date}
                   </div>
-                  <div className="">{patent.patent_number}</div>
-                  <div className="text-left p-2 text-gray-700">
-                    {patent.title}
+                  <div className="lg:min-w-[20%] lg:max-w-[20%]">
+                    {seo.name_of_the_scholar}
                   </div>
-                  <div className="">{patent.applied_year}</div>
-                  <div className="">{patent.status_filed_granted}</div>
+                  <div className="lg:min-w-[30%] lg:max-w-[30%] text-center">
+                    {seo.scholars_organization}
+                  </div>
+                  <div className="lg:min-w-[35%] lg:max-w-[35%] text-right">
+                    {seo.title_of_the_lecture}
+                  </div>
                 </div>
               );
             })}
@@ -130,20 +140,7 @@ export default function AchievementsContent({ st_achieve, fa_achieve, pat }) {
               Syllabus
             </div>
             <div className="lg:bg-gray-600 lg:bg-opacity-30 bg-white rounded-b-2xl">
-              <ul className="list-disc">
-                <li>
-                  <a>1</a>
-                </li>
-                <li>
-                  <a>1</a>
-                </li>
-                <li>
-                  <a>1</a>
-                </li>
-                <li>
-                  <a>1</a>
-                </li>
-              </ul>
+              <SideBarSyllabus deptId={1} />
             </div>
           </div>
           <div className=" text-center mb-5 w-[85%] m-auto lg:w-full">

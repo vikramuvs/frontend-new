@@ -31,7 +31,7 @@ export async function getStaticProps() {
   const res = await fetch("http://localhost:8080/api/v1/achievements/");
   const json = await res.json();
 
-  const fa = await fetch("http://localhost:8080/api/v1/faculty_achievemnts/");
+  const fa = await fetch("http://localhost:8080/api/v1/faculty_achievements/");
   const fa_json = await fa.json();
 
   const patent = await fetch("http://localhost:8080/api/v1/patents/");

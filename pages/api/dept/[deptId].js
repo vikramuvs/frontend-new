@@ -8,7 +8,7 @@ export default function helloAPI(req, res) {
   //   }
   // );
 
-  fetch("http://localhost:8080/api/v1/vision_mission/", {
+  fetch("http://localhost:8080/api/v1/sideheadings/" + req1, {
     method: "GET",
   }).then((data) => res.status(200).json(data));
 }
