@@ -1,11 +1,18 @@
 import SideBarSyllabus from "./SideBarSyllabus";
 
-export default function ActivitiesContent({ ivData, sswData, seoData }) {
+export default function ActivitiesContent({
+  ivData,
+  sswData,
+  seoData,
+  syllabus,
+  timetable,
+  studymaterial,
+}) {
   //   const [facultyData, setfacultyData] = useState(data[0].fa);
   //   const [mission, setMission] = useState(data[0].mission);
   //   const [profile, setProfile] = useState(data[0].profile);
 
-  //console.log(st_achieve);
+  //console.log(syllabus);
 
   return (
     <>
@@ -140,51 +147,25 @@ export default function ActivitiesContent({ ivData, sswData, seoData }) {
               Syllabus
             </div>
             <div className="lg:bg-gray-600 lg:bg-opacity-30 bg-white rounded-b-2xl">
-              <SideBarSyllabus deptId={1} />
+              <SideBarSyllabus syllabus={syllabus} />
             </div>
           </div>
           <div className=" text-center mb-5 w-[85%] m-auto lg:w-full">
             {/*syllabus*/}
             <div className="bg-gradient-to-r to-orange-ramaiah from-pink-ramaiah rounded-t-xl text-white p-1 font-heading">
-              Syllabus
+              Timetable
             </div>
             <div className="lg:bg-gray-600 lg:bg-opacity-30 bg-white rounded-b-2xl">
-              <ul className="list-disc">
-                <li>
-                  <a>1</a>
-                </li>
-                <li>
-                  <a>1</a>
-                </li>
-                <li>
-                  <a>1</a>
-                </li>
-                <li>
-                  <a>1</a>
-                </li>
-              </ul>
+              <SideBarSyllabus syllabus={timetable} />
             </div>
           </div>
           <div className=" text-center mb-5 w-[85%] m-auto lg:w-full">
             {/*syllabus*/}
             <div className="bg-gradient-to-r to-orange-ramaiah from-pink-ramaiah rounded-t-xl text-white p-1 font-heading">
-              Syllabus
+              Study Materials
             </div>
             <div className="lg:bg-gray-600 lg:bg-opacity-30 bg-white rounded-b-2xl">
-              <ul className="list-disc">
-                <li>
-                  <a>1</a>
-                </li>
-                <li>
-                  <a>1</a>
-                </li>
-                <li>
-                  <a>1</a>
-                </li>
-                <li>
-                  <a>1</a>
-                </li>
-              </ul>
+              <SideBarSyllabus syllabus={studymaterial} />
             </div>
           </div>
         </div>

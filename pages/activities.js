@@ -5,7 +5,7 @@ import Header from "../components/Header";
 import DeptStats from "../components/DeptStats";
 import Footer from "../components/Footer";
 
-function activities({ ind_visits, ssw_fdp, seo }) {
+function activities({ ind_visits, ssw_fdp, seo, sy, tt, sm }) {
   return (
     <>
       <Head>
@@ -20,6 +20,9 @@ function activities({ ind_visits, ssw_fdp, seo }) {
           ivData={ind_visits}
           sswData={ssw_fdp}
           seoData={seo}
+          syllabus={sy}
+          timetable={tt}
+          studymaterial={sm}
         />
         <Footer />
       </div>
@@ -36,6 +39,15 @@ export async function getStaticProps() {
 
   const seo = await fetch("http://localhost:8080/api/v1/events_org/");
   const seoJson = await seo.json();
+
+  const syl = await fetch("http://localhost:8080/api/v1/syllabus/1");
+  const syllJson = await syl.json();
+
+  const t_t = await fetch("http://localhost:8080/api/v1/timetable/1");
+  const t_tJson = await t_t.json();
+
+  const s_m = await fetch("http://localhost:8080/api/v1/studymat/1");
+  const s_mJson = await s_m.json();
   //const json = await res.json();
   //console.log(res);
 
@@ -44,6 +56,9 @@ export async function getStaticProps() {
       ind_visits: ivJson,
       ssw_fdp: sswJson,
       seo: seoJson,
+      sy: syllJson,
+      sm: s_mJson,
+      tt: t_tJson,
     }, // will be passed to the page component as props
   };
 }
