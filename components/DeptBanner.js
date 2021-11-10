@@ -1,4 +1,4 @@
-export default function DeptBanner() {
+export default function DeptBanner({ latestNews, latestEvents }) {
   return (
     <>
       <div className="grid gap-5 grid-cols-12 h-auto lg:h-auto">
@@ -14,25 +14,49 @@ export default function DeptBanner() {
               <div className="w-1/2 lg:w-1/2 lg:mr-2">
                 <span className="text-xl font-heading ">LATEST NEWS</span>
                 <div className="bg-gradient-to-r to-orange-ramaiah from-pink-ramaiah text-white">
-                  <span className="font-heading lg:text-2xl">26</span> Aug 2021
+                  {latestNews.map((newsItem, i) => {
+                    return (
+                      <>
+                        <span key={i} className="font-heading lg:text-2xl">
+                          {newsItem.publishedDate.substring(8, 10)}
+                        </span>
+                        <span> Nov 2021 </span>
+                      </>
+                    );
+                  })}
                 </div>
                 <div className="border-b-[1px] border-l-[1px] border-r-[1px] border-gray-500">
-                  Exam Fee Notification for Supplementary Semester Offline
-                  Examinations - B.E./B.Arch III to VIII Sem |
-                  MBA/MCA/M.TECH/M.ARCH All Semesters (Theory &nbsp; Practical)
-                  - Sept / Oct 2021
+                  {latestNews.map((newsItem, i) => {
+                    return (
+                      <div key={i}>
+                        <a href={newsItem.linkURL}> {newsItem.title}</a>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
               <div className="w-1/2 lg:w-1/2 lg:mr-2 ">
                 <span className="text-xl font-heading">LATEST EVENTS</span>
                 <div className="bg-gradient-to-r to-orange-ramaiah from-pink-ramaiah text-white">
-                  <span className="font-heading lg:text-2xl">26</span> Aug 2021
+                  {latestEvents.map((eventItem, i) => {
+                    return (
+                      <>
+                        <span key={i} className="font-heading lg:text-2xl">
+                          {eventItem.eventStartDate.substring(8, 10)}
+                        </span>
+                        <span> Nov 2021 </span>
+                      </>
+                    );
+                  })}
                 </div>
                 <div className="border-b-[1px] border-l-[1px] border-r-[1px] border-gray-500">
-                  Exam Fee Notification for Supplementary Semester Offline
-                  Examinations - B.E./B.Arch III to VIII Sem |
-                  MBA/MCA/M.TECH/M.ARCH All Semesters (Theory &nbsp; Practical)
-                  - Sept / Oct 2021
+                  {latestEvents.map((eventItem, i) => {
+                    return (
+                      <div key={i}>
+                        <a href={eventItem.linkURL}> {eventItem.title}</a>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
               {/* <div className="w-1/2 bg-gray-600">Latest Events</div> */}

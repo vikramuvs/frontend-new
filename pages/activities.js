@@ -5,7 +5,17 @@ import Header from "../components/Header";
 import DeptStats from "../components/DeptStats";
 import Footer from "../components/Footer";
 
-function activities({ ind_visits, ssw_fdp, seo, sy, tt, sm }) {
+function activities({
+  ind_visits,
+  ssw_fdp,
+  seo,
+  sy,
+  tt,
+  sm,
+  latestNews,
+  latestEvents,
+  deptStats,
+}) {
   return (
     <>
       <Head>
@@ -14,8 +24,8 @@ function activities({ ind_visits, ssw_fdp, seo, sy, tt, sm }) {
       </Head>
       <div className="font-body">
         <Header />
-        <DeptBanner />
-        <DeptStats />
+        <DeptBanner latestNews={latestNews} latestEvents={latestEvents} />
+        <DeptStats stats={deptStats} />
         <ActivitiesContent
           ivData={ind_visits}
           sswData={ssw_fdp}
@@ -48,6 +58,15 @@ export async function getStaticProps() {
 
   const s_m = await fetch("http://localhost:8080/api/v1/studymat/1");
   const s_mJson = await s_m.json();
+
+  const l_e = await fetch("http://localhost:8080/api/v1/latest_events/");
+  const l_eJson = await l_e.json();
+
+  const l_n = await fetch("http://localhost:8080/api/v1/latest_news/");
+  const l_nJson = await l_n.json();
+
+  const dep_stat = await fetch("http://localhost:8080/api/v1/dept_stats/");
+  const d_sJson = await dep_stat.json();
   //const json = await res.json();
   //console.log(res);
 
@@ -59,6 +78,9 @@ export async function getStaticProps() {
       sy: syllJson,
       sm: s_mJson,
       tt: t_tJson,
+      latestNews: l_nJson,
+      latestEvents: l_eJson,
+      deptStats: d_sJson,
     }, // will be passed to the page component as props
   };
 }

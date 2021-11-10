@@ -5,7 +5,17 @@ import Header from "../components/Header";
 import DeptStats from "../components/DeptStats";
 import Footer from "../components/Footer";
 
-function achievements({ stu_achievements, fac_achievements, patents }) {
+function achievements({
+  stu_achievements,
+  fac_achievements,
+  patents,
+  sy,
+  tt,
+  sm,
+  latestNews,
+  latestEvents,
+  deptStats,
+}) {
   return (
     <>
       <Head>
@@ -14,12 +24,15 @@ function achievements({ stu_achievements, fac_achievements, patents }) {
       </Head>
       <div className="font-body">
         <Header />
-        <DeptBanner />
-        <DeptStats />
+        <DeptBanner latestNews={latestNews} latestEvents={latestEvents} />
+        <DeptStats stats={deptStats} />
         <AchievementsContent
           st_achieve={stu_achievements}
           fa_achieve={fac_achievements}
           pat={patents}
+          syllabus={sy}
+          timetable={tt}
+          studymaterial={sm}
         />
         <Footer />
       </div>
@@ -36,6 +49,24 @@ export async function getStaticProps() {
 
   const patent = await fetch("http://localhost:8080/api/v1/patents/");
   const patent_json = await patent.json();
+
+  const syl = await fetch("http://localhost:8080/api/v1/syllabus/1");
+  const syllJson = await syl.json();
+
+  const t_t = await fetch("http://localhost:8080/api/v1/timetable/1");
+  const t_tJson = await t_t.json();
+
+  const s_m = await fetch("http://localhost:8080/api/v1/studymat/1");
+  const s_mJson = await s_m.json();
+
+  const l_e = await fetch("http://localhost:8080/api/v1/latest_events/");
+  const l_eJson = await l_e.json();
+
+  const l_n = await fetch("http://localhost:8080/api/v1/latest_news/");
+  const l_nJson = await l_n.json();
+
+  const dep_stat = await fetch("http://localhost:8080/api/v1/dept_stats/");
+  const d_sJson = await dep_stat.json();
   //const json = await res.json();
   //console.log(res);
 
@@ -44,6 +75,12 @@ export async function getStaticProps() {
       stu_achievements: json,
       fac_achievements: fa_json,
       patents: patent_json,
+      sy: syllJson,
+      sm: s_mJson,
+      tt: t_tJson,
+      latestNews: l_nJson,
+      latestEvents: l_eJson,
+      deptStats: d_sJson,
     }, // will be passed to the page component as props
   };
 }

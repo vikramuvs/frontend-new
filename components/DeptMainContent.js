@@ -1,6 +1,7 @@
+import SideBarSyllabus from "./SideBarSyllabus";
 import { useEffect, useState } from "react";
 
-function DeptMainContent({ data }) {
+function DeptMainContent({ data, syllabus, timetable, studymaterial }) {
   const [vision, setVision] = useState(data[0].vision);
   const [mission, setMission] = useState(data[0].mission);
   const [profile, setProfile] = useState(data[0].profile);
@@ -14,34 +15,40 @@ function DeptMainContent({ data }) {
         <div className="col-span-full h-8 lg:bg-blue-ramaiah  bg-opacity-30 text-blue-ramaiah space-x-3 m-auto lg:col-start-2 lg:col-end-4 lg:inline-flex lg:flex-col lg:h-auto lg:w-full lg:absolute">
           <div className="lg:w-full lg:flex lg:flex-col text-center">
             <a
-              href=""
+              href="/"
               className="lg:hover:font-bold active:bg-opacity-100 active:border-b-2 border-white bg-gray-deptHeader bg-opacity-75 lg:p-2 lg:m-2"
             >
               Overview
             </a>
             <a
-              href=""
+              href="faculty"
               className="sm:hover:font-bold bg-gray-deptHeader bg-opacity-75 lg:p-2 lg:m-2"
             >
               Faculty
             </a>
             <a
-              href=""
+              href="research"
               className="lg:hover:font-bold bg-gray-deptHeader bg-opacity-75 lg:p-2 lg:m-2"
             >
               Research
             </a>
             <a
-              href=""
+              href="bos"
               className="sm:hover:font-bold bg-gray-deptHeader bg-opacity-75 lg:p-2 lg:m-2"
             >
               BOS|BOE
             </a>
             <a
-              href=""
+              href="achievements"
               className="sm:hover:font-bold bg-gray-deptHeader bg-opacity-75 lg:p-2 lg:m-2"
             >
               Achievements
+            </a>
+            <a
+              href="activities"
+              className="sm:hover:font-bold bg-gray-deptHeader bg-opacity-75 lg:p-2 lg:m-2"
+            >
+              Activities
             </a>
           </div>
         </div>
@@ -183,64 +190,25 @@ function DeptMainContent({ data }) {
               Syllabus
             </div>
             <div className="lg:bg-gray-600 lg:bg-opacity-30 bg-white rounded-b-2xl">
-              <ul className="list-disc">
-                <li>
-                  <a>1</a>
-                </li>
-                <li>
-                  <a>1</a>
-                </li>
-                <li>
-                  <a>1</a>
-                </li>
-                <li>
-                  <a>1</a>
-                </li>
-              </ul>
+              <SideBarSyllabus syllabus={syllabus} />
             </div>
           </div>
           <div className=" text-center mb-5 w-[85%] m-auto lg:w-full">
             {/*syllabus*/}
             <div className="bg-gradient-to-r to-orange-ramaiah from-pink-ramaiah rounded-t-xl text-white p-1 font-heading">
-              Syllabus
+              Timetable
             </div>
             <div className="lg:bg-gray-600 lg:bg-opacity-30 bg-white rounded-b-2xl">
-              <ul className="list-disc">
-                <li>
-                  <a>1</a>
-                </li>
-                <li>
-                  <a>1</a>
-                </li>
-                <li>
-                  <a>1</a>
-                </li>
-                <li>
-                  <a>1</a>
-                </li>
-              </ul>
+              <SideBarSyllabus syllabus={timetable} />
             </div>
           </div>
           <div className=" text-center mb-5 w-[85%] m-auto lg:w-full">
             {/*syllabus*/}
             <div className="bg-gradient-to-r to-orange-ramaiah from-pink-ramaiah rounded-t-xl text-white p-1 font-heading">
-              Syllabus
+              Study Materials
             </div>
             <div className="lg:bg-gray-600 lg:bg-opacity-30 bg-white rounded-b-2xl">
-              <ul className="list-disc">
-                <li>
-                  <a>1</a>
-                </li>
-                <li>
-                  <a>1</a>
-                </li>
-                <li>
-                  <a>1</a>
-                </li>
-                <li>
-                  <a>1</a>
-                </li>
-              </ul>
+              <SideBarSyllabus syllabus={studymaterial} />
             </div>
           </div>
         </div>

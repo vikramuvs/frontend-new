@@ -21,37 +21,37 @@ export default function ActivitiesContent({
         <div className="col-span-full h-8 lg:bg-blue-ramaiah  bg-opacity-30 text-blue-ramaiah space-x-3 m-auto lg:col-start-2 lg:col-end-4 lg:inline-flex lg:flex-col lg:h-auto lg:w-full lg:absolute">
           <div className="lg:w-full lg:flex lg:flex-col text-center">
             <a
-              href=""
+              href="/"
               className="lg:hover:font-bold active:bg-opacity-100 active:border-b-2 border-white bg-gray-deptHeader bg-opacity-75 lg:p-2 lg:m-2"
             >
               Overview
             </a>
             <a
-              href=""
+              href="faculty"
               className="sm:hover:font-bold bg-gray-deptHeader bg-opacity-75 lg:p-2 lg:m-2"
             >
               Faculty
             </a>
             <a
-              href=""
+              href="research"
               className="lg:hover:font-bold bg-gray-deptHeader bg-opacity-75 lg:p-2 lg:m-2"
             >
               Research
             </a>
             <a
-              href=""
+              href="bos"
               className="sm:hover:font-bold bg-gray-deptHeader bg-opacity-75 lg:p-2 lg:m-2"
             >
               BOS|BOE
             </a>
             <a
-              href=""
+              href="achievements"
               className="sm:hover:font-bold bg-gray-deptHeader bg-opacity-75 lg:p-2 lg:m-2"
             >
               Achievements
             </a>
             <a
-              href=""
+              href="activities"
               className="sm:hover:font-bold bg-gray-deptHeader bg-opacity-75 lg:p-2 lg:m-2"
             >
               Activities
@@ -60,8 +60,10 @@ export default function ActivitiesContent({
         </div>
 
         {/* Dept Main Content*/}
-        <div className="col-span-full m-2 p-2 lg:col-start-4 lg:col-end-10 h-auto text-blue-ramaiah border-gray-100 border-2 bg-white">
-          <h2 className="text-2xl font-heading">Industry Visits</h2>
+        <div className="col-span-full m-2 p-2 lg:col-start-4 lg:col-end-10 h-auto text-black border-gray-100 border-2 bg-white">
+          <h2 className="text-2xl font-heading text-blue-ramaiah">
+            Industry Visits
+          </h2>
           <br />
           <div className="grid">
             {ivData.map((iv, i) => {
@@ -81,7 +83,9 @@ export default function ActivitiesContent({
             })}
           </div>{" "}
           <br />
-          <h2 className="text-2xl font-heading">Seminars/Worskshops</h2>
+          <h2 className="text-2xl font-heading text-blue-ramaiah">
+            Seminars/Worskshops
+          </h2>
           <br />
           <div className="grid">
             {sswData.map((ssw, i) => {
@@ -110,7 +114,7 @@ export default function ActivitiesContent({
             })}
           </div>
           <br />
-          <h2 className="text-2xl font-heading">
+          <h2 className="text-2xl font-heading text-blue-ramaiah">
             Invited Talks / Guest Lectures
           </h2>
           <br />
