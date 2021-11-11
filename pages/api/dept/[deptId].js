@@ -2,15 +2,19 @@ export default function helloAPI(req, res) {
   const req1 = req.query;
 
   // const fetchedData = await fetch(
-  //   "http://localhost:8080/api/v1/vision_mission/",
+  //   "http://ec2-34-215-195-143.us-west-2.compute.amazonaws.com:8080/api/v1/vision_mission/",
   //   {
   //     method: "GET",
   //   }
   // );
 
-  fetch("http://localhost:8080/api/v1/sideheadings/" + req1, {
-    method: "GET",
-  }).then((data) => res.status(200).json(data));
+  fetch(
+    "http://ec2-34-215-195-143.us-west-2.compute.amazonaws.com:8080/api/v1/sideheadings/" +
+      req1,
+    {
+      method: "GET",
+    }
+  ).then((data) => res.status(200).json(data));
 }
 
 // function DeptDetails({ eventData }) {
@@ -32,7 +36,7 @@ export default function helloAPI(req, res) {
 //   const deptId = context.params.deptId;
 
 //   const fetchedData = await fetch(
-//     "http://localhost:8080/api/v1/vision_mission/",
+//     "http://ec2-34-215-195-143.us-west-2.compute.amazonaws.com:8080/api/v1/vision_mission/",
 //     {
 //       method: "GET",
 //     }

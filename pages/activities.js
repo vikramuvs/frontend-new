@@ -41,31 +41,49 @@ function activities({
 }
 
 export async function getStaticProps() {
-  const iv = await fetch("http://localhost:8080/api/v1/ind_visits/");
+  const iv = await fetch(
+    "http://ec2-34-215-195-143.us-west-2.compute.amazonaws.com:8080/api/v1/ind_visits/"
+  );
   const ivJson = await iv.json();
 
-  const ssw = await fetch("http://localhost:8080/api/v1/ssw_fdp/");
+  const ssw = await fetch(
+    "http://ec2-34-215-195-143.us-west-2.compute.amazonaws.com:8080/api/v1/ssw_fdp/"
+  );
   const sswJson = await ssw.json();
 
-  const seo = await fetch("http://localhost:8080/api/v1/events_org/");
+  const seo = await fetch(
+    "http://ec2-34-215-195-143.us-west-2.compute.amazonaws.com:8080/api/v1/events_org/"
+  );
   const seoJson = await seo.json();
 
-  const syl = await fetch("http://localhost:8080/api/v1/syllabus/1");
+  const syl = await fetch(
+    "http://ec2-34-215-195-143.us-west-2.compute.amazonaws.com:8080/api/v1/syllabus/1"
+  );
   const syllJson = await syl.json();
 
-  const t_t = await fetch("http://localhost:8080/api/v1/timetable/1");
+  const t_t = await fetch(
+    "http://ec2-34-215-195-143.us-west-2.compute.amazonaws.com:8080/api/v1/timetable/1"
+  );
   const t_tJson = await t_t.json();
 
-  const s_m = await fetch("http://localhost:8080/api/v1/studymat/1");
+  const s_m = await fetch(
+    "http://ec2-34-215-195-143.us-west-2.compute.amazonaws.com:8080/api/v1/studymat/1"
+  );
   const s_mJson = await s_m.json();
 
-  const l_e = await fetch("http://localhost:8080/api/v1/latest_events/");
+  const l_e = await fetch(
+    "http://ec2-34-215-195-143.us-west-2.compute.amazonaws.com:8080/api/v1/latest_events/"
+  );
   const l_eJson = await l_e.json();
 
-  const l_n = await fetch("http://localhost:8080/api/v1/latest_news/");
+  const l_n = await fetch(
+    "http://ec2-34-215-195-143.us-west-2.compute.amazonaws.com:8080/api/v1/latest_news/"
+  );
   const l_nJson = await l_n.json();
 
-  const dep_stat = await fetch("http://localhost:8080/api/v1/dept_stats/");
+  const dep_stat = await fetch(
+    "http://ec2-34-215-195-143.us-west-2.compute.amazonaws.com:8080/api/v1/dept_stats/"
+  );
   const d_sJson = await dep_stat.json();
   //const json = await res.json();
   //console.log(res);

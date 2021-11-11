@@ -1,0 +1,1 @@
+{"apis":{"dynamic":[{"file":"pages/api/dept/[deptId].js","regex":"^\\/api\\/dept(?:\\/([^\\/#\\?]+?))[\\/#\\?]?$"}],"nonDynamic":{"/api/dept":"pages/api/dept.js","/api/hello":"pages/api/hello.js"}},"domainRedirects":{},"enableHTTPCompression":false}

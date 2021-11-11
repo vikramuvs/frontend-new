@@ -1,0 +1,17 @@
+{
+  "name": "969mkz-n76hkdm",
+  "hash": "cE7zD8LVsFj0Xkh0ZgNMKtFolJGMZ5aA/L43r4nymTQ=",
+  "description": "API Lambda@Edge for Next CloudFront distribution",
+  "memory": 512,
+  "timeout": 10,
+  "code": "D:\\msrit-new\\frontend-new\\.serverless_nextjs\\api-lambda",
+  "shims": [],
+  "handler": "index.handler",
+  "runtime": "nodejs14.x",
+  "env": {},
+  "role": {
+    "arn": "arn:aws:iam::461176318403:role/969mkz-jtn4szk"
+  },
+  "arn": "arn:aws:lambda:us-east-1:461176318403:function:969mkz-n76hkdm",
+  "region": "us-east-1"
+}
