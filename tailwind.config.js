@@ -6,6 +6,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         bt: "url('../../assets/images/biotech-bkg 1.png')",
+        homeBanner: "url('../../assets/images/msrit-campus.jpg')",
       },
       colors: {
         transparent: "transparent",
