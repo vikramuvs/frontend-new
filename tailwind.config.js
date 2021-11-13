@@ -15,10 +15,12 @@ module.exports = {
           ramaiah: "#361c6a",
         },
         pink: {
-          ramaiah: "#992361",
+          // ramaiah: "#992361",
+          ramaiah: "rgba(157,29,89,1)",
         },
         orange: {
-          ramaiah: "#E34A21",
+          // ramaiah: "#E34A21",
+          ramaiah: "rgba(222,63,15,1)",
         },
         gray: {
           menu: "#C1B3B0",
