@@ -7,6 +7,8 @@ module.exports = {
       backgroundImage: {
         bt: "url('../../assets/images/biotech-bkg 1.png')",
         homeBanner: "url('../../assets/images/msrit-campus.jpg')",
+        homeBannerJnanam: "url('../../assets/images/image 1.png')",
+        samMsr: "url('../../assets/images/sam-msr.png')",
       },
       colors: {
         transparent: "transparent",
@@ -25,6 +27,7 @@ module.exports = {
         gray: {
           menu: "#C1B3B0",
           deptHeader: "#E2E2E2",
+          homeSection: "#DDDDDD",
         },
       },
       fontFamily: {
