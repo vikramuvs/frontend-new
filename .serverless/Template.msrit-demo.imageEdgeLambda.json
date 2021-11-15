@@ -1,10 +1,10 @@
 {
   "name": "969mkz-bji2c5",
-  "hash": "+j9bMVhp9ov189Gsbxcj6ILOWehYhm9CoOeItqNkPfQ=",
+  "hash": "/WE5jkehbuS/Vvt/doQBke4QBWqbduw3sa4yujdAp8A=",
   "description": "Image Lambda@Edge for Next CloudFront distribution",
   "memory": 512,
   "timeout": 10,
-  "code": "D:\\msrit-new\\frontend-new\\.serverless_nextjs\\image-lambda",
+  "code": "/Users/srinivasakg/Desktop/msrit-edu-new/frontend-new/.serverless_nextjs/image-lambda",
   "shims": [],
   "handler": "index.handler",
   "runtime": "nodejs14.x",

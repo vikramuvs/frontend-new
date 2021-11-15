@@ -96,7 +96,7 @@ module.exports = require("zlib");
 
 /***/ }),
 
-/***/ 857:
+/***/ 8737:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -110,7 +110,7 @@ __webpack_require__.r(__webpack_exports__);
 
         
       const { processEnv } = __webpack_require__(9936)
-      processEnv([{"path":".env","contents":"  AWS_ACCESS_KEY_ID=AKIAWWYCAFHBSWSXYV46\r\n  AWS_SECRET_ACCESS_KEY=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\r\n"}])
+      processEnv([{"path":".env","contents":"AWS_ACCESS_KEY_ID=AKIAWWYCAFHBSWL542PA\nAWS_SECRET_ACCESS_KEY=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"}])
     
         
         const runtimeConfig = {}
@@ -136,7 +136,7 @@ __webpack_require__.r(__webpack_exports__);
           page: "/api/hello",
           basePath: "",
           pageIsDynamic: false,
-          encodedPreviewProps: {previewModeId:"0731edec9edad3ac03b7b085a520cc0b",previewModeSigningKey:"94df36b24f77d372234c8c53359d63a2f882e91da019655f69979f5688ef89d0",previewModeEncryptionKey:"9f258de1850db3f908f9f1ae6586b3ef89a1dbe6799d609c23c467429df6aa12"}
+          encodedPreviewProps: {previewModeId:"64bc7f2062bdc2bf261a8d95019d4d91",previewModeSigningKey:"02adb376c9961bb3e6544556f4269ed2546b41b5aee812c59ab75fb7be86a490",previewModeEncryptionKey:"d65781bc87b0374f2e9a4088fc7b36ebbb8969cf8e617c759cd95a73ffb34e0e"}
         })
         /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (apiHandler);
       
@@ -167,7 +167,7 @@ function helloAPI(req, res) {
 var __webpack_require__ = require("../../webpack-api-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [458,800], () => (__webpack_exec__(857)));
+var __webpack_exports__ = __webpack_require__.X(0, [458,800], () => (__webpack_exec__(8737)));
 module.exports = __webpack_exports__;
 
 })();

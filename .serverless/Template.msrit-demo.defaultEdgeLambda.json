@@ -1,10 +1,10 @@
 {
   "name": "969mkz-d8i3h2t",
-  "hash": "wmxJ/MxjPMBLgpBt9QGwieTUs268fMM3PWG8BocDuZU=",
+  "hash": "JMXdmgqdHUUYw32ZuNrAgZ57xmQWEQSiB5Tnczr5s1k=",
   "description": "Default Lambda@Edge for Next CloudFront distribution",
   "memory": 512,
   "timeout": 10,
-  "code": "D:\\msrit-new\\frontend-new\\.serverless_nextjs\\default-lambda",
+  "code": "/Users/srinivasakg/Desktop/msrit-edu-new/frontend-new/.serverless_nextjs/default-lambda",
   "shims": [],
   "handler": "index.handler",
   "runtime": "nodejs14.x",

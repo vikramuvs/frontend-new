@@ -123,16 +123,20 @@ const toCloudFrontHeaders = (headers, headerNames, originalHeaders) => {
 
     if (headerValue instanceof Array) {
       headerValue.forEach((val) => {
-        result[headerKey].push({
-          key: headerName,
-          value: val.toString()
-        });
+        if (val) {
+          result[headerKey].push({
+            key: headerName,
+            value: val.toString()
+          });
+        }
       });
     } else {
-      result[headerKey].push({
-        key: headerName,
-        value: headerValue.toString()
-      });
+      if (headerValue) {
+        result[headerKey].push({
+          key: headerName,
+          value: headerValue.toString()
+        });
+      }
     }
   });
 
@@ -168,9 +172,9 @@ const handler$1 = (
     headers: {}
   };
 
-  const newStream = new Stream__default['default'].Readable();
+  const newStream = new Stream__default["default"].Readable();
 
-  const req = Object.assign(newStream, http__default['default'].IncomingMessage.prototype);
+  const req = Object.assign(newStream, http__default["default"].IncomingMessage.prototype);
   req.url = rewrittenUri || cfRequest.uri;
   req.method = cfRequest.method;
   req.rawHeaders = [];
@@ -211,7 +215,7 @@ const handler$1 = (
 
   req.push(null);
 
-  const res = new Stream__default['default']();
+  const res = new Stream__default["default"]();
   res.finished = false;
 
   Object.defineProperty(res, "statusCode", {
@@ -219,7 +223,7 @@ const handler$1 = (
       return response.status;
     },
     set(statusCode) {
-      response.status = statusCode;
+      response.status = statusCode.toString();
       response.statusDescription = HttpStatusCodes[statusCode];
     }
   });
@@ -227,7 +231,7 @@ const handler$1 = (
   res.headers = {};
   const headerNames = {};
   res.writeHead = (status, headers) => {
-    response.status = status;
+    response.status = status.toString();
     response.statusDescription = HttpStatusCodes[status];
 
     if (headers) {
@@ -265,7 +269,7 @@ const handler$1 = (
       if (response.body) {
         response.bodyEncoding = "base64";
         response.body = shouldGzip
-          ? zlib__default['default'].gzipSync(response.body).toString("base64")
+          ? zlib__default["default"].gzipSync(response.body).toString("base64")
           : Buffer.from(response.body).toString("base64");
       }
 
@@ -345,7 +349,7 @@ function isIgnoredHeader(name) {
     return ignoredHeaders.includes(lowerCaseName);
 }
 async function createExternalRewriteResponse(customRewrite, req, res, body) {
-    const { default: fetch } = await Promise.resolve().then(function () { return require('./index-9e574644.js'); });
+    const { default: fetch } = await Promise.resolve().then(function () { return require('./index-686a9242.js'); });
     // Set request headers
     const reqHeaders = {};
     Object.assign(reqHeaders, req.headers);
@@ -360,7 +364,6 @@ async function createExternalRewriteResponse(customRewrite, req, res, body) {
             headers: reqHeaders,
             method: req.method,
             body: decodedBody,
-            compress: false,
             redirect: "manual"
         });
     }
@@ -779,63 +782,6 @@ function pathToRegexp(path, keys, options) {
     return stringToRegexp(path, keys, options);
 }
 
-function addDefaultLocaleToPath(path, routesManifest, forceLocale = null) {
-    if (routesManifest.i18n) {
-        const defaultLocale = forceLocale !== null && forceLocale !== void 0 ? forceLocale : routesManifest.i18n.defaultLocale;
-        const locales = routesManifest.i18n.locales;
-        const basePath = path.startsWith(routesManifest.basePath)
-            ? routesManifest.basePath
-            : "";
-        // If prefixed with a locale, return that path
-        for (const locale of locales) {
-            if (path === `${basePath}/${locale}` ||
-                path.startsWith(`${basePath}/${locale}/`)) {
-                return typeof forceLocale === "string"
-                    ? path.replace(`${locale}/`, `${forceLocale}/`)
-                    : path;
-            }
-        }
-        // Otherwise, prefix with default locale
-        if (path === "/" || path === `${basePath}`) {
-            return `${basePath}/${defaultLocale}`;
-        }
-        else {
-            return path.replace(`${basePath}/`, `${basePath}/${defaultLocale}/`);
-        }
-    }
-    return path;
-}
-function dropLocaleFromPath(path, routesManifest) {
-    if (routesManifest.i18n) {
-        const locales = routesManifest.i18n.locales;
-        // If prefixed with a locale, return path without
-        for (const locale of locales) {
-            const prefix = `/${locale}`;
-            if (path === prefix) {
-                return "/";
-            }
-            if (path.startsWith(`${prefix}/`)) {
-                return `${path.slice(prefix.length)}`;
-            }
-        }
-    }
-    return path;
-}
-function getLocalePrefixFromUri(uri, routesManifest) {
-    if (routesManifest.basePath && uri.startsWith(routesManifest.basePath)) {
-        uri = uri.slice(routesManifest.basePath.length);
-    }
-    if (routesManifest.i18n) {
-        for (const locale of routesManifest.i18n.locales) {
-            if (uri === `/${locale}` || uri.startsWith(`/${locale}/`)) {
-                return `/${locale}`;
-            }
-        }
-        return `/${routesManifest.i18n.defaultLocale}`;
-    }
-    return "";
-}
-
 /**
  Provides matching capabilities to support custom redirects, rewrites, and headers.
  */
@@ -858,10 +804,10 @@ function compileDestination(destination, params) {
         const destinationLowerCase = destination.toLowerCase();
         if (destinationLowerCase.startsWith("https://") ||
             destinationLowerCase.startsWith("http://")) {
-            // Handle external URLs
-            const { origin, pathname } = new URL(destination);
+            // Handle external URL redirects
+            const { origin, pathname, search } = new URL(destination);
             const toPath = compile(pathname, { encode: encodeURIComponent });
-            const compiledDestination = `${origin}${toPath(params)}`;
+            const compiledDestination = `${origin}${toPath(params)}${search}`;
             // Remove trailing slash if original destination didn't have it
             if (!destination.endsWith("/") && compiledDestination.endsWith("/")) {
                 return compiledDestination.slice(0, -1);
@@ -900,6 +846,105 @@ const matchDynamicRoute = (uri, routes) => {
         }
     }
 };
+
+const resolveHostForHeader = (req, headerName) => {
+    const hostHeaders = req.headers[headerName];
+    /**
+     * if hostHeaders is a string means it is resolved as "x-forwarded-host"
+     *  "x-forwarded-host": "next-serverless.com"
+     *
+     * else it is resolved as host
+     * [ { key: 'Host', value: 'next-serverless.com' } ]
+     **/
+    if (typeof hostHeaders === "string" || hostHeaders instanceof String) {
+        return hostHeaders;
+    }
+    if (hostHeaders && hostHeaders.length > 0) {
+        return hostHeaders[0].value.split(":")[0];
+    }
+    return undefined;
+};
+function resolveHost(req) {
+    // When running behind a reverse-proxy the x-forwarded-host is added
+    const xForwardedHost = resolveHostForHeader(req, "x-forwarded-host");
+    if (xForwardedHost) {
+        return xForwardedHost;
+    }
+    return resolveHostForHeader(req, "host");
+}
+const findDomainLocale = (req, manifest) => {
+    var _a;
+    const domains = (_a = manifest.i18n) === null || _a === void 0 ? void 0 : _a.domains;
+    if (domains) {
+        const host = resolveHost(req);
+        if (host) {
+            const matchedDomain = domains.find((d) => d.domain === host);
+            if (matchedDomain) {
+                return matchedDomain.defaultLocale;
+            }
+        }
+    }
+    return null;
+};
+function addDefaultLocaleToPath(path, routesManifest, forceLocale = null) {
+    if (routesManifest.i18n) {
+        const defaultLocale = forceLocale !== null && forceLocale !== void 0 ? forceLocale : routesManifest.i18n.defaultLocale;
+        const locales = routesManifest.i18n.locales;
+        const basePath = path.startsWith(routesManifest.basePath)
+            ? routesManifest.basePath
+            : "";
+        // If prefixed with a locale, return that path with normalized locale
+        const pathLowerCase = path.toLowerCase();
+        for (const locale of locales) {
+            if (pathLowerCase === `${basePath}/${locale}`.toLowerCase() ||
+                pathLowerCase.startsWith(`${basePath}/${locale}/`.toLowerCase())) {
+                return path.replace(new RegExp(`${basePath}/${locale}`, "i"), `${basePath}/${forceLocale !== null && forceLocale !== void 0 ? forceLocale : locale}`);
+            }
+        }
+        // Otherwise, prefix with default locale
+        if (path === "/" || path === `${basePath}`) {
+            return `${basePath}/${defaultLocale}`;
+        }
+        else {
+            return path.replace(`${basePath}/`, `${basePath}/${defaultLocale}/`);
+        }
+    }
+    return path;
+}
+function dropLocaleFromPath(path, routesManifest) {
+    if (routesManifest.i18n) {
+        const pathLowerCase = path.toLowerCase();
+        const locales = routesManifest.i18n.locales;
+        // If prefixed with a locale, return path without
+        for (const locale of locales) {
+            const prefixLowerCase = `/${locale.toLowerCase()}`;
+            if (pathLowerCase === prefixLowerCase) {
+                return "/";
+            }
+            if (pathLowerCase.startsWith(`${prefixLowerCase}/`)) {
+                return `${pathLowerCase.slice(prefixLowerCase.length)}`;
+            }
+        }
+    }
+    return path;
+}
+function getLocalePrefixFromUri(uri, routesManifest) {
+    if (routesManifest.basePath && uri.startsWith(routesManifest.basePath)) {
+        uri = uri.slice(routesManifest.basePath.length);
+    }
+    if (routesManifest.i18n) {
+        const uriLowerCase = uri.toLowerCase();
+        for (const locale of routesManifest.i18n.locales) {
+            const localeLowerCase = locale.toLowerCase();
+            if (uriLowerCase === `/${localeLowerCase}` ||
+                uriLowerCase.startsWith(`/${localeLowerCase}/`)) {
+                return `/${locale}`;
+            }
+        }
+        return `/${routesManifest.i18n.defaultLocale}`;
+    }
+    return "";
+}
 
 const getCustomHeaders = (uri, routesManifest) => {
     const localized = addDefaultLocaleToPath(uri, routesManifest);
@@ -972,19 +1017,15 @@ const toRequest = (event) => {
 };
 
 const normalise = (uri, routesManifest) => {
-    const { basePath, i18n } = routesManifest;
+    const { basePath } = routesManifest;
     if (basePath) {
         if (uri.startsWith(basePath)) {
             uri = uri.slice(basePath.length);
         }
         else {
-            // basePath set but URI does not start with basePath, return 404
-            if (i18n === null || i18n === void 0 ? void 0 : i18n.defaultLocale) {
-                return `/${i18n.defaultLocale}/404`;
-            }
-            else {
-                return "/404";
-            }
+            // basePath set but URI does not start with basePath, return original path with special flag indicating missing expected base path
+            // but basePath is expected
+            return { normalisedUri: uri, missingExpectedBasePath: true };
         }
     }
     // Remove trailing slash for all paths
@@ -992,7 +1033,10 @@ const normalise = (uri, routesManifest) => {
         uri = uri.slice(0, -1);
     }
     // Empty path should be normalised to "/" as there is no Next.js route for ""
-    return uri === "" ? "/" : uri;
+    return {
+        normalisedUri: uri === "" ? "/" : uri,
+        missingExpectedBasePath: false
+    };
 };
 
 const staticNotFound = (uri, manifest, routesManifest) => {
@@ -1024,46 +1068,65 @@ const pageHtml = (localeUri) => {
     }
     return `pages${localeUri}.html`;
 };
-const handlePageReq = (uri, manifest, routesManifest, isPreview, isRewrite) => {
+const handlePageReq = (req, uri, manifest, routesManifest, isPreview, isRewrite) => {
     var _a, _b;
     const { pages } = manifest;
-    const localeUri = normalise(addDefaultLocaleToPath(uri, routesManifest), routesManifest);
-    if (pages.html.nonDynamic[localeUri]) {
-        const nonLocaleUri = dropLocaleFromPath(localeUri, routesManifest);
-        const statusCode = nonLocaleUri === "/404" ? 404 : nonLocaleUri === "/500" ? 500 : undefined;
-        return {
-            isData: false,
-            isStatic: true,
-            file: pages.html.nonDynamic[localeUri],
-            statusCode
-        };
+    const { normalisedUri: localeUri, missingExpectedBasePath } = normalise(addDefaultLocaleToPath(uri, routesManifest, findDomainLocale(req, routesManifest)), routesManifest);
+    // This allows matching against rewrites even without basepath
+    if (!missingExpectedBasePath) {
+        if (pages.html.nonDynamic[localeUri]) {
+            const nonLocaleUri = dropLocaleFromPath(localeUri, routesManifest);
+            const statusCode = nonLocaleUri === "/404"
+                ? 404
+                : nonLocaleUri === "/500"
+                    ? 500
+                    : undefined;
+            return {
+                isData: false,
+                isStatic: true,
+                file: pages.html.nonDynamic[localeUri],
+                statusCode
+            };
+        }
+        if (pages.ssg.nonDynamic[localeUri] && !isPreview) {
+            const ssg = pages.ssg.nonDynamic[localeUri];
+            const route = (_a = ssg.srcRoute) !== null && _a !== void 0 ? _a : localeUri;
+            const nonLocaleUri = dropLocaleFromPath(localeUri, routesManifest);
+            const statusCode = nonLocaleUri === "/404"
+                ? 404
+                : nonLocaleUri === "/500"
+                    ? 500
+                    : undefined;
+            return {
+                isData: false,
+                isStatic: true,
+                file: pageHtml(localeUri),
+                // page JS path is from SSR entries in manifest
+                page: pages.ssr.nonDynamic[route] || pages.ssr.dynamic[route],
+                revalidate: ssg.initialRevalidateSeconds,
+                statusCode
+            };
+        }
+        if (((_b = pages.ssg.notFound) !== null && _b !== void 0 ? _b : {})[localeUri] && !isPreview) {
+            return notFoundPage(uri, manifest, routesManifest);
+        }
+        if (pages.ssr.nonDynamic[localeUri]) {
+            if (localeUri.startsWith("/api/")) {
+                return {
+                    isApi: true,
+                    page: pages.ssr.nonDynamic[localeUri]
+                };
+            }
+            else {
+                return {
+                    isData: false,
+                    isRender: true,
+                    page: pages.ssr.nonDynamic[localeUri]
+                };
+            }
+        }
     }
-    if (pages.ssg.nonDynamic[localeUri] && !isPreview) {
-        const ssg = pages.ssg.nonDynamic[localeUri];
-        const route = (_a = ssg.srcRoute) !== null && _a !== void 0 ? _a : localeUri;
-        const nonLocaleUri = dropLocaleFromPath(localeUri, routesManifest);
-        const statusCode = nonLocaleUri === "/404" ? 404 : nonLocaleUri === "/500" ? 500 : undefined;
-        return {
-            isData: false,
-            isStatic: true,
-            file: pageHtml(localeUri),
-            // page JS path is from SSR entries in manifest
-            page: pages.ssr.nonDynamic[route] || pages.ssr.dynamic[route],
-            revalidate: ssg.initialRevalidateSeconds,
-            statusCode
-        };
-    }
-    if (((_b = pages.ssg.notFound) !== null && _b !== void 0 ? _b : {})[localeUri] && !isPreview) {
-        return notFoundPage(uri, manifest, routesManifest);
-    }
-    if (pages.ssr.nonDynamic[localeUri]) {
-        return {
-            isData: false,
-            isRender: true,
-            page: pages.ssr.nonDynamic[localeUri]
-        };
-    }
-    const rewrite = !isRewrite && getRewritePath(uri, routesManifest, manifest);
+    const rewrite = !isRewrite && getRewritePath(req, uri, routesManifest, manifest);
     if (rewrite) {
         const [path, querystring] = rewrite.split("?");
         if (isExternalRewrite(path)) {
@@ -1073,38 +1136,49 @@ const handlePageReq = (uri, manifest, routesManifest, isPreview, isRewrite) => {
                 querystring
             };
         }
-        const route = handlePageReq(path, manifest, routesManifest, isPreview, true);
+        const route = handlePageReq(req, path, manifest, routesManifest, isPreview, true);
         return {
             ...route,
             querystring
         };
     }
-    const dynamic = matchDynamicRoute(localeUri, pages.dynamic);
-    const dynamicSSG = dynamic && pages.ssg.dynamic[dynamic];
-    if (dynamicSSG) {
-        return {
-            isData: false,
-            isStatic: true,
-            file: pageHtml(localeUri),
-            page: dynamic ? pages.ssr.dynamic[dynamic] : undefined,
-            fallback: dynamicSSG.fallback
-        };
-    }
-    const dynamicSSR = dynamic && pages.ssr.dynamic[dynamic];
-    if (dynamicSSR) {
-        return {
-            isData: false,
-            isRender: true,
-            page: dynamicSSR
-        };
-    }
-    const dynamicHTML = dynamic && pages.html.dynamic[dynamic];
-    if (dynamicHTML) {
-        return {
-            isData: false,
-            isStatic: true,
-            file: dynamicHTML
-        };
+    // We don't want to match URIs with missing basepath against dynamic routes if it wasn't already covered by rewrite.
+    if (!missingExpectedBasePath) {
+        const dynamic = matchDynamicRoute(localeUri, pages.dynamic);
+        const dynamicSSG = dynamic && pages.ssg.dynamic[dynamic];
+        if (dynamicSSG && !isPreview) {
+            return {
+                isData: false,
+                isStatic: true,
+                file: pageHtml(localeUri),
+                page: dynamic ? pages.ssr.dynamic[dynamic] : undefined,
+                fallback: dynamicSSG.fallback
+            };
+        }
+        const dynamicSSR = dynamic && pages.ssr.dynamic[dynamic];
+        if (dynamicSSR) {
+            if (dynamic.startsWith("/api/")) {
+                return {
+                    isApi: true,
+                    page: dynamicSSR
+                };
+            }
+            else {
+                return {
+                    isData: false,
+                    isRender: true,
+                    page: dynamicSSR
+                };
+            }
+        }
+        const dynamicHTML = dynamic && pages.html.dynamic[dynamic];
+        if (dynamicHTML) {
+            return {
+                isData: false,
+                isStatic: true,
+                file: dynamicHTML
+            };
+        }
     }
     return notFoundPage(uri, manifest, routesManifest);
 };
@@ -1115,8 +1189,8 @@ const handlePageReq = (uri, manifest, routesManifest, isPreview, isRewrite) => {
  * @param pageManifest
  * @param routesManifest
  */
-function getRewritePath(uri, routesManifest, pageManifest) {
-    const path = addDefaultLocaleToPath(uri, routesManifest);
+function getRewritePath(req, uri, routesManifest, pageManifest) {
+    const path = addDefaultLocaleToPath(uri, routesManifest, findDomainLocale(req, routesManifest));
     const rewrites = routesManifest.rewrites;
     for (const rewrite of rewrites) {
         const match = matchPath(path, rewrite.source);
@@ -1130,7 +1204,7 @@ function getRewritePath(uri, routesManifest, pageManifest) {
         }
         // No-op rewrite support for pages: skip to next rewrite if path does not map to existing non-dynamic and dynamic routes
         if (pageManifest && path === destination) {
-            const url = handlePageReq(destination, pageManifest, routesManifest, false, true);
+            const url = handlePageReq(req, destination, pageManifest, routesManifest, false, true);
             if (url.statusCode === 404) {
                 continue;
             }
@@ -1163,17 +1237,19 @@ function isExternalRewrite(customRewrite) {
     return (customRewrite.startsWith("http://") || customRewrite.startsWith("https://"));
 }
 
-const handleApiReq = (uri, manifest, routesManifest, isRewrite) => {
+const handleApiReq = (req, uri, manifest, routesManifest, isRewrite) => {
     const { apis } = manifest;
-    const normalisedUri = normalise(uri, routesManifest);
-    const nonDynamic = apis.nonDynamic[normalisedUri];
-    if (nonDynamic) {
-        return {
-            isApi: true,
-            page: nonDynamic
-        };
+    const { normalisedUri, missingExpectedBasePath } = normalise(uri, routesManifest);
+    if (!missingExpectedBasePath) {
+        const nonDynamic = apis.nonDynamic[normalisedUri];
+        if (nonDynamic) {
+            return {
+                isApi: true,
+                page: nonDynamic
+            };
+        }
     }
-    const rewrite = !isRewrite && getRewritePath(uri, routesManifest);
+    const rewrite = !isRewrite && getRewritePath(req, uri, routesManifest);
     if (rewrite) {
         // Rewrites include locales even for api routes
         const apiRewrite = dropLocaleFromPath(rewrite, routesManifest);
@@ -1185,7 +1261,7 @@ const handleApiReq = (uri, manifest, routesManifest, isRewrite) => {
                 querystring
             };
         }
-        const route = handleApiReq(path, manifest, routesManifest, true);
+        const route = handleApiReq(req, path, manifest, routesManifest, true);
         if (route) {
             return {
                 ...route,
@@ -1194,12 +1270,14 @@ const handleApiReq = (uri, manifest, routesManifest, isRewrite) => {
         }
         return route;
     }
-    const dynamic = matchDynamic(normalisedUri, apis.dynamic);
-    if (dynamic) {
-        return {
-            isApi: true,
-            page: dynamic
-        };
+    if (!missingExpectedBasePath) {
+        const dynamic = matchDynamic(normalisedUri, apis.dynamic);
+        if (dynamic) {
+            return {
+                isApi: true,
+                page: dynamic
+            };
+        }
     }
 };
 
@@ -1288,8 +1366,8 @@ function getDomainRedirectPath(request, manifest) {
 }
 /**
  * Get the redirect of the given path, if it exists.
- * @param path
- * @param manifest
+ * @param request
+ * @param routesManifest
  */
 function getRedirectPath(request, routesManifest) {
     var _a;
@@ -1345,7 +1423,7 @@ const routeApi = (req, manifest, routesManifest) => {
     if (redirect) {
         return redirect;
     }
-    return handleApiReq(req.uri, manifest, routesManifest);
+    return handleApiReq(req, req.uri, manifest, routesManifest);
 };
 
 const unauthorized = (event, route) => {
@@ -1427,8 +1505,8 @@ function removeBlacklistedHeaders(headers) {
 const handler = async (event) => {
     var _a;
     const request = event.Records[0].cf.request;
-    const routesManifest = RoutesManifestJson__default['default'];
-    const buildManifest = manifest__default['default'];
+    const routesManifest = RoutesManifestJson__default["default"];
+    const buildManifest = manifest__default["default"];
     const { req, res, responsePromise } = nextAwsCloudfront(event.Records[0].cf, {
         enableHTTPCompression: buildManifest.enableHTTPCompression
     });

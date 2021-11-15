@@ -46,36 +46,52 @@ function HomePage() {
               </div>
             </div>
           </div> */}
-          <div className="col-span-6 bg-homeBanner bg-gray-100 bg-no-repeat bg-cover bg-top opacity-50 bg-blend-luminosity flex flex-col min-h-[100%] max-h-[100%]">
+          <div className="col-span-6 bg-homeBanner bg-gray-homeBannerGray bg-no-repeat bg-cover bg-top bg-blend-luminosity flex flex-col min-h-[100%] max-h-[100%]">
             <div className="h-[25%] flex-shrink"></div>
             <div className="h-[35%] flex-grow"></div>
             <div className="h-[40%] flex-grow">
               <div className="space-y-3 opacity-100 relative">
-                <div className="h-40 bg-white shadow-2xl mx-auto w-[60%] z-10 before:h-auto before:w-auto before:-top-6 before:absolute before:rounded-t-lg before:text-white before:bg-orange-ramaiah before:z-0 before:content-['Latest_News'] ">
-                  <div className="p-2 ">
-                    <div className=" bg-gradient-to-r from-pink-ramaiah to-orange-ramaiah text-white text-center">
-                      <p className="text-4xl font-extrabold inline-block">26</p>
-                      <span>Aug 2021</span>
-                    </div>
-                    <div className="my-auto">
-                      Exam Fee Notification for Supplementary Semester Offline
-                      Examinations - B.E./B.Arch III to VIII Sem |
-                      MBA/MCA/M.TECH/M.ARCH All Semesters (Theory & Practical) -
-                      Sept / Oct 2021
+                {/* <div className="h-40 bg-white shadow-2xl mx-auto w-[60%] z-10 before:h-auto before:w-auto before:-top-6 before:absolute before:rounded-t-lg before:text-white before:bg-orange-ramaiah before:z-0 before:content-['Latest_News'] "> */}
+                <div className="flex flex-col my-auto">
+                  <div className="bg-blue-ramaiah text-white text-xl px-2 mx-auto text-center">
+                    Latest News
+                  </div>
+                  <div className="h-auto bg-white shadow-2xl mx-auto w-[60%] z-10">
+                    <div className="p-2 ">
+                      <div className=" bg-gradient-to-r from-pink-ramaiah to-orange-ramaiah text-white text-center">
+                        <p className="text-4xl font-extrabold inline-block">
+                          26
+                        </p>
+                        <span>Nov 2021</span>
+                      </div>
+                      <div className="my-auto">
+                        Exam Fee Notification for Supplementary Semester Offline
+                        Examinations - B.E./B.Arch III to VIII Sem |
+                        MBA/MCA/M.TECH/M.ARCH All Semesters (Theory & Practical)
+                        - Sept / Oct 2021
+                      </div>
                     </div>
                   </div>
                 </div>
 
-                <div className="h-40 bg-white  shadow-2xl mx-auto w-[60%] ">
-                  <div className="p-2 ">
-                    <div className=" bg-gradient-to-r from-pink-ramaiah to-orange-ramaiah text-white text-center">
-                      <p className="text-4xl font-extrabold inline-block">26</p>
-                      <span>Aug 2021</span>
-                    </div>
-                    <div className="my-auto">
-                      Five day Online FDP on "Mathematical Developments in
-                      Cryptography and Data Science" by Dept. of Mathematics,
-                      RIT.
+                <div className="flex flex-col my-auto h-[50%]">
+                  <div className="bg-blue-ramaiah text-white text-xl px-2 mx-auto text-center h-auto">
+                    Latest Events
+                  </div>
+
+                  <div className="h-auto bg-white shadow-2xl mx-auto w-[60%] ">
+                    <div className="p-2 ">
+                      <div className=" bg-gradient-to-r from-pink-ramaiah to-orange-ramaiah text-white text-center">
+                        <p className="text-4xl font-extrabold inline-block">
+                          06
+                        </p>
+                        <span>Oct 2021</span>
+                      </div>
+                      <div className="my-auto">
+                        Five day Online FDP on "Mathematical Developments in
+                        Cryptography and Data Science" by Dept. of Mathematics,
+                        RIT.
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -120,15 +136,45 @@ function HomePage() {
               </div>
             </div>
             <div className="h-[40%] flex-grow">
-              <div className="space-y-3">
-                <div className="flex flex-row justify-evenly flex-wrap border-[1px] border-gray-500">
-                  <div className="h-40 w-40 mr-12 bg-gradient-to-r from-pink-ramaiah to-orange-ramaiah border-[1px] border-white rounded-lg text-white text-center"></div>
-                  <div className="h-40 w-40 mr-12 bg-gradient-to-r from-pink-ramaiah to-orange-ramaiah border-[1px] border-white rounded-lg text-white text-center"></div>
-                  <div className="h-40 w-40 mr-12 bg-gradient-to-r from-pink-ramaiah to-orange-ramaiah border-[1px] border-white rounded-lg text-white text-center"></div>
+              <div className="space-y-5">
+                <div className="flex flex-row justify-evenly flex-wrap">
+                  <div className="h-auto w-auto mr-12 bg-gradient-to-r from-pink-ramaiah to-orange-ramaiah border-[1px] border-white rounded-lg text-white text-center p-3">
+                    <div className="text-5xl font-heading p-3">
+                      65
+                      <sup className="font-thin after:content-['th'] after:text-white after:text-3xl"></sup>
+                    </div>
+                    <div>
+                      All India Rank <br />
+                      (2021)
+                    </div>
+                  </div>
+                  <div className="h-auto w-auto mr-12 bg-gradient-to-r from-pink-ramaiah to-orange-ramaiah border-[1px] border-white rounded-lg text-white text-center p-1">
+                    <div className="text-5xl font-heading p-3">Best</div>
+                    <div>
+                      among VTU <br /> institutions
+                    </div>
+                  </div>
+                  <div className="h-auto w-auto mr-12 bg-gradient-to-r from-pink-ramaiah to-orange-ramaiah border-[1px] border-white rounded-lg text-white text-center p-2">
+                    <div className="text-5xl font-heading p-3">46</div>
+                    <div>
+                      Industrial <br /> Collaborations
+                    </div>
+                  </div>
                 </div>
                 <div className="flex flex-row justify-evenly flex-wrap">
-                  <div className="h-40 w-40 mr-12 bg-gradient-to-r from-pink-ramaiah to-orange-ramaiah border-[1px] border-white rounded-lg text-white text-center"></div>
-                  <div className="h-40 w-40 mr-12 bg-gradient-to-r from-pink-ramaiah to-orange-ramaiah border-[1px] border-white rounded-lg text-white text-center"></div>
+                  <div className="h-auto w-auto bg-gradient-to-r from-pink-ramaiah to-orange-ramaiah border-[1px] border-white rounded-lg text-white text-center py-2">
+                    <div className="text-5xl font-heading p-3">95%</div>
+                    <div>
+                      Placement <br /> Average
+                    </div>
+                  </div>
+                  <div className="h-30 w-30 mr-12 bg-gradient-to-r from-pink-ramaiah to-orange-ramaiah border-[1px] border-white rounded-lg text-white text-center p-2">
+                    <div className="text-5xl font-heading p-3">350</div>
+                    <div>
+                      Avg. Publications <br />
+                      per year
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -139,15 +185,26 @@ function HomePage() {
           <div className="relative lg:h-5/6 lg:w-auto">
             <Image src={logo} alt="Logo" layout="fixed" className="absolute" />
           </div>
-          <div className="h-10 bg-gray-menu bg-opacity-50  text-white justify-end">
-            <nav className="space-x-6">
-              <a className="p-4 border-b-2 border-orange-ramaiah font-medium">
+          <div className="text-white justify-end">
+            <nav className="space-x-6 bg-gray-menu bg-opacity-50 p-4 box-border">
+              <a
+                className="p-4 border-b-2 border-orange-ramaiah text-blue-ramaiah font-bold"
+                href="home"
+              >
                 Home
               </a>
-              <a className="p-4">About Us</a>
-              <a className="p-4">Admissions</a>
-              <a className="p-4">Academics</a>
-              <a className="p-4">Placement</a>
+              <a className="p-4 hover:font-bold cursor-pointer" href="">
+                About Us
+              </a>
+              <a className="p-4 hover:font-bold cursor-pointer" href="">
+                Admissions
+              </a>
+              <a className="p-4 hover:font-bold cursor-pointer" href="/">
+                Academics
+              </a>
+              <a className="p-4 hover:font-bold cursor-pointer" href="">
+                Placement
+              </a>
             </nav>
           </div>
         </section>
@@ -162,13 +219,32 @@ function HomePage() {
               height="90%"
               webkitallowfullscreen=""
               mozallowfullscreen=""
-              allowfullscreen=""
+              allowFullScreen=""
             ></iframe>
           </div>
         </div>
 
-        <div className="bg-homeBannerJnanam h-[50vh] bg-no-repeat bg-cover bg-bottom">
-          <div className="bg-samMsr mx-auto"></div>
+        <div className="bg-homeBannerJnanam h-auto bg-no-repeat bg-cover bg-bottom space-y-3 py-3">
+          <div className="mx-auto">
+            <img src="sam-msr.png" className="mx-auto"></img>
+          </div>
+          <div className="flex w-full mx-auto justify-center space-x-8">
+            <div className="">
+              <img src="msr.png" className="rounded-full" />
+            </div>
+            <div className="text-white max-w-[30%] self-center space-y-10">
+              <div className="italic text-5xl font-bold">
+                A Tribute to Dr. M. S. Ramaiah{" "}
+              </div>
+              <div>
+                “What we have done for ourselves alone dies with us. What we
+                have done for others and the world remains and is immortal.”
+              </div>
+              <button className="bg-orange-ramaiah p-4 text-white text-lg">
+                EXPLORE BOARD OF MANAGEMENT
+              </button>
+            </div>
+          </div>
         </div>
       </main>
       {/* Jnanam Vigyanam Module */}

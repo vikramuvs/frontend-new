@@ -28,6 +28,7 @@ module.exports = {
           menu: "#C1B3B0",
           deptHeader: "#E2E2E2",
           homeSection: "#DDDDDD",
+          homeBannerGray: "rgba(243, 244, 246, .8)",
         },
       },
       fontFamily: {

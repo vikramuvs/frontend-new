@@ -2,8 +2,8 @@
   "name": "969mkz-09q9jtj",
   "arn": "arn:aws:iam::461176318403:role/969mkz-09q9jtj",
   "service": [
-    "lambda.amazonaws.com",
-    "edgelambda.amazonaws.com"
+    "edgelambda.amazonaws.com",
+    "lambda.amazonaws.com"
   ],
   "policy": {
     "Version": "2012-10-17",

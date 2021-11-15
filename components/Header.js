@@ -21,7 +21,7 @@ export default function Header() {
                   />
                 </div>
                 <nav className="w-auto h-3/6 bg-gray-menu bg-opacity-50 space-x-4 text-xl text-white hidden lg:inline-flex">
-                  <a className="sm:hover:font-bold p-2" href="/">
+                  <a className="sm:hover:font-bold p-2" href="/home">
                     Home
                   </a>
                   <a className="sm:hover:font-bold p-2" href="/about-us">
