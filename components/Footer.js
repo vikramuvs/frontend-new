@@ -16,20 +16,132 @@ function Footer() {
           </div>
           <div>
             <ul className="space-y-3">
-              <li>QIP Center</li>
-              <li>Proctorial System</li>
-              <li>IEEE RIT</li>
-              <li>Sports</li>
-              <li>NSS</li>
-              <li>Dept. Of Extra-Curricular Activities</li>
-              <li>Entrepreneurship Development Cell</li>
-              <li>Apple Training Center</li>
-              <li>Co-curricular Activities</li>
-              <li>Alumni</li>
-              <li>TEQIP</li>
-              <li>Mandatory Committees</li>
-              <li>SPDC</li>
-              <li>PMSSS NODAL OFFICER</li>
+              <li>
+                <a
+                  className="hover:text-orange-ramaiah visited:text-orange-ramaiah"
+                  target="_blank"
+                  href="http://msrit.edu/qip-center.html"
+                >
+                  QIP Center
+                </a>
+              </li>
+              <li>
+                <a
+                  className="hover:text-orange-ramaiah visited:text-orange-ramaiah"
+                  target="_blank"
+                  href="http://msrit.edu/support/proctorial-system.html"
+                >
+                  Proctorial System
+                </a>
+              </li>
+              <li>
+                <a
+                  className="hover:text-orange-ramaiah visited:text-orange-ramaiah"
+                  target="_blank"
+                  href="https://site.ieee.org/sb-ritb/"
+                >
+                  IEEE RIT
+                </a>
+              </li>
+              <li>
+                <a
+                  className="hover:text-orange-ramaiah visited:text-orange-ramaiah"
+                  target="_blank"
+                  href="http://msrit.edu/support/sports.html"
+                >
+                  Sports
+                </a>
+              </li>
+              <li>
+                <a
+                  className="hover:text-orange-ramaiah visited:text-orange-ramaiah"
+                  target="_blank"
+                  href="http://msrit.edu/support/nss.html"
+                >
+                  NSS
+                </a>
+              </li>
+              <li>
+                <a
+                  className="hover:text-orange-ramaiah visited:text-orange-ramaiah"
+                  target="_blank"
+                  href="http://msrit.edu/support/deca.html"
+                >
+                  Dept. Of Extra-Curricular Activities
+                </a>
+              </li>
+              <li>
+                <a
+                  className="hover:text-orange-ramaiah visited:text-orange-ramaiah"
+                  target="_blank"
+                  href="http://msrit.edu/support/edc.html"
+                >
+                  Entrepreneurship Development Cell
+                </a>
+              </li>
+              <li>
+                <a
+                  className="hover:text-orange-ramaiah visited:text-orange-ramaiah"
+                  target="_blank"
+                  href="http://msrit.edu/support/edc.html"
+                >
+                  Apple Training Center
+                </a>
+              </li>
+              <li>
+                <a
+                  className="hover:text-orange-ramaiah visited:text-orange-ramaiah"
+                  target="_blank"
+                  href="http://msrit.edu/support/cocurricular.html"
+                >
+                  Co-curricular Activities
+                </a>
+              </li>
+              <li>
+                <a
+                  className="hover:text-orange-ramaiah visited:text-orange-ramaiah"
+                  target="_blank"
+                  href="http://msrit.edu/support/alumni.html"
+                >
+                  Alumni
+                </a>
+              </li>
+              <li>
+                <a
+                  className="hover:text-orange-ramaiah visited:text-orange-ramaiah"
+                  target="_blank"
+                  href="http://msrit.edu/support/TEQIP.html"
+                >
+                  TEQIP
+                </a>
+              </li>
+              <li>
+                <a
+                  className="hover:text-orange-ramaiah visited:text-orange-ramaiah"
+                  target="_blank"
+                  href="http://msrit.edu/support/mandatory-committees.html"
+                >
+                  Mandatory Committees
+                </a>
+              </li>
+              <li>
+                <a
+                  className="hover:text-orange-ramaiah visited:text-orange-ramaiah"
+                  target="_blank"
+                  href="http://msrit.edu/support/spdc.html"
+                >
+                  SPDC
+                </a>
+              </li>
+              <li>
+                <a
+                  className="hover:text-orange-ramaiah visited:text-orange-ramaiah"
+                  target="_blank"
+                  href="https://s3-us-west-2.amazonaws.com/msrit-bucket/Supporting/PMSSS+NODAL+OFFICER"
+                >
+                  PMSSS NODAL OFFICER
+                </a>
+              </li>
             </ul>
           </div>
         </div>
@@ -39,14 +151,52 @@ function Footer() {
           </span>
           <div>
             <ul className="space-y-3">
-              <li>NRI Students Fee Payment 2020-21 </li>
-              <li>PG Students (Tuition Fees 2020-2021) </li>
-              <li>UG Higher Semester (Tuition Fees 2020-2021) </li>
               <li>
-                Supplementary Exam Fee Sept/Oct 2021-UG III to VIII Sem &nbsp;
-                PG All Semesters
+                <a
+                  className="hover:text-orange-ramaiah visited:text-orange-ramaiah"
+                  target="_blank"
+                  href="https://s3-us-west-2.amazonaws.com/msrit-bucket/Supporting/PMSSS+NODAL+OFFICER"
+                >
+                  NRI Students Fee Payment 2020-21
+                </a>{" "}
               </li>
-              <li>Pay Hostel Fee Online</li>
+              <li>
+                <a
+                  className="hover:text-orange-ramaiah visited:text-orange-ramaiah"
+                  target="_blank"
+                  href="https://feehive.bankofbaroda.co.in/FeeHiveWeb/FeeHive/Login/MSRIT"
+                >
+                  PG Students (Tuition Fees 2020-2021)
+                </a>{" "}
+              </li>
+              <li>
+                <a
+                  className="hover:text-orange-ramaiah visited:text-orange-ramaiah"
+                  target="_blank"
+                  href="https://feehive.bankofbaroda.co.in/FeeHiveWeb/FeeHive/Login/MSRIT"
+                >
+                  UG Higher Semester (Tuition Fees 2020-2021)
+                </a>{" "}
+              </li>
+              <li>
+                <a
+                  className="hover:text-orange-ramaiah visited:text-orange-ramaiah"
+                  target="_blank"
+                  href="https://feehive.bankofbaroda.co.in/FeeHiveWeb/FeeHive/Login/MSRIT"
+                >
+                  Supplementary Exam Fee Sept/Oct 2021-UG III to VIII Sem &nbsp;
+                  PG All Semesters
+                </a>
+              </li>
+              <li>
+                <a
+                  className="hover:text-orange-ramaiah visited:text-orange-ramaiah"
+                  target="_blank"
+                  href="https://feehive.bankofbaroda.co.in/FeeHiveWeb/FeeHive/Login/MSRIT"
+                >
+                  Pay Hostel Fee Online
+                </a>{" "}
+              </li>
             </ul>
           </div>
         </div>
@@ -57,17 +207,141 @@ function Footer() {
           </span>
           <div>
             <ul className="space-y-3">
-              <li>Center of Excellence </li>
-              <li>Grievance Redressal Committee </li>
-              <li>Grievance Redressal System </li>
-              <li>Student Information Systems </li> <li>Results </li>
-              <li>Faculty Email Login </li> <li>MeraPurse </li>
-              <li>GEF Conduct Rules </li> <li>GEF Service Rules </li>
-              <li>Student Satisfaction </li> <li>Survey of the Institute </li>
-              <li>Curriculum Feedback Analysis </li> <li>Code of Conduct </li>
-              <li>Code of Ethics </li> <li>Consultancy Policy </li>
-              <li>Research Policy </li> <li>Academic Calendar 2018-19 </li>
-              <li>Academic Calendar 2019-20 </li> <li>Syllabus 2018-19 </li>
+              <li>
+                <a
+                  className="hover:text-orange-ramaiah visited:text-orange-ramaiah"
+                  target="_blank"
+                  href="https://msrit-bucket.s3-us-west-2.amazonaws.com/R%26D/Center+of+Excellence.pdf"
+                >
+                  Center of Excellence{" "}
+                </a>{" "}
+              </li>
+              <li>
+                <a
+                  className="hover:text-orange-ramaiah visited:text-orange-ramaiah"
+                  target="_blank"
+                  href="http://msrit.edu/support/mandatory-committees.html#grievance_redressal_committee"
+                >
+                  Grievance Redressal Committee{" "}
+                </a>
+              </li>
+              <li>
+                <a
+                  className="hover:text-orange-ramaiah visited:text-orange-ramaiah"
+                  target="_blank"
+                  href="http://msrit.edu/support/mandatory-committees.html#grievance_redressal_committee"
+                >
+                  Grievance Redressal System
+                </a>{" "}
+              </li>
+              <li>
+                <a
+                  className="hover:text-orange-ramaiah visited:text-orange-ramaiah"
+                  target="_blank"
+                  href="http://parents.msrit.edu/"
+                >
+                  Student Information Systems
+                </a>{" "}
+              </li>{" "}
+              <li>
+                <a
+                  className="hover:text-orange-ramaiah visited:text-orange-ramaiah"
+                  target="_blank"
+                  href="http://exam.msrit.edu/"
+                >
+                  Results
+                </a>{" "}
+              </li>
+              <li>
+                <a
+                  className="hover:text-orange-ramaiah visited:text-orange-ramaiah"
+                  target="_blank"
+                  href="http://email.msrit.edu/"
+                >
+                  Faculty Email Login
+                </a>{" "}
+              </li>{" "}
+              <li>
+                <a
+                  className="hover:text-orange-ramaiah visited:text-orange-ramaiah"
+                  target="_blank"
+                  href="http://payse.cash/wp-content/uploads/2017/03/msrit-intro.pdf"
+                >
+                  MeraPurse
+                </a>{" "}
+              </li>
+              <li>
+                <a
+                  className="hover:text-orange-ramaiah visited:text-orange-ramaiah"
+                  target="_blank"
+                  href="https://d2e9h3gjmozu47.cloudfront.net/Uploads/GEFConductRules.pdf"
+                >
+                  GEF Conduct Rules{" "}
+                </a>
+              </li>{" "}
+              <li>
+                <a
+                  className="hover:text-orange-ramaiah visited:text-orange-ramaiah"
+                  target="_blank"
+                  href="https://d2e9h3gjmozu47.cloudfront.net/Uploads/GEFConductRules.pdf"
+                >
+                  GEF Service Rules{" "}
+                </a>
+              </li>
+              <li>
+                <a
+                  className="hover:text-orange-ramaiah visited:text-orange-ramaiah"
+                  target="_blank"
+                  href="https://d2e9h3gjmozu47.cloudfront.net/Uploads/GEFConductRules.pdf"
+                >
+                  Student Satisfaction
+                </a>{" "}
+              </li>
+              <li>
+                <a
+                  className="hover:text-orange-ramaiah visited:text-orange-ramaiah"
+                  target="_blank"
+                  href="http://msrit.edu/curriculum-feedback-analysis.html"
+                >
+                  Curriculum Feedback Analysis{" "}
+                </a>
+              </li>{" "}
+              <li>
+                <a
+                  className="hover:text-orange-ramaiah visited:text-orange-ramaiah"
+                  target="_blank"
+                  href="https://msrit-bucket.s3-us-west-2.amazonaws.com/Uploads/code_conduct_MSRIT.pdf"
+                >
+                  Code of Conduct
+                </a>{" "}
+              </li>
+              <li>
+                <a
+                  className="hover:text-orange-ramaiah visited:text-orange-ramaiah"
+                  target="_blank"
+                  href="https://msrit-bucket.s3-us-west-2.amazonaws.com/Uploads/ConsultancyPolicy.pdf"
+                >
+                  Code of Ethics
+                </a>{" "}
+              </li>{" "}
+              <li>
+                <a
+                  className="hover:text-orange-ramaiah visited:text-orange-ramaiah"
+                  target="_blank"
+                  href="https://msrit-bucket.s3-us-west-2.amazonaws.com/Uploads/ConsultancyPolicy.pdf"
+                >
+                  Consultancy Policy
+                </a>{" "}
+              </li>
+              <li>
+                <a
+                  className="hover:text-orange-ramaiah visited:text-orange-ramaiah"
+                  target="_blank"
+                  href="https://msrit-bucket.s3-us-west-2.amazonaws.com/Uploads/ResearchPolicy.pdf"
+                >
+                  Research Policy{" "}
+                </a>
+              </li>
             </ul>
           </div>
         </div>
@@ -77,15 +351,88 @@ function Footer() {
           </span>
           <div>
             <ul className="space-y-3">
-              <li>VTU Audit Report </li>
-              <li>IQAC </li>
-              <li>NIRF</li>
-              <li>NBA</li>
-              <li>AICTE</li>
-              <li>Sudarshana Magazine</li>
-              <li>Pradarshana</li>
-              <li>Sampige Bulletin</li>
-              <li>Strategic Planning </li>
+              <li>
+                <a
+                  className="hover:text-orange-ramaiah visited:text-orange-ramaiah"
+                  target="_blank"
+                  href="https://msrit-bucket.s3-us-west-2.amazonaws.com/Uploads/ResearchPolicy.pdf"
+                >
+                  VTU Audit Report{" "}
+                </a>
+              </li>
+              <li>
+                <a
+                  className="hover:text-orange-ramaiah visited:text-orange-ramaiah"
+                  target="_blank"
+                  href="http://msrit.edu/reports.html#IQAC"
+                >
+                  IQAC
+                </a>{" "}
+              </li>
+              <li>
+                <a
+                  className="hover:text-orange-ramaiah visited:text-orange-ramaiah"
+                  target="_blank"
+                  href="http://msrit.edu/reports.html#IQAC"
+                >
+                  NIRF
+                </a>
+              </li>
+              <li>
+                <a
+                  className="hover:text-orange-ramaiah visited:text-orange-ramaiah"
+                  target="_blank"
+                  href="http://msrit.edu/reports.html#NBA"
+                >
+                  NBA
+                </a>
+              </li>
+              <li>
+                <a
+                  className="hover:text-orange-ramaiah visited:text-orange-ramaiah"
+                  target="_blank"
+                  href="http://msrit.edu/reports.html#AICTE"
+                >
+                  AICTE
+                </a>
+              </li>
+              <li>
+                <a
+                  className="hover:text-orange-ramaiah visited:text-orange-ramaiah"
+                  target="_blank"
+                  href="http://msrit.edu/reports.html#Sudarshana"
+                >
+                  Sudarshana Magazine
+                </a>
+              </li>
+              <li>
+                <a
+                  className="hover:text-orange-ramaiah visited:text-orange-ramaiah"
+                  target="_blank"
+                  href="http://msrit.edu/reports.html#Sudarshana"
+                >
+                  Pradarshana
+                </a>
+              </li>
+              <li>
+                <a
+                  className="hover:text-orange-ramaiah visited:text-orange-ramaiah"
+                  target="_blank"
+                  href="http://msrit.edu/reports.html#Sudarshana"
+                >
+                  Sampige Bulleti
+                </a>
+                n
+              </li>
+              <li>
+                <a
+                  className="hover:text-orange-ramaiah visited:text-orange-ramaiah"
+                  target="_blank"
+                  href="http://msrit.edu/reports.html#Sudarshana"
+                >
+                  Strategic Planning{" "}
+                </a>
+              </li>
             </ul>
           </div>
         </div>
