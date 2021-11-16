@@ -5,7 +5,7 @@ import DeptStats from "../components/DeptStats";
 import DeptMainContent from "../components/DeptMainContent";
 import Footer from "../components/Footer";
 
-export default function Home({
+export default function Index({
   visionData,
   latestNews,
   latestEvents,

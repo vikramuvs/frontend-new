@@ -2,7 +2,7 @@ import Footer from "./Footer";
 import logo from "/assets/images/Institute-of-Technology.png";
 import Image from "next/image";
 
-function HomePage() {
+function HomePage({ latestNews, latestEvents }) {
   return (
     <div>
       {/* Home Page Module */}
