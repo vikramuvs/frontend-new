@@ -1,7 +1,12 @@
 import Image from "next/image";
+import { useState } from "react";
 import logo from "/assets/images/Institute-of-Technology-transparent-bkg.png";
 
 export default function Header() {
+  const [menuItemCLicked, setMenuItemClicked] = useState(false);
+
+  console.log(menuItemCLicked);
+
   return (
     <>
       <div className="grid gap-5 grid-cols-12">
@@ -20,7 +25,7 @@ export default function Header() {
                     className="absolute"
                   />
                 </div>
-                <nav className="w-auto h-3/6 bg-gray-menu bg-opacity-50 space-x-4 text-xl text-white hidden lg:inline-flex">
+                <nav className="w-auto h-3/6 bg-gray-menu bg-opacity-50 space-x-4 text-xl text-white hidden lg:inline-flex lg:relative">
                   <a className="sm:hover:font-bold p-2" href="/home">
                     Home
                   </a>
@@ -32,14 +37,121 @@ export default function Header() {
                   </a>
                   <a
                     className="sm:hover:font-bold"
-                    className="font-bold border-b-2 p-2"
-                    href="/academics"
+                    className="font-bold border-b-2 p-2 cursor-pointer"
+                    onClick={() => {
+                      setMenuItemClicked(!menuItemCLicked);
+                    }}
                   >
                     Academics
                   </a>
                   <a className="sm:hover:font-bold p-2" href="/placement">
                     Placement
                   </a>
+
+                  <div
+                    className={`lg:absolute lg:top-10 lg:min-h-[100px] lg:bg-[#7c688d] lg:flex-wrap lg:text-white lg:w-auto lg:p-4 lg:pt-0  lg:z-[5] lg:transform  lg:transition-all lg:translate-x-4 lg:translate-y-4 lg:space-x-3 lg:duration-100 ${
+                      !menuItemCLicked ? "lg:hidden" : "lg:flex"
+                    }`}
+                  >
+                    <div className="flex-grow w-full lg:border-t-8 lg:border-pink-ramaiah">
+                      {" "}
+                    </div>
+                    <div className="text-base cursor-default">
+                      {" "}
+                      <span className="bg-pink-ramaiah py-3">
+                        {" "}
+                        Circuit Branches{" "}
+                      </span>
+                      <br />{" "}
+                      <div className="flex flex-col border-t-2  text-lg">
+                        {" "}
+                        <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer">
+                          ECE
+                        </a>{" "}
+                        <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer">
+                          EEE
+                        </a>{" "}
+                        <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer">
+                          {" "}
+                          CSE
+                        </a>{" "}
+                        <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer">
+                          ISE
+                        </a>{" "}
+                        <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer">
+                          EIE
+                        </a>{" "}
+                        <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer">
+                          ETE
+                        </a>{" "}
+                        <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer">
+                          MLE
+                        </a>{" "}
+                      </div>{" "}
+                    </div>
+                    <div className="text-base cursor-default">
+                      {" "}
+                      <span className="bg-pink-ramaiah">
+                        {" "}
+                        Non-circuit Branches{" "}
+                      </span>
+                      <br />{" "}
+                      <div className="flex flex-col border-t-2 border-pink-ramaiah text-lg">
+                        {" "}
+                        <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer">
+                          BT
+                        </a>{" "}
+                        <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer">
+                          CV
+                        </a>{" "}
+                        <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer">
+                          ME
+                        </a>{" "}
+                        <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer">
+                          IEM
+                        </a>{" "}
+                        <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer">
+                          Architecture
+                        </a>{" "}
+                      </div>{" "}
+                    </div>
+                    <div className="text-base cursor-default">
+                      {" "}
+                      <span className="bg-pink-ramaiah">
+                        {" "}
+                        Research Programs{" "}
+                      </span>
+                      <br />{" "}
+                      <div className="flex flex-col border-t-2 border-pink-ramaiah text-lg">
+                        {" "}
+                        <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer">
+                          CAMFS
+                        </a>{" "}
+                        <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer">
+                          CFR
+                        </a>{" "}
+                        <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer">
+                          IRF
+                        </a>{" "}
+                        <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer">
+                          ISE
+                        </a>{" "}
+                      </div>{" "}
+                    </div>
+                    <div className="text-base cursor-default">
+                      {" "}
+                      <span className="bg-pink-ramaiah">Ph.D</span> <br />{" "}
+                      <div className="flex flex-col  text-lg">
+                        {" "}
+                        <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer">
+                          ECE
+                        </a>{" "}
+                        <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer">
+                          EEE
+                        </a>{" "}
+                      </div>{" "}
+                    </div>
+                  </div>
                 </nav>
                 <nav className="text-xl text-white inline-flex lg:hidden cursor-pointer">
                   <svg
