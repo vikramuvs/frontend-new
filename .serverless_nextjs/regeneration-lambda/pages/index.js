@@ -5,7 +5,7 @@ exports.id = 405;
 exports.ids = [405];
 exports.modules = {
 
-/***/ 1733:
+/***/ 8272:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -37,7 +37,7 @@ __webpack_require__.r(__webpack_exports__);
 
       
       const { processEnv } = __webpack_require__(2333)
-      processEnv([{"path":".env","contents":"AWS_ACCESS_KEY_ID=AKIAWWYCAFHBSWL542PA\nAWS_SECRET_ACCESS_KEY=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"}])
+      processEnv([{"path":".env","contents":"AWS_ACCESS_KEY_ID=AKIAWWYCAFHB723MYRFU\nAWS_SECRET_ACCESS_KEY=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"}])
     
       
       const runtimeConfig = {}
@@ -99,11 +99,11 @@ __webpack_require__.r(__webpack_exports__);
         rewrites: combinedRewrites,
         i18n: undefined,
         page: "/",
-        buildId: "47LEg20Ckti1war30dluQ",
-        escapedBuildId: "47LEg20Ckti1war30dluQ",
+        buildId: "JjSgAY7yG8aUrzG-vdrOd",
+        escapedBuildId: "JjSgAY7yG8aUrzG\-vdrOd",
         basePath: "",
         pageIsDynamic: false,
-        encodedPreviewProps: {previewModeId:"64bc7f2062bdc2bf261a8d95019d4d91",previewModeSigningKey:"02adb376c9961bb3e6544556f4269ed2546b41b5aee812c59ab75fb7be86a490",previewModeEncryptionKey:"d65781bc87b0374f2e9a4088fc7b36ebbb8969cf8e617c759cd95a73ffb34e0e"}
+        encodedPreviewProps: {previewModeId:"1de2a9cac9ec802d67db500dbc1f10d3",previewModeSigningKey:"651290b95efe6b88c8f67b45ff13468f346f2f1750279a00d5d85a80cfcf7a23",previewModeEncryptionKey:"c1d2d27932bd76329cf49c4b54af4247121891f720c95208e9de4776a3a958f1"}
       })
       
     
@@ -118,7 +118,7 @@ __webpack_require__.r(__webpack_exports__);
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  "default": () => (/* binding */ Home),
+  "default": () => (/* binding */ Index),
   "getStaticProps": () => (/* binding */ getStaticProps)
 });
 
@@ -144,6 +144,10 @@ function DeptMainContent({ data , syllabus , timetable , studymaterial  }) {
     const { 0: vision , 1: setVision  } = (0,react.useState)(data[0].vision);
     const { 0: mission , 1: setMission  } = (0,react.useState)(data[0].mission);
     const { 0: profile , 1: setProfile  } = (0,react.useState)(data[0].profile);
+    const { 0: op , 1: setOp  } = (0,react.useState)(true);
+    const { 0: ug , 1: setUg  } = (0,react.useState)(false);
+    const { 0: pg , 1: setPg  } = (0,react.useState)(false);
+    const { 0: hod , 1: setHod  } = (0,react.useState)(false);
     // console.log(data);
     return(/*#__PURE__*/ jsx_runtime.jsx(jsx_runtime.Fragment, {
         children: /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
@@ -271,29 +275,49 @@ function DeptMainContent({ data , syllabus , timetable , studymaterial  }) {
                             className: "lg:space-x-2 flex m-auto pt-6 flex-wrap",
                             children: [
                                 /*#__PURE__*/ jsx_runtime.jsx("button", {
-                                    className: "bg-blue-ramaiah text-white p-2 bg-gradient-to-r to-orange-ramaiah from-pink-ramaiah rounded-t-md border-[1px] lg:border-none",
+                                    className: `bg-blue-ramaiah text-white p-2 rounded-t-md border-[1px] lg:border-none ${op ? "bg-gradient-to-r to-orange-ramaiah from-pink-ramaiah" : " "}`,
+                                    onClick: ()=>{
+                                        setOp(true);
+                                        setUg(false);
+                                        setPg(false);
+                                        setHod(false);
+                                    },
                                     children: "Offered Programs"
                                 }),
                                 /*#__PURE__*/ jsx_runtime.jsx("button", {
-                                    className: "bg-blue-ramaiah text-white p-2 rounded-t-md border-[1px] lg:border-none",
+                                    className: `bg-blue-ramaiah text-white p-2 rounded-t-md border-[1px] lg:border-none ${ug ? "bg-gradient-to-r to-orange-ramaiah from-pink-ramaiah" : " "}`,
+                                    onClick: ()=>{
+                                        setOp(false);
+                                        setUg(true);
+                                        setPg(false);
+                                        setHod(false);
+                                    },
                                     children: "Objectives UG"
                                 }),
                                 /*#__PURE__*/ jsx_runtime.jsx("button", {
-                                    className: "bg-blue-ramaiah text-white p-2 rounded-t-md border-[1px] lg:border-none",
+                                    className: `bg-blue-ramaiah text-white p-2 rounded-t-md border-[1px] lg:border-none ${pg ? "bg-gradient-to-r to-orange-ramaiah from-pink-ramaiah" : " "}`,
+                                    onClick: ()=>{
+                                        setOp(false);
+                                        setUg(false);
+                                        setPg(true);
+                                        setHod(false);
+                                    },
                                     children: "Objectives PG"
                                 }),
                                 /*#__PURE__*/ jsx_runtime.jsx("button", {
-                                    className: "bg-blue-ramaiah text-white p-2 rounded-t-md border-[1px] lg:border-none",
+                                    className: `bg-blue-ramaiah text-white p-2 rounded-t-md border-[1px] lg:border-none ${hod ? "bg-gradient-to-r to-orange-ramaiah from-pink-ramaiah" : " "}`,
+                                    onClick: ()=>{
+                                        setOp(false);
+                                        setUg(false);
+                                        setPg(false);
+                                        setHod(true);
+                                    },
                                     children: "HOD's Profile"
-                                }),
-                                /*#__PURE__*/ jsx_runtime.jsx("button", {
-                                    className: "bg-blue-ramaiah text-white p-2 rounded-t-md border-[1px] lg:border-none",
-                                    children: "Facilities"
                                 })
                             ]
                         }),
                         /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
-                            className: "pt-2 bg-gray-deptHeader bg-opacity-50 border-gray-200 border-2",
+                            className: `pt-2 bg-gray-deptHeader bg-opacity-50 border-gray-200 border-2 ${!op ? "hidden" : ""}`,
                             children: [
                                 "Department of Biotechnology offers three programs that are affiliated to VTU – Belgaum and recognized by AICTE:",
                                 /*#__PURE__*/ (0,jsx_runtime.jsxs)("ul", {
@@ -315,6 +339,205 @@ function DeptMainContent({ data , syllabus , timetable , studymaterial  }) {
                                             children: "Ph.D. with intake as per VTU norms "
                                         })
                                     ]
+                                })
+                            ]
+                        }),
+                        /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                            className: `pt-2 bg-gray-deptHeader bg-opacity-50 border-gray-200 border-2 ${!ug ? "hidden" : ""}`,
+                            children: [
+                                /*#__PURE__*/ jsx_runtime.jsx("strong", {
+                                    children: "Program Educational Objectives (PEOs):"
+                                }),
+                                " ",
+                                /*#__PURE__*/ jsx_runtime.jsx("br", {
+                                }),
+                                /*#__PURE__*/ (0,jsx_runtime.jsxs)("ul", {
+                                    className: "list-disc ml-3",
+                                    children: [
+                                        /*#__PURE__*/ (0,jsx_runtime.jsxs)("li", {
+                                            children: [
+                                                "PEO 1: To impart a strong foundation in mathematics, basic and engineering sciences contributing to Biotechnology.",
+                                                " "
+                                            ]
+                                        }),
+                                        /*#__PURE__*/ (0,jsx_runtime.jsxs)("li", {
+                                            children: [
+                                                "PEO 2: To produce graduates who can pursue higher education and research in biotechnology and allied fields.",
+                                                " "
+                                            ]
+                                        }),
+                                        /*#__PURE__*/ (0,jsx_runtime.jsxs)("li", {
+                                            children: [
+                                                "PEO 3: To produce graduates with an ability to design, develop and implement research projects and apply to solve problems related to areas of biotechnology.",
+                                                " "
+                                            ]
+                                        }),
+                                        /*#__PURE__*/ (0,jsx_runtime.jsxs)("li", {
+                                            children: [
+                                                "PEO 4: To provide opportunities for students to work in multidisciplinary teams with professional ethics, good communication, leadership skills and commitment to society.",
+                                                " "
+                                            ]
+                                        })
+                                    ]
+                                }),
+                                /*#__PURE__*/ jsx_runtime.jsx("strong", {
+                                    children: "Program Outcomes (POs):"
+                                }),
+                                /*#__PURE__*/ (0,jsx_runtime.jsxs)("ul", {
+                                    className: "list-disc ml-3",
+                                    children: [
+                                        "Engineering Graduates will be capable of:",
+                                        /*#__PURE__*/ (0,jsx_runtime.jsxs)("li", {
+                                            children: [
+                                                "Engineering knowledge: Apply the knowledge of mathematics, science, engineering fundamentals, and an engineering specialization to the solution of complex engineering problems.",
+                                                " "
+                                            ]
+                                        }),
+                                        /*#__PURE__*/ (0,jsx_runtime.jsxs)("li", {
+                                            children: [
+                                                "Problem analysis: Identify, formulate, review research literature, and analyze complex engineering problems reaching substantiated conclusions using first principles of mathematics, natural sciences, and engineering sciences.",
+                                                " "
+                                            ]
+                                        }),
+                                        /*#__PURE__*/ (0,jsx_runtime.jsxs)("li", {
+                                            children: [
+                                                "Design/development of solutions: Design solutions for complex engineering problems and design system components or processes that meet the specified needs with appropriate consideration for the public health and safety, and the cultural, societal, and environmental considerations.",
+                                                " "
+                                            ]
+                                        }),
+                                        /*#__PURE__*/ (0,jsx_runtime.jsxs)("li", {
+                                            children: [
+                                                "Conduct investigations of complex problems: Use research-based knowledge and research methods including design of experiments, analysis and interpretation of data, and synthesis of the information to provide valid conclusions.",
+                                                " "
+                                            ]
+                                        }),
+                                        /*#__PURE__*/ (0,jsx_runtime.jsxs)("li", {
+                                            children: [
+                                                "Modern tool usage: Create, select, and apply appropriate techniques, resources, and modern engineering and IT tools including prediction and modeling to complex engineering activities with an understanding of the limitations.",
+                                                " "
+                                            ]
+                                        }),
+                                        /*#__PURE__*/ jsx_runtime.jsx("li", {
+                                            children: "The engineer and society: Apply reasoning informed by the contextual knowledge to assess societal, health, safety, legal and cultural issues and the consequent responsibilities relevant to the professional engineering practice."
+                                        }),
+                                        /*#__PURE__*/ jsx_runtime.jsx("li", {
+                                            children: "Environment and sustainability: Understand the impact of the professional engineering solutions in societal and environmental contexts, and demonstrate the knowledge of, and need for sustainable development."
+                                        }),
+                                        /*#__PURE__*/ jsx_runtime.jsx("li", {
+                                            children: "Ethics: Apply ethical principles and commit to professional ethics and responsibilities and norms of the engineering practice."
+                                        }),
+                                        /*#__PURE__*/ jsx_runtime.jsx("li", {
+                                            children: "Individual and team work: Function effectively as an individual, and as a member or leader in diverse teams, and in multidisciplinary settings."
+                                        }),
+                                        /*#__PURE__*/ jsx_runtime.jsx("li", {
+                                            children: "Communication: Communicate effectively on complex engineering activities with the engineering community and with society at large, such as, being able to comprehend and write effective reports and design documentation, make effective presentations, and give and receive clear instructions."
+                                        }),
+                                        /*#__PURE__*/ jsx_runtime.jsx("li", {
+                                            children: "Project management and finance: Demonstrate knowledge and understanding of the engineering and management principles and apply these to one’s own work, as a member and leader in a team, to manage projects and in multidisciplinary environments."
+                                        }),
+                                        /*#__PURE__*/ jsx_runtime.jsx("li", {
+                                            children: "Life-long learning: Recognize the need for, and have the preparation and ability to engage in independent and life-long learning in the broadest context of technological change."
+                                        })
+                                    ]
+                                }),
+                                /*#__PURE__*/ jsx_runtime.jsx("strong", {
+                                    children: "Program Specific Outcomes (PSOs):"
+                                }),
+                                /*#__PURE__*/ (0,jsx_runtime.jsxs)("ul", {
+                                    className: "list-disc ml-3",
+                                    children: [
+                                        /*#__PURE__*/ jsx_runtime.jsx("li", {
+                                            children: "To have thorough grounding in Mathematics, Chemistry and Biology."
+                                        }),
+                                        /*#__PURE__*/ jsx_runtime.jsx("li", {
+                                            children: "To be proficient in the principles and practices of advanced biological sciences."
+                                        }),
+                                        /*#__PURE__*/ jsx_runtime.jsx("li", {
+                                            children: "To apply engineering principles to biological systems to solve Biotechnology problems."
+                                        })
+                                    ]
+                                })
+                            ]
+                        }),
+                        /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                            className: `pt-2 bg-gray-deptHeader bg-opacity-50 border-gray-200 border-2 ${!pg ? "hidden" : ""}`,
+                            children: [
+                                /*#__PURE__*/ jsx_runtime.jsx("strong", {
+                                    children: "Program Educational Objectives (PEOs):"
+                                }),
+                                " ",
+                                /*#__PURE__*/ jsx_runtime.jsx("br", {
+                                }),
+                                /*#__PURE__*/ (0,jsx_runtime.jsxs)("ul", {
+                                    className: "list-disc ml-3",
+                                    children: [
+                                        /*#__PURE__*/ jsx_runtime.jsx("li", {
+                                            children: "PEO 1: To produce postgraduates who can articulate technical developments in the field of biotechnology and apply relevant tools to solve problems in real life situations"
+                                        }),
+                                        /*#__PURE__*/ jsx_runtime.jsx("li", {
+                                            children: "PEO 2: To enable postgraduates to have an ability to design and conduct research to meet desired needs within realistic economic, environmental, socio-political, ethical, health, safety & sustainability realms"
+                                        }),
+                                        /*#__PURE__*/ jsx_runtime.jsx("li", {
+                                            children: "PEO 3: To prepare postgraduates to be successful professionals in the industry, academia, research, entrepreneurial pursuit and consulting firms"
+                                        }),
+                                        /*#__PURE__*/ jsx_runtime.jsx("li", {
+                                            children: "PEO 4: To prepare students to enrich their knowledge & skills throughout their career"
+                                        })
+                                    ]
+                                }),
+                                /*#__PURE__*/ jsx_runtime.jsx("strong", {
+                                    children: "Program Outcomes (POs):"
+                                }),
+                                "Engineering Graduates will be capable of:",
+                                /*#__PURE__*/ (0,jsx_runtime.jsxs)("ul", {
+                                    className: "list-disc ml-3",
+                                    children: [
+                                        /*#__PURE__*/ jsx_runtime.jsx("li", {
+                                            children: "PO1: An ability to independently carry out research/investigation & development work to solve the practical problem"
+                                        }),
+                                        /*#__PURE__*/ jsx_runtime.jsx("li", {
+                                            children: "PO2: An ability to write & present a substantial technical report/document"
+                                        }),
+                                        /*#__PURE__*/ jsx_runtime.jsx("li", {
+                                            children: "PO3: Students should be able to demonstrate a degree of mastery over the area as per the specialization of the programme. The mastery should be at a level higher than the requirements in the appropriate bachelor program"
+                                        }),
+                                        /*#__PURE__*/ jsx_runtime.jsx("li", {
+                                            children: "PO4: Demonstrate the ability to design, conduct experiments and analyze data in the field of Biotechnology"
+                                        }),
+                                        /*#__PURE__*/ jsx_runtime.jsx("li", {
+                                            children: "PO5: Able to employ Biotechnology tools in biological research."
+                                        })
+                                    ]
+                                })
+                            ]
+                        }),
+                        /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                            className: `pt-2 bg-gray-deptHeader bg-opacity-50 border-gray-200 border-2 text-justify ${!hod ? "hidden" : ""}`,
+                            children: [
+                                /*#__PURE__*/ jsx_runtime.jsx("strong", {
+                                    children: "Dr. Chandra Prabha M N"
+                                }),
+                                " ",
+                                /*#__PURE__*/ jsx_runtime.jsx("br", {
+                                }),
+                                /*#__PURE__*/ jsx_runtime.jsx("img", {
+                                    src: "http://d2e9h3gjmozu47.cloudfront.net/Gallery/hod/bt.jpg",
+                                    className: "mx-auto text-center"
+                                }),
+                                /*#__PURE__*/ jsx_runtime.jsx("p", {
+                                    children: "Dr. Chandra Prabha M N, completed her Bachelor’s degree in Chemical Engineering securing II rank at University level from M.S. Ramaiah Institute of Technology in 1997. She obtained her Masters in Engineering from Indian Institute of Science (IISc) in 2001 and Ph.D. from Faculty of Engineering, IISc in 2007. She has received Fellowship from CEFIPRA- France, to undergo a high level scientific training at CNRS, Henry Poincare University, Nancy, France in 2003 and was a visiting scholar at Columbia University, USA under DST- NSF joint research program in 2004. She has presented her research in various International Scientific forums at South Korea (2012), Italy (2010), Argentina (2009), Germany (2007), Cape Town (2005)."
+                                }),
+                                " ",
+                                /*#__PURE__*/ jsx_runtime.jsx("br", {
+                                }),
+                                /*#__PURE__*/ jsx_runtime.jsx("p", {
+                                    children: "Dr. Chandra Prabha M N joined Ramaiah Institute of Technology as faculty in 2007. Her research interest includes microbe-mineral interactions and application of nanomaterials/nanocomposites in environmental and health biotechnology. In particular, her research focuses on exploiting the functional properties of nanomaterials and bio-material interfaces for various engineering applications. She has received ~1.5 crore funding through several externally funded projects from DST, AICTE, VTU and VGST. She has published over 60 research papers in International journals, conference proceedings and 6 book chapters. She also serves as reviewer for several international journals. She has guided many research scholars for Ph.D. and M. Tech. research projects."
+                                }),
+                                " ",
+                                /*#__PURE__*/ jsx_runtime.jsx("br", {
+                                }),
+                                /*#__PURE__*/ jsx_runtime.jsx("p", {
+                                    children: "She is recipient of prestigious \"Career Award for Young Teachers\" by AICTE in 2010, a final shortlisted candidate for INAE Young Engineer Award in 2009, recipient of INSA Summer Fellowship in 2009. She is also recipient of “Award for Excellence in Research - 2019” from Ramaiah Institute of Technology"
                                 })
                             ]
                         })
@@ -386,7 +609,7 @@ var Footer = __webpack_require__(3193);
 
 
 
-function Home({ visionData , latestNews , latestEvents , deptStats , sy , tt , sm ,  }) {
+function Index({ visionData , latestNews , latestEvents , deptStats , sy , tt , sm ,  }) {
     return(/*#__PURE__*/ (0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
         children: [
             /*#__PURE__*/ (0,jsx_runtime.jsxs)(head["default"], {
@@ -577,7 +800,7 @@ module.exports = require("zlib");
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [146,959,52,193,616], () => (__webpack_exec__(1733)));
+var __webpack_exports__ = __webpack_require__.X(0, [146,959,52,193,616], () => (__webpack_exec__(8272)));
 module.exports = __webpack_exports__;
 
 })();

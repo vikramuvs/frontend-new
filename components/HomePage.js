@@ -1,10 +1,59 @@
 import Footer from "./Footer";
 import logo from "/assets/images/Institute-of-Technology.png";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import ReactTextTransition, { presets } from "react-text-transition";
 
 function HomePage({ latestNews, latestEvents }) {
+  const [lnState, setLnState] = useState([...latestNews]);
+  const [leState, setLeState] = useState([...latestEvents]);
+  const [newsIndex, setNewsIndex] = useState(0);
+  const [eventsIndex, setEventsIndex] = useState(0);
   const [menuItemCLicked, setMenuItemClicked] = useState(false);
+  const [NewsItems, setNewsItems] = useState([
+    "CHANGE OF BRANCH NOTIFICATION (III SEMESTER)",
+    "Dept of Information Science and Engineering, RIT organizes Online Certification Course on Practical Approach of Deep Learning for Artificial Intelligence",
+    "KSCST Student Project Programme - 2021 - Best Project of the Year Award",
+  ]);
+  const [EventItems, setEventItems] = useState([
+    "International Conference on Innovative Interventions for Inclusive and Sustainable Business Landscape (IIISBL - 2021) organized by Department of Management Studies, RIT",
+    "iot-deathon by Intel Developer Students Club, RIT",
+    "My Story Session - A talk by Mr. Arvind Nadig, Co-founder & CEO at Li2 & Brahma3, Alumni of RIT",
+  ]);
+  const [NewsDates, setNewsDates] = useState([
+    "08-Nov-2021",
+    "27-Oct-2021",
+    "10-Oct-2021",
+  ]);
+  const [EventDates, setEventDates] = useState([
+    "02-Nov-2021",
+    "22-Oct-2021",
+    "06-Oct-2021",
+  ]);
+  const [newsItemURL, setNewsItemURL] = useState([
+    "https://drive.google.com/file/d/1sgySy98SJ_fovyEnP7p9fquJYcu_bcAV/view?usp=sharing",
+    "https://drive.google.com/file/d/1W20Vyr98KyHVo-m3srf78FurQDIC0Ah2/view?usp=sharing",
+    "https://drive.google.com/file/d/1eJ_9WBtD9vDkCTcBpOEUjJYL5LNIu7Jn/view?usp=sharing",
+  ]);
+  const [eventItemURL, setEventItemURL] = useState([
+    "https://drive.google.com/file/d/1RgPVsDEdcKi7fnYqoApSFUryveQ-L4Sk/view?usp=sharing",
+    "https://drive.google.com/file/d/1FWHMQRLz6gn4NlXgkc7n8qkOWgQSuQA7/view?usp=sharing",
+    "https://drive.google.com/file/d/1FHszh7JyBQc7JRrXP8UPdz0tX3DG1Lx9/view?usp=sharing",
+  ]);
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setNewsIndex(newsIndex + 1);
+      setEventsIndex(eventsIndex + 1);
+    }, 4000);
+    return () => clearTimeout(intervalId);
+  }, [newsIndex, eventsIndex]);
+
+  // useEffect(() => {
+  //   setInterval(() => {
+  //     setEventsIndex(eventsIndex + 1);
+  //   }, 4000);
+  // }, []);
 
   return (
     <div>
@@ -63,15 +112,42 @@ function HomePage({ latestNews, latestEvents }) {
                     <div className="p-2 ">
                       <div className=" bg-gradient-to-r from-pink-ramaiah to-orange-ramaiah text-white text-center">
                         <p className="text-4xl font-extrabold inline-block">
-                          26
+                          <ReactTextTransition
+                            text={NewsDates[
+                              newsIndex % NewsDates.length
+                            ].substr(0, 2)}
+                            overflow
+                            inline
+                          />
                         </p>
-                        <span>Nov 2021</span>
+                        <span>
+                          <ReactTextTransition
+                            text={
+                              NewsDates[newsIndex % NewsDates.length].substr(
+                                3,
+                                3
+                              ) +
+                              " " +
+                              NewsDates[newsIndex % NewsDates.length].substr(
+                                7,
+                                4
+                              )
+                            }
+                            overflow
+                            inline
+                          />
+                        </span>
                       </div>
                       <div className="my-auto">
-                        Exam Fee Notification for Supplementary Semester Offline
-                        Examinations - B.E./B.Arch III to VIII Sem |
-                        MBA/MCA/M.TECH/M.ARCH All Semesters (Theory & Practical)
-                        - Sept / Oct 2021
+                        <a
+                          href={newsItemURL[newsIndex % NewsDates.length]}
+                          target="_blank"
+                        >
+                          <ReactTextTransition
+                            text={NewsItems[newsIndex % NewsItems.length]}
+                            overflow
+                          />
+                        </a>
                       </div>
                     </div>
                   </div>
@@ -86,14 +162,40 @@ function HomePage({ latestNews, latestEvents }) {
                     <div className="p-2 ">
                       <div className=" bg-gradient-to-r from-pink-ramaiah to-orange-ramaiah text-white text-center">
                         <p className="text-4xl font-extrabold inline-block">
-                          06
+                          <ReactTextTransition
+                            text={EventDates[
+                              eventsIndex % EventDates.length
+                            ].substr(0, 2)}
+                            overflow
+                            inline
+                          />
                         </p>
-                        <span>Oct 2021</span>
+                        <span>
+                          <ReactTextTransition
+                            text={
+                              EventDates[
+                                eventsIndex % EventDates.length
+                              ].substr(3, 3) +
+                              " " +
+                              EventDates[
+                                eventsIndex % EventDates.length
+                              ].substr(7, 4)
+                            }
+                            overflow
+                            inline
+                          />
+                        </span>
                       </div>
                       <div className="my-auto">
-                        Five day Online FDP on "Mathematical Developments in
-                        Cryptography and Data Science" by Dept. of Mathematics,
-                        RIT.
+                        <a
+                          href={eventItemURL[eventsIndex % EventDates.length]}
+                          target="_blank"
+                        >
+                          <ReactTextTransition
+                            text={EventItems[eventsIndex % EventItems.length]}
+                            overflow
+                          />
+                        </a>
                       </div>
                     </div>
                   </div>
@@ -132,7 +234,20 @@ function HomePage({ latestNews, latestEvents }) {
               <div className="text-7xl text-white font-semibold leading-[1.125]">
                 Open your world to{" "}
                 <span className="text-orange-ramaiah border-orange-ramaiah border-b-[1px]">
-                  OPPORTUNITIES
+                 {
+                    <Typical
+                      steps={[
+                        "OPPORTUNITIES",
+                        10000,
+                        "TECHNOLOGY",
+                        10000,
+                        "INNOVATION",
+                        10000,
+                      ]}
+                      wrapper="p"
+                      loop={Infinity}
+                    />
+                  } 
                 </span>{" "}
                 <br />
                 with us
@@ -220,12 +335,14 @@ function HomePage({ latestNews, latestEvents }) {
                   !menuItemCLicked ? "lg:hidden" : "lg:flex"
                 }`}
               >
-                <div className="flex-grow w-full lg:border-t-8 lg:border-pink-ramaiah">
+                {/* <div className="flex-grow w-full lg:border-t-8 lg:border-pink-ramaiah">
                   {" "}
-                </div>
-                <div className="text-base cursor-default w-1/2">
-                  {" "}
-                  <span> Circuit Branches </span>
+                </div> */}
+                <div className="text-base cursor-default w-1/2 border-[0.5px] text-center border-white rounded flex flex-col">
+                  <div className="bg-gradient-to-r from-pink-ramaiah to-orange-ramaiah rounded">
+                    {" "}
+                    Circuit Branches{" "}
+                  </div>
                   <br />{" "}
                   <div className="flex flex-col border-t-2 flex-grow-0 text-sm">
                     {" "}
@@ -253,9 +370,12 @@ function HomePage({ latestNews, latestEvents }) {
                     </a>{" "}
                   </div>{" "}
                 </div>
-                <div className="text-base cursor-default w-1/2">
+                <div className="text-base cursor-default w-1/2 border-[0.5px] text-center border-white rounded flex flex-col">
                   {" "}
-                  <span> Non-circuit Branches </span>
+                  <div className="bg-gradient-to-r from-pink-ramaiah to-orange-ramaiah rounded">
+                    {" "}
+                    Non-circuit Branches{" "}
+                  </div>
                   <br />{" "}
                   <div className="flex flex-col border-t-2 border-white text-sm">
                     {" "}
@@ -279,9 +399,12 @@ function HomePage({ latestNews, latestEvents }) {
                     </a>{" "}
                   </div>{" "}
                 </div>
-                <div className="text-base cursor-default w-1/2">
+                <div className="text-base cursor-default w-1/2 border-[0.5px] text-center border-white rounded flex flex-col">
                   {" "}
-                  <span> Research Programs </span>
+                  <div className="bg-gradient-to-r from-pink-ramaiah to-orange-ramaiah rounded">
+                    {" "}
+                    Research Programs{" "}
+                  </div>
                   <br />{" "}
                   <div className="flex flex-col border-t-2 border-white text-sm">
                     {" "}
@@ -299,9 +422,13 @@ function HomePage({ latestNews, latestEvents }) {
                     </a>{" "}
                   </div>{" "}
                 </div>
-                <div className="text-base cursor-default w-1/2">
+                <div className="text-base cursor-default w-1/2 border-[0.5px] text-center border-white rounded flex flex-col">
                   {" "}
-                  <span>Ph.D</span> <br />{" "}
+                  <div className="bg-gradient-to-r from-pink-ramaiah to-orange-ramaiah rounded">
+                    {" "}
+                    PhD{" "}
+                  </div>{" "}
+                  <br />{" "}
                   <div className="flex flex-col border-t-2 border-white text-sm">
                     {" "}
                     <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer">
@@ -317,6 +444,7 @@ function HomePage({ latestNews, latestEvents }) {
           </div>
         </section>
 
+        {/* Virtual Tour Module */}
         <div className="col-span-full bg-gray-homeSection h-[60vh] text-center ">
           <div className="text-blue-ramaiah underline capitalize font-heading text-4xl w-[65%] mx-auto h-full space-y-3 py-3">
             Virtual Tour
@@ -332,6 +460,7 @@ function HomePage({ latestNews, latestEvents }) {
           </div>
         </div>
 
+        {/* Jnanam Vigyanam Module */}
         <div className="bg-homeBannerJnanam h-auto bg-no-repeat bg-cover bg-bottom space-y-3 py-3">
           <div className="mx-auto">
             <img src="sam-msr.png" className="mx-auto"></img>
@@ -355,9 +484,6 @@ function HomePage({ latestNews, latestEvents }) {
           </div>
         </div>
       </main>
-      {/* Jnanam Vigyanam Module */}
-      {/* Virtual Tour Module */}
-      {/* Jnanam Vigyanam Module */}
       <Footer />
     </div>
   );

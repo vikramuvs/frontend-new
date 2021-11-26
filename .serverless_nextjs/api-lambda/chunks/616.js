@@ -178,13 +178,18 @@ __webpack_require__.d(__webpack_exports__, {
 var jsx_runtime = __webpack_require__(5893);
 // EXTERNAL MODULE: ./node_modules/next/image.js
 var next_image = __webpack_require__(5675);
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(7294);
 ;// CONCATENATED MODULE: ./assets/images/Institute-of-Technology-transparent-bkg.png
 /* harmony default export */ const Institute_of_Technology_transparent_bkg = ({"src":"/_next/static/media/Institute-of-Technology-transparent-bkg.2750bad3.png","height":122,"width":409,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAACCAYAAABllJ3tAAAARUlEQVR4nGM8Z2nYIPj5/BP5y/+vMjIwCPz///8XAwPDfyD+BsQXGHfouXeLfD13xfjOq23//vwRZWRm/g6UYAZikKJ/ANPNGyDcVnOvAAAAAElFTkSuQmCC"});
 ;// CONCATENATED MODULE: ./components/Header.js
 
 
 
+
 function Header() {
+    const { 0: menuItemCLicked , 1: setMenuItemClicked  } = (0,react.useState)(false);
+    console.log(menuItemCLicked);
     return(/*#__PURE__*/ jsx_runtime.jsx(jsx_runtime.Fragment, {
         children: /*#__PURE__*/ jsx_runtime.jsx("div", {
             className: "grid gap-5 grid-cols-12",
@@ -215,7 +220,7 @@ function Header() {
                                     })
                                 }),
                                 /*#__PURE__*/ (0,jsx_runtime.jsxs)("nav", {
-                                    className: "w-auto h-3/6 bg-gray-menu bg-opacity-50 space-x-4 text-xl text-white hidden lg:inline-flex",
+                                    className: "w-auto h-3/6 bg-gray-menu bg-opacity-50 space-x-4 text-xl text-white hidden lg:inline-flex lg:relative",
                                     children: [
                                         /*#__PURE__*/ jsx_runtime.jsx("a", {
                                             className: "sm:hover:font-bold p-2",
@@ -234,14 +239,195 @@ function Header() {
                                         }),
                                         /*#__PURE__*/ jsx_runtime.jsx("a", {
                                             className: "sm:hover:font-bold",
-                                            className: "font-bold border-b-2 p-2",
-                                            href: "/academics",
+                                            className: "font-bold border-b-2 p-2 cursor-pointer",
+                                            onClick: ()=>{
+                                                setMenuItemClicked(!menuItemCLicked);
+                                            },
                                             children: "Academics"
                                         }),
                                         /*#__PURE__*/ jsx_runtime.jsx("a", {
                                             className: "sm:hover:font-bold p-2",
-                                            href: "/placement",
-                                            children: "Placement"
+                                            href: "/contact",
+                                            children: "Contact"
+                                        }),
+                                        /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                            className: `lg:absolute lg:top-10 lg:min-h-[100px] lg:bg-[#7c688d] lg:-left-8 lg:flex-wrap lg:text-white lg:w-full lg:p-4 lg:pt-0 lg:z-[5] lg:transform lg:transition-all lg:translate-x-4 lg:translate-y-4  lg:duration-100 ${!menuItemCLicked ? "lg:hidden" : "lg:flex"}`,
+                                            children: [
+                                                /*#__PURE__*/ jsx_runtime.jsx("div", {
+                                                    className: "flex-grow w-full lg:border-t-8 lg:border-pink-ramaiah",
+                                                    children: " "
+                                                }),
+                                                /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                                    className: "text-base cursor-default w-1/2",
+                                                    children: [
+                                                        " ",
+                                                        /*#__PURE__*/ jsx_runtime.jsx("span", {
+                                                            children: " Circuit Branches "
+                                                        }),
+                                                        /*#__PURE__*/ jsx_runtime.jsx("br", {
+                                                        }),
+                                                        " ",
+                                                        /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                                            className: "flex flex-col border-t-2 flex-grow-0 text-sm",
+                                                            children: [
+                                                                " ",
+                                                                /*#__PURE__*/ jsx_runtime.jsx("a", {
+                                                                    className: "lg:hover:text-blue-ramaiah lg:cursor-pointer",
+                                                                    children: "Computer Science & Engg."
+                                                                }),
+                                                                " ",
+                                                                /*#__PURE__*/ jsx_runtime.jsx("a", {
+                                                                    className: "lg:hover:text-blue-ramaiah lg:cursor-pointer",
+                                                                    children: "Electrical & Electronics Engg."
+                                                                }),
+                                                                " ",
+                                                                /*#__PURE__*/ (0,jsx_runtime.jsxs)("a", {
+                                                                    className: "lg:hover:text-blue-ramaiah lg:cursor-pointer",
+                                                                    children: [
+                                                                        " ",
+                                                                        "Electronics & Communications Engg."
+                                                                    ]
+                                                                }),
+                                                                " ",
+                                                                /*#__PURE__*/ jsx_runtime.jsx("a", {
+                                                                    className: "lg:hover:text-blue-ramaiah lg:cursor-pointer",
+                                                                    children: "Electronics & Instrumentation Engg."
+                                                                }),
+                                                                " ",
+                                                                /*#__PURE__*/ jsx_runtime.jsx("a", {
+                                                                    className: "lg:hover:text-blue-ramaiah lg:cursor-pointer",
+                                                                    children: "Electronics & Telecommunications Engg."
+                                                                }),
+                                                                " ",
+                                                                /*#__PURE__*/ jsx_runtime.jsx("a", {
+                                                                    className: "lg:hover:text-blue-ramaiah lg:cursor-pointer",
+                                                                    children: "Information Science & Engg."
+                                                                }),
+                                                                " ",
+                                                                /*#__PURE__*/ jsx_runtime.jsx("a", {
+                                                                    className: "lg:hover:text-blue-ramaiah lg:cursor-pointer",
+                                                                    children: "Medical Electronics Engg."
+                                                                }),
+                                                                " "
+                                                            ]
+                                                        }),
+                                                        " "
+                                                    ]
+                                                }),
+                                                /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                                    className: "text-base cursor-default w-1/2",
+                                                    children: [
+                                                        " ",
+                                                        /*#__PURE__*/ jsx_runtime.jsx("span", {
+                                                            children: " Non-circuit Branches "
+                                                        }),
+                                                        /*#__PURE__*/ jsx_runtime.jsx("br", {
+                                                        }),
+                                                        " ",
+                                                        /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                                            className: "flex flex-col border-t-2 border-white text-sm",
+                                                            children: [
+                                                                " ",
+                                                                /*#__PURE__*/ jsx_runtime.jsx("a", {
+                                                                    className: "lg:hover:text-blue-ramaiah lg:cursor-pointer",
+                                                                    children: "Architecture"
+                                                                }),
+                                                                " ",
+                                                                /*#__PURE__*/ jsx_runtime.jsx("a", {
+                                                                    className: "lg:hover:text-blue-ramaiah lg:cursor-pointer",
+                                                                    children: "Biotechnology"
+                                                                }),
+                                                                " ",
+                                                                /*#__PURE__*/ jsx_runtime.jsx("a", {
+                                                                    className: "lg:hover:text-blue-ramaiah lg:cursor-pointer",
+                                                                    children: "Civil Engineering"
+                                                                }),
+                                                                " ",
+                                                                /*#__PURE__*/ jsx_runtime.jsx("a", {
+                                                                    className: "lg:hover:text-blue-ramaiah lg:cursor-pointer",
+                                                                    children: "Industrial Engineering & Mgmt"
+                                                                }),
+                                                                " ",
+                                                                /*#__PURE__*/ jsx_runtime.jsx("a", {
+                                                                    className: "lg:hover:text-blue-ramaiah lg:cursor-pointer",
+                                                                    children: "Mechanical Engineering"
+                                                                }),
+                                                                " "
+                                                            ]
+                                                        }),
+                                                        " "
+                                                    ]
+                                                }),
+                                                /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                                    className: "text-base cursor-default w-1/2",
+                                                    children: [
+                                                        " ",
+                                                        /*#__PURE__*/ jsx_runtime.jsx("span", {
+                                                            children: " Research Programs "
+                                                        }),
+                                                        /*#__PURE__*/ jsx_runtime.jsx("br", {
+                                                        }),
+                                                        " ",
+                                                        /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                                            className: "flex flex-col border-t-2 border-white text-sm",
+                                                            children: [
+                                                                " ",
+                                                                /*#__PURE__*/ jsx_runtime.jsx("a", {
+                                                                    className: "lg:hover:text-blue-ramaiah lg:cursor-pointer",
+                                                                    children: "CAMFS"
+                                                                }),
+                                                                " ",
+                                                                /*#__PURE__*/ jsx_runtime.jsx("a", {
+                                                                    className: "lg:hover:text-blue-ramaiah lg:cursor-pointer",
+                                                                    children: "CFR"
+                                                                }),
+                                                                " ",
+                                                                /*#__PURE__*/ jsx_runtime.jsx("a", {
+                                                                    className: "lg:hover:text-blue-ramaiah lg:cursor-pointer",
+                                                                    children: "IRF"
+                                                                }),
+                                                                " ",
+                                                                /*#__PURE__*/ jsx_runtime.jsx("a", {
+                                                                    className: "lg:hover:text-blue-ramaiah lg:cursor-pointer",
+                                                                    children: "ISE"
+                                                                }),
+                                                                " "
+                                                            ]
+                                                        }),
+                                                        " "
+                                                    ]
+                                                }),
+                                                /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                                    className: "text-base cursor-default w-1/2",
+                                                    children: [
+                                                        " ",
+                                                        /*#__PURE__*/ jsx_runtime.jsx("span", {
+                                                            children: "Ph.D"
+                                                        }),
+                                                        " ",
+                                                        /*#__PURE__*/ jsx_runtime.jsx("br", {
+                                                        }),
+                                                        " ",
+                                                        /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                                            className: "flex flex-col border-t-2 border-white text-sm",
+                                                            children: [
+                                                                " ",
+                                                                /*#__PURE__*/ jsx_runtime.jsx("a", {
+                                                                    className: "lg:hover:text-blue-ramaiah lg:cursor-pointer",
+                                                                    children: "ECE"
+                                                                }),
+                                                                " ",
+                                                                /*#__PURE__*/ jsx_runtime.jsx("a", {
+                                                                    className: "lg:hover:text-blue-ramaiah lg:cursor-pointer",
+                                                                    children: "EEE"
+                                                                }),
+                                                                " "
+                                                            ]
+                                                        }),
+                                                        " "
+                                                    ]
+                                                })
+                                            ]
                                         })
                                     ]
                                 }),

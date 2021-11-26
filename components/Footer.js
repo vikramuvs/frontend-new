@@ -1,7 +1,7 @@
 function Footer() {
   return (
     <>
-      <footer className="h-auto bg-blue-ramaiah flex flex-col lg:grid w-full lg:grid-cols-12 lg:gap-5 text-white font-lightBody pt-6">
+      <footer className="h-auto bg-blue-ramaiah flex flex-col lg:grid w-full lg:grid-cols-12 lg:gap-5 text-white font-lightBody py-6">
         <div className="col-start-2 col-end-4 w-full h-full content-center hidden lg:grid ">
           <img
             className="w-full"
