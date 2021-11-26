@@ -1,8 +1,11 @@
 import Footer from "./Footer";
 import logo from "/assets/images/Institute-of-Technology.png";
 import Image from "next/image";
+import { useState } from "react";
 
 function HomePage({ latestNews, latestEvents }) {
+  const [menuItemCLicked, setMenuItemClicked] = useState(false);
+
   return (
     <div>
       {/* Home Page Module */}
@@ -123,8 +126,8 @@ function HomePage({ latestNews, latestEvents }) {
               </div>
             </div>
           </div> */}
-          <div className="col-span-6 bg-blue-ramaiah flex flex-col min-h-[100%] max-h-[100%]">
-            <div className="h-[25%] flex-shrink"></div>
+          <div className="col-span-6 bg-blue-ramaiah flex flex-col min-h-[100%] max-h-[100%] bg-rightSideHome bg-cover bg-no-repeat">
+            {/* <div className="h-[25%] flex-shrink"></div>
             <div className="h-[35%] flex-grow">
               <div className="text-7xl text-white font-semibold leading-[1.125]">
                 Open your world to{" "}
@@ -177,7 +180,7 @@ function HomePage({ latestNews, latestEvents }) {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
 
@@ -185,8 +188,8 @@ function HomePage({ latestNews, latestEvents }) {
           <div className="relative lg:h-5/6 lg:w-auto">
             <Image src={logo} alt="Logo" layout="fixed" className="absolute" />
           </div>
-          <div className="text-white justify-end">
-            <nav className="space-x-6 bg-gray-menu bg-opacity-50 p-4 box-border">
+          <div className="text-white justify-end relative">
+            <nav className="space-x-6 bg-gray-menu bg-opacity-50 p-4 box-border ">
               <a
                 className="p-4 border-b-2 border-orange-ramaiah text-blue-ramaiah font-bold"
                 href="home"
@@ -199,12 +202,117 @@ function HomePage({ latestNews, latestEvents }) {
               <a className="p-4 hover:font-bold cursor-pointer" href="">
                 Admissions
               </a>
-              <a className="p-4 hover:font-bold cursor-pointer" href="/">
+              <a
+                className="p-4 hover:font-bold cursor-pointer"
+                href="#"
+                onClick={() => {
+                  setMenuItemClicked(!menuItemCLicked);
+                }}
+              >
                 Academics
               </a>
               <a className="p-4 hover:font-bold cursor-pointer" href="">
-                Placement
+                Contact
               </a>
+
+              <div
+                className={`lg:absolute lg:top-10 lg:min-h-[100px] lg:bg-[#7c688d] lg:-left-10 lg:flex-wrap lg:text-white lg:w-full lg:p-4 lg:pt-0 lg:z-[5] lg:transform lg:transition-all lg:translate-x-4 lg:translate-y-4  lg:duration-100 ${
+                  !menuItemCLicked ? "lg:hidden" : "lg:flex"
+                }`}
+              >
+                <div className="flex-grow w-full lg:border-t-8 lg:border-pink-ramaiah">
+                  {" "}
+                </div>
+                <div className="text-base cursor-default w-1/2">
+                  {" "}
+                  <span> Circuit Branches </span>
+                  <br />{" "}
+                  <div className="flex flex-col border-t-2 flex-grow-0 text-sm">
+                    {" "}
+                    <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer">
+                      Computer Science & Engg.
+                    </a>{" "}
+                    <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer">
+                      Electrical & Electronics Engg.
+                    </a>{" "}
+                    <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer">
+                      {" "}
+                      Electronics & Communications Engg.
+                    </a>{" "}
+                    <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer">
+                      Electronics & Instrumentation Engg.
+                    </a>{" "}
+                    <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer">
+                      Electronics & Telecommunications Engg.
+                    </a>{" "}
+                    <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer">
+                      Information Science & Engg.
+                    </a>{" "}
+                    <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer">
+                      Medical Electronics Engg.
+                    </a>{" "}
+                  </div>{" "}
+                </div>
+                <div className="text-base cursor-default w-1/2">
+                  {" "}
+                  <span> Non-circuit Branches </span>
+                  <br />{" "}
+                  <div className="flex flex-col border-t-2 border-white text-sm">
+                    {" "}
+                    <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer">
+                      Architecture
+                    </a>{" "}
+                    <a
+                      className="lg:hover:text-blue-ramaiah lg:cursor-pointer"
+                      href="/"
+                    >
+                      Biotechnology
+                    </a>{" "}
+                    <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer">
+                      Civil Engineering
+                    </a>{" "}
+                    <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer">
+                      Industrial Engineering & Mgmt
+                    </a>{" "}
+                    <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer">
+                      Mechanical Engineering
+                    </a>{" "}
+                  </div>{" "}
+                </div>
+                <div className="text-base cursor-default w-1/2">
+                  {" "}
+                  <span> Research Programs </span>
+                  <br />{" "}
+                  <div className="flex flex-col border-t-2 border-white text-sm">
+                    {" "}
+                    <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer">
+                      CAMFS
+                    </a>{" "}
+                    <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer">
+                      CFR
+                    </a>{" "}
+                    <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer">
+                      IRF
+                    </a>{" "}
+                    <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer">
+                      ISE
+                    </a>{" "}
+                  </div>{" "}
+                </div>
+                <div className="text-base cursor-default w-1/2">
+                  {" "}
+                  <span>Ph.D</span> <br />{" "}
+                  <div className="flex flex-col border-t-2 border-white text-sm">
+                    {" "}
+                    <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer">
+                      ECE
+                    </a>{" "}
+                    <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer">
+                      EEE
+                    </a>{" "}
+                  </div>{" "}
+                </div>
+              </div>
             </nav>
           </div>
         </section>

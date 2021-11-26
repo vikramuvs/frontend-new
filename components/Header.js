@@ -44,85 +44,76 @@ export default function Header() {
                   >
                     Academics
                   </a>
-                  <a className="sm:hover:font-bold p-2" href="/placement">
-                    Placement
+                  <a className="sm:hover:font-bold p-2" href="/contact">
+                    Contact
                   </a>
 
                   <div
-                    className={`lg:absolute lg:top-10 lg:min-h-[100px] lg:bg-[#7c688d] lg:flex-wrap lg:text-white lg:w-auto lg:p-4 lg:pt-0  lg:z-[5] lg:transform  lg:transition-all lg:translate-x-4 lg:translate-y-4 lg:space-x-3 lg:duration-100 ${
+                    className={`lg:absolute lg:top-10 lg:min-h-[100px] lg:bg-[#7c688d] lg:-left-8 lg:flex-wrap lg:text-white lg:w-full lg:p-4 lg:pt-0 lg:z-[5] lg:transform lg:transition-all lg:translate-x-4 lg:translate-y-4  lg:duration-100 ${
                       !menuItemCLicked ? "lg:hidden" : "lg:flex"
                     }`}
                   >
                     <div className="flex-grow w-full lg:border-t-8 lg:border-pink-ramaiah">
                       {" "}
                     </div>
-                    <div className="text-base cursor-default">
+                    <div className="text-base cursor-default w-1/2">
                       {" "}
-                      <span className="bg-pink-ramaiah py-3">
-                        {" "}
-                        Circuit Branches{" "}
-                      </span>
+                      <span> Circuit Branches </span>
                       <br />{" "}
-                      <div className="flex flex-col border-t-2  text-lg">
+                      <div className="flex flex-col border-t-2 flex-grow-0 text-sm">
                         {" "}
                         <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer">
-                          ECE
+                          Computer Science & Engg.
                         </a>{" "}
                         <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer">
-                          EEE
+                          Electrical & Electronics Engg.
                         </a>{" "}
                         <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer">
                           {" "}
-                          CSE
+                          Electronics & Communications Engg.
                         </a>{" "}
                         <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer">
-                          ISE
+                          Electronics & Instrumentation Engg.
                         </a>{" "}
                         <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer">
-                          EIE
+                          Electronics & Telecommunications Engg.
                         </a>{" "}
                         <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer">
-                          ETE
+                          Information Science & Engg.
                         </a>{" "}
                         <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer">
-                          MLE
+                          Medical Electronics Engg.
                         </a>{" "}
                       </div>{" "}
                     </div>
-                    <div className="text-base cursor-default">
+                    <div className="text-base cursor-default w-1/2">
                       {" "}
-                      <span className="bg-pink-ramaiah">
-                        {" "}
-                        Non-circuit Branches{" "}
-                      </span>
+                      <span> Non-circuit Branches </span>
                       <br />{" "}
-                      <div className="flex flex-col border-t-2 border-pink-ramaiah text-lg">
+                      <div className="flex flex-col border-t-2 border-white text-sm">
                         {" "}
-                        <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer">
-                          BT
-                        </a>{" "}
-                        <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer">
-                          CV
-                        </a>{" "}
-                        <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer">
-                          ME
-                        </a>{" "}
-                        <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer">
-                          IEM
-                        </a>{" "}
                         <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer">
                           Architecture
                         </a>{" "}
+                        <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer">
+                          Biotechnology
+                        </a>{" "}
+                        <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer">
+                          Civil Engineering
+                        </a>{" "}
+                        <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer">
+                          Industrial Engineering & Mgmt
+                        </a>{" "}
+                        <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer">
+                          Mechanical Engineering
+                        </a>{" "}
                       </div>{" "}
                     </div>
-                    <div className="text-base cursor-default">
+                    <div className="text-base cursor-default w-1/2">
                       {" "}
-                      <span className="bg-pink-ramaiah">
-                        {" "}
-                        Research Programs{" "}
-                      </span>
+                      <span> Research Programs </span>
                       <br />{" "}
-                      <div className="flex flex-col border-t-2 border-pink-ramaiah text-lg">
+                      <div className="flex flex-col border-t-2 border-white text-sm">
                         {" "}
                         <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer">
                           CAMFS
@@ -138,10 +129,10 @@ export default function Header() {
                         </a>{" "}
                       </div>{" "}
                     </div>
-                    <div className="text-base cursor-default">
+                    <div className="text-base cursor-default w-1/2">
                       {" "}
-                      <span className="bg-pink-ramaiah">Ph.D</span> <br />{" "}
-                      <div className="flex flex-col  text-lg">
+                      <span>Ph.D</span> <br />{" "}
+                      <div className="flex flex-col border-t-2 border-white text-sm">
                         {" "}
                         <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer">
                           ECE

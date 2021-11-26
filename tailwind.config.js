@@ -9,6 +9,7 @@ module.exports = {
         homeBanner: "url('../../assets/images/msrit-campus.jpg')",
         homeBannerJnanam: "url('../../assets/images/image 1.png')",
         samMsr: "url('../../assets/images/sam-msr.png')",
+        rightSideHome: "url('../../assets/images/right-side.png')",
       },
       colors: {
         transparent: "transparent",
