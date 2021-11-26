@@ -5,6 +5,10 @@ function DeptMainContent({ data, syllabus, timetable, studymaterial }) {
   const [vision, setVision] = useState(data[0].vision);
   const [mission, setMission] = useState(data[0].mission);
   const [profile, setProfile] = useState(data[0].profile);
+  const [op, setOp] = useState(true);
+  const [ug, setUg] = useState(false);
+  const [pg, setPg] = useState(false);
+  const [hod, setHod] = useState(false);
 
   // console.log(data);
 
@@ -149,24 +153,76 @@ function DeptMainContent({ data, syllabus, timetable, studymaterial }) {
           </div>
 
           <div className="lg:space-x-2 flex m-auto pt-6 flex-wrap">
-            <button className="bg-blue-ramaiah text-white p-2 bg-gradient-to-r to-orange-ramaiah from-pink-ramaiah rounded-t-md border-[1px] lg:border-none">
+            <button
+              className={`bg-blue-ramaiah text-white p-2 rounded-t-md border-[1px] lg:border-none ${
+                op
+                  ? "bg-gradient-to-r to-orange-ramaiah from-pink-ramaiah"
+                  : " "
+              }`}
+              onClick={() => {
+                setOp(true);
+                setUg(false);
+                setPg(false);
+                setHod(false);
+              }}
+            >
               Offered Programs
             </button>
-            <button className="bg-blue-ramaiah text-white p-2 rounded-t-md border-[1px] lg:border-none">
+            <button
+              className={`bg-blue-ramaiah text-white p-2 rounded-t-md border-[1px] lg:border-none ${
+                ug
+                  ? "bg-gradient-to-r to-orange-ramaiah from-pink-ramaiah"
+                  : " "
+              }`}
+              onClick={() => {
+                setOp(false);
+                setUg(true);
+                setPg(false);
+                setHod(false);
+              }}
+            >
               Objectives UG
             </button>
-            <button className="bg-blue-ramaiah text-white p-2 rounded-t-md border-[1px] lg:border-none">
+            <button
+              className={`bg-blue-ramaiah text-white p-2 rounded-t-md border-[1px] lg:border-none ${
+                pg
+                  ? "bg-gradient-to-r to-orange-ramaiah from-pink-ramaiah"
+                  : " "
+              }`}
+              onClick={() => {
+                setOp(false);
+                setUg(false);
+                setPg(true);
+                setHod(false);
+              }}
+            >
               Objectives PG
             </button>
-            <button className="bg-blue-ramaiah text-white p-2 rounded-t-md border-[1px] lg:border-none">
+            <button
+              className={`bg-blue-ramaiah text-white p-2 rounded-t-md border-[1px] lg:border-none ${
+                hod
+                  ? "bg-gradient-to-r to-orange-ramaiah from-pink-ramaiah"
+                  : " "
+              }`}
+              onClick={() => {
+                setOp(false);
+                setUg(false);
+                setPg(false);
+                setHod(true);
+              }}
+            >
               HOD's Profile
             </button>
-            <button className="bg-blue-ramaiah text-white p-2 rounded-t-md border-[1px] lg:border-none">
+            {/* <button className="bg-blue-ramaiah text-white p-2 rounded-t-md border-[1px] lg:border-none">
               Facilities
-            </button>
+            </button> */}
           </div>
 
-          <div className="pt-2 bg-gray-deptHeader bg-opacity-50 border-gray-200 border-2">
+          <div
+            className={`pt-2 bg-gray-deptHeader bg-opacity-50 border-gray-200 border-2 ${
+              !op ? "hidden" : ""
+            }`}
+          >
             Department of Biotechnology offers three programs that are
             affiliated to VTU – Belgaum and recognized by AICTE:
             <ul className="list-disc ml-3">
@@ -180,6 +236,228 @@ function DeptMainContent({ data, syllabus, timetable, studymaterial }) {
               <li>M.Sc. (Engg) by Research with intake as per VTU norms</li>
               <li>Ph.D. with intake as per VTU norms </li>
             </ul>
+          </div>
+
+          <div
+            className={`pt-2 bg-gray-deptHeader bg-opacity-50 border-gray-200 border-2 ${
+              !ug ? "hidden" : ""
+            }`}
+          >
+            <strong>Program Educational Objectives (PEOs):</strong> <br />
+            <ul className="list-disc ml-3">
+              <li>
+                PEO 1: To impart a strong foundation in mathematics, basic and
+                engineering sciences contributing to Biotechnology.{" "}
+              </li>
+              <li>
+                PEO 2: To produce graduates who can pursue higher education and
+                research in biotechnology and allied fields.{" "}
+              </li>
+              <li>
+                PEO 3: To produce graduates with an ability to design, develop
+                and implement research projects and apply to solve problems
+                related to areas of biotechnology.{" "}
+              </li>
+              <li>
+                PEO 4: To provide opportunities for students to work in
+                multidisciplinary teams with professional ethics, good
+                communication, leadership skills and commitment to society.{" "}
+              </li>
+            </ul>
+            <strong>Program Outcomes (POs):</strong>
+            <ul className="list-disc ml-3">
+              Engineering Graduates will be capable of:
+              <li>
+                Engineering knowledge: Apply the knowledge of mathematics,
+                science, engineering fundamentals, and an engineering
+                specialization to the solution of complex engineering problems.{" "}
+              </li>
+              <li>
+                Problem analysis: Identify, formulate, review research
+                literature, and analyze complex engineering problems reaching
+                substantiated conclusions using first principles of mathematics,
+                natural sciences, and engineering sciences.{" "}
+              </li>
+              <li>
+                Design/development of solutions: Design solutions for complex
+                engineering problems and design system components or processes
+                that meet the specified needs with appropriate consideration for
+                the public health and safety, and the cultural, societal, and
+                environmental considerations.{" "}
+              </li>
+              <li>
+                Conduct investigations of complex problems: Use research-based
+                knowledge and research methods including design of experiments,
+                analysis and interpretation of data, and synthesis of the
+                information to provide valid conclusions.{" "}
+              </li>
+              <li>
+                Modern tool usage: Create, select, and apply appropriate
+                techniques, resources, and modern engineering and IT tools
+                including prediction and modeling to complex engineering
+                activities with an understanding of the limitations.{" "}
+              </li>
+              <li>
+                The engineer and society: Apply reasoning informed by the
+                contextual knowledge to assess societal, health, safety, legal
+                and cultural issues and the consequent responsibilities relevant
+                to the professional engineering practice.
+              </li>
+              <li>
+                Environment and sustainability: Understand the impact of the
+                professional engineering solutions in societal and environmental
+                contexts, and demonstrate the knowledge of, and need for
+                sustainable development.
+              </li>
+              <li>
+                Ethics: Apply ethical principles and commit to professional
+                ethics and responsibilities and norms of the engineering
+                practice.
+              </li>
+              <li>
+                Individual and team work: Function effectively as an individual,
+                and as a member or leader in diverse teams, and in
+                multidisciplinary settings.
+              </li>
+              <li>
+                Communication: Communicate effectively on complex engineering
+                activities with the engineering community and with society at
+                large, such as, being able to comprehend and write effective
+                reports and design documentation, make effective presentations,
+                and give and receive clear instructions.
+              </li>
+              <li>
+                Project management and finance: Demonstrate knowledge and
+                understanding of the engineering and management principles and
+                apply these to one’s own work, as a member and leader in a team,
+                to manage projects and in multidisciplinary environments.
+              </li>
+              <li>
+                Life-long learning: Recognize the need for, and have the
+                preparation and ability to engage in independent and life-long
+                learning in the broadest context of technological change.
+              </li>
+            </ul>
+            <strong>Program Specific Outcomes (PSOs):</strong>
+            <ul className="list-disc ml-3">
+              <li>
+                To have thorough grounding in Mathematics, Chemistry and
+                Biology.
+              </li>
+              <li>
+                To be proficient in the principles and practices of advanced
+                biological sciences.
+              </li>
+              <li>
+                To apply engineering principles to biological systems to solve
+                Biotechnology problems.
+              </li>
+            </ul>
+          </div>
+
+          <div
+            className={`pt-2 bg-gray-deptHeader bg-opacity-50 border-gray-200 border-2 ${
+              !pg ? "hidden" : ""
+            }`}
+          >
+            <strong>Program Educational Objectives (PEOs):</strong> <br />
+            <ul className="list-disc ml-3">
+              <li>
+                PEO 1: To produce postgraduates who can articulate technical
+                developments in the field of biotechnology and apply relevant
+                tools to solve problems in real life situations
+              </li>
+              <li>
+                PEO 2: To enable postgraduates to have an ability to design and
+                conduct research to meet desired needs within realistic
+                economic, environmental, socio-political, ethical, health,
+                safety & sustainability realms
+              </li>
+              <li>
+                PEO 3: To prepare postgraduates to be successful professionals
+                in the industry, academia, research, entrepreneurial pursuit and
+                consulting firms
+              </li>
+              <li>
+                PEO 4: To prepare students to enrich their knowledge & skills
+                throughout their career
+              </li>
+            </ul>
+            <strong>Program Outcomes (POs):</strong>
+            Engineering Graduates will be capable of:
+            <ul className="list-disc ml-3">
+              <li>
+                PO1: An ability to independently carry out
+                research/investigation & development work to solve the practical
+                problem
+              </li>
+              <li>
+                PO2: An ability to write & present a substantial technical
+                report/document
+              </li>
+              <li>
+                PO3: Students should be able to demonstrate a degree of mastery
+                over the area as per the specialization of the programme. The
+                mastery should be at a level higher than the requirements in the
+                appropriate bachelor program
+              </li>
+              <li>
+                PO4: Demonstrate the ability to design, conduct experiments and
+                analyze data in the field of Biotechnology
+              </li>
+              <li>
+                PO5: Able to employ Biotechnology tools in biological research.
+              </li>
+            </ul>
+          </div>
+
+          <div
+            className={`pt-2 bg-gray-deptHeader bg-opacity-50 border-gray-200 border-2 text-justify ${
+              !hod ? "hidden" : ""
+            }`}
+          >
+            <strong>Dr. Chandra Prabha M N</strong> <br />
+            <img
+              src="http://d2e9h3gjmozu47.cloudfront.net/Gallery/hod/bt.jpg"
+              className="mx-auto text-center"
+            />
+            <p>
+              Dr. Chandra Prabha M N, completed her Bachelor’s degree in
+              Chemical Engineering securing II rank at University level from
+              M.S. Ramaiah Institute of Technology in 1997. She obtained her
+              Masters in Engineering from Indian Institute of Science (IISc) in
+              2001 and Ph.D. from Faculty of Engineering, IISc in 2007. She has
+              received Fellowship from CEFIPRA- France, to undergo a high level
+              scientific training at CNRS, Henry Poincare University, Nancy,
+              France in 2003 and was a visiting scholar at Columbia University,
+              USA under DST- NSF joint research program in 2004. She has
+              presented her research in various International Scientific forums
+              at South Korea (2012), Italy (2010), Argentina (2009), Germany
+              (2007), Cape Town (2005).
+            </p>{" "}
+            <br />
+            <p>
+              Dr. Chandra Prabha M N joined Ramaiah Institute of Technology as
+              faculty in 2007. Her research interest includes microbe-mineral
+              interactions and application of nanomaterials/nanocomposites in
+              environmental and health biotechnology. In particular, her
+              research focuses on exploiting the functional properties of
+              nanomaterials and bio-material interfaces for various engineering
+              applications. She has received ~1.5 crore funding through several
+              externally funded projects from DST, AICTE, VTU and VGST. She has
+              published over 60 research papers in International journals,
+              conference proceedings and 6 book chapters. She also serves as
+              reviewer for several international journals. She has guided many
+              research scholars for Ph.D. and M. Tech. research projects.
+            </p>{" "}
+            <br />
+            <p>
+              She is recipient of prestigious "Career Award for Young Teachers"
+              by AICTE in 2010, a final shortlisted candidate for INAE Young
+              Engineer Award in 2009, recipient of INSA Summer Fellowship in
+              2009. She is also recipient of “Award for Excellence in Research -
+              2019” from Ramaiah Institute of Technology
+            </p>
           </div>
         </div>
         {/* Dept Right Sidebar */}
