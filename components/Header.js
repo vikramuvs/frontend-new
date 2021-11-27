@@ -36,29 +36,46 @@ export default function Header() {
                     Admissions
                   </a>
                   <a
-                    className="sm:hover:font-bold"
+                    className="sm:hover:font-bold "
                     className="font-bold border-b-2 p-2 cursor-pointer"
                     onClick={() => {
                       setMenuItemClicked(!menuItemCLicked);
                     }}
                   >
                     Academics
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-5 w-5 inline-block ml-2"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
                   </a>
+
                   <a className="sm:hover:font-bold p-2" href="/contact">
                     Contact
                   </a>
 
                   <div
-                    className={`lg:absolute lg:top-10 lg:min-h-[100px] lg:bg-[#7c688d] lg:-left-8 lg:flex-wrap lg:text-white lg:w-full lg:p-4 lg:pt-0 lg:z-[5] lg:transform lg:transition-all lg:translate-x-4 lg:translate-y-4  lg:duration-100 ${
+                    className={`lg:absolute lg:top-8 lg:min-h-[100px] lg:bg-[#7c688d] lg:-left-8 lg:flex-wrap lg:text-white lg:w-full lg:p-4 lg:pt-0 lg:z-[5] lg:transform lg:transition-all lg:translate-x-4 lg:translate-y-4  lg:duration-100 ${
                       !menuItemCLicked ? "lg:hidden" : "lg:flex"
                     }`}
                   >
-                    <div className="flex-grow w-full lg:border-t-8 lg:border-pink-ramaiah">
+                    {/* <div className="flex-grow w-full lg:border-t-8 lg:border-pink-ramaiah">
                       {" "}
-                    </div>
-                    <div className="text-base cursor-default w-1/2">
-                      {" "}
-                      <span> Circuit Branches </span>
+                    </div> */}
+                    <div className="text-base cursor-default w-1/2 border-[0.5px] text-center border-white rounded flex flex-col">
+                      <div className="bg-gradient-to-r from-pink-ramaiah to-orange-ramaiah rounded">
+                        {" "}
+                        Circuit Branches{" "}
+                      </div>
                       <br />{" "}
                       <div className="flex flex-col border-t-2 flex-grow-0 text-sm">
                         {" "}
@@ -86,9 +103,11 @@ export default function Header() {
                         </a>{" "}
                       </div>{" "}
                     </div>
-                    <div className="text-base cursor-default w-1/2">
-                      {" "}
-                      <span> Non-circuit Branches </span>
+                    <div className="text-base cursor-default w-1/2 border-[0.5px] text-center border-white rounded flex flex-col">
+                      <div className="bg-gradient-to-r from-pink-ramaiah to-orange-ramaiah rounded">
+                        {" "}
+                        Non-circuit Branches{" "}
+                      </div>
                       <br />{" "}
                       <div className="flex flex-col border-t-2 border-white text-sm">
                         {" "}
@@ -109,9 +128,12 @@ export default function Header() {
                         </a>{" "}
                       </div>{" "}
                     </div>
-                    <div className="text-base cursor-default w-1/2">
+                    <div className="text-base cursor-default w-1/2 border-[0.5px] text-center border-white rounded flex flex-col">
                       {" "}
-                      <span> Research Programs </span>
+                      <div className="bg-gradient-to-r from-pink-ramaiah to-orange-ramaiah rounded">
+                        {" "}
+                        Research Programs{" "}
+                      </div>
                       <br />{" "}
                       <div className="flex flex-col border-t-2 border-white text-sm">
                         {" "}
@@ -129,9 +151,13 @@ export default function Header() {
                         </a>{" "}
                       </div>{" "}
                     </div>
-                    <div className="text-base cursor-default w-1/2">
+                    <div className="text-base cursor-default w-1/2 border-[0.5px] text-center border-white rounded flex flex-col">
                       {" "}
-                      <span>Ph.D</span> <br />{" "}
+                      <div className="bg-gradient-to-r from-pink-ramaiah to-orange-ramaiah rounded">
+                        {" "}
+                        PhD{" "}
+                      </div>{" "}
+                      <br />{" "}
                       <div className="flex flex-col border-t-2 border-white text-sm">
                         {" "}
                         <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer">
