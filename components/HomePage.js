@@ -3,6 +3,7 @@ import logo from "/assets/images/Institute-of-Technology.png";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import ReactTextTransition, { presets } from "react-text-transition";
+import { Carousel } from "react-responsive-carousel";
 
 function HomePage({ latestNews, latestEvents }) {
   const [lnState, setLnState] = useState([...latestNews]);
@@ -61,7 +62,7 @@ function HomePage({ latestNews, latestEvents }) {
       <main className="relative">
         {/* Header */}
 
-        <div className="grid grid-cols-12 min-h-[100vh] max-h-[100vh] z-0">
+        <div className="grid grid-cols-12 max-h-full z-0">
           {/* left-half-div */}
           {/* <div className="col-span-6 bg-homeBanner bg-gray-100 bg-no-repeat bg-cover bg-top opacity-50 bg-blend-luminosity grid grid-rows-3">
             <div></div>
@@ -98,7 +99,7 @@ function HomePage({ latestNews, latestEvents }) {
               </div>
             </div>
           </div> */}
-          <div className="col-span-6 bg-homeBanner bg-gray-homeBannerGray bg-no-repeat bg-cover bg-top bg-blend-luminosity flex flex-col min-h-[100%] max-h-[100%]">
+          <div className="col-span-6 bg-homeBanner bg-gray-homeBannerGray bg-no-repeat bg-cover bg-top bg-blend-luminosity flex flex-col h-full">
             <div className="h-[25%] flex-shrink"></div>
             <div className="h-[35%] flex-grow"></div>
             <div className="h-[40%] flex-grow">
@@ -228,7 +229,17 @@ function HomePage({ latestNews, latestEvents }) {
               </div>
             </div>
           </div> */}
-          <div className="col-span-6 bg-blue-ramaiah flex flex-col min-h-[100%] max-h-[100%] bg-rightSideHome bg-cover bg-no-repeat">
+          <div className="col-span-6 h-[100vh] min-w-[50vw]">
+            <Carousel>
+              <div>
+                <img src="right-side.png" className="h-full w-full" />
+              </div>
+
+              <div>
+                <img src="right-side.png" className="h-full w-full" />
+              </div>
+            </Carousel>
+
             {/* <div className="h-[25%] flex-shrink"></div>
             <div className="h-[35%] flex-grow">
               <div className="text-7xl text-white font-semibold leading-[1.125]">
@@ -459,7 +470,7 @@ function HomePage({ latestNews, latestEvents }) {
         </section>
 
         {/* Virtual Tour Module */}
-        <div className="col-span-full bg-gray-homeSection h-[60vh] text-center ">
+        <section className="bg-gray-homeSection h-[60vh] text-center ">
           <div className="text-blue-ramaiah underline capitalize font-heading text-4xl w-[65%] mx-auto h-full space-y-3 py-3">
             Virtual Tour
             <br />
@@ -472,7 +483,7 @@ function HomePage({ latestNews, latestEvents }) {
               allowFullScreen=""
             ></iframe>
           </div>
-        </div>
+        </section>
 
         {/* Jnanam Vigyanam Module */}
         <div className="bg-homeBannerJnanam h-auto bg-no-repeat bg-cover bg-bottom space-y-3 py-3">
