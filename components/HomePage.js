@@ -3,9 +3,26 @@ import logo from "/assets/images/Institute-of-Technology.png";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import ReactTextTransition, { presets } from "react-text-transition";
-import { Carousel } from "react-responsive-carousel";
+// import Carousel, { Dots, autoplayPlugin } from "@brainhubeu/react-carousel";
+import "@brainhubeu/react-carousel/lib/style.css";
+import dynamic from "next/dynamic";
+
+// import {
+//   CarouselProvider,
+//   Slider,
+//   Slide,
+//   ButtonBack,
+//   ButtonNext,
+//   DotGroup,
+//   Dot,
+// } from "pure-react-carousel";
+// import "pure-react-carousel/dist/react-carousel.es.css";
 
 function HomePage({ latestNews, latestEvents }) {
+  const { default: Carousel, Dots } = dynamic(
+    () => require("@brainhubeu/react-carousel"),
+    { ssr: false }
+  );
   const [lnState, setLnState] = useState([...latestNews]);
   const [leState, setLeState] = useState([...latestEvents]);
   const [newsIndex, setNewsIndex] = useState(0);
@@ -230,15 +247,38 @@ function HomePage({ latestNews, latestEvents }) {
             </div>
           </div> */}
           <div className="col-span-6 h-[100vh] min-w-[50vw]">
-            <Carousel>
-              <div>
-                <img src="right-side.png" className="h-full w-full" />
-              </div>
-
-              <div>
-                <img src="right-side.png" className="h-full w-full" />
-              </div>
+            <Carousel
+              plugins={[
+                "infinite",
+                {
+                  options: {
+                    interval: 2000,
+                  },
+                },
+              ]}
+              animationSpeed={1000}
+            >
+              <img src="right-side.png" />
+              <img src="home-page-banner-2.png" />
             </Carousel>
+
+            {/* <CarouselProvider
+              naturalSlideWidth={100}
+              naturalSlideHeight={101}
+              totalSlides={2}
+              className="max-h-full"
+            >
+              <Slider>
+                <Slide index={0}>
+                  <img src="right-side.png" className="h-full w-full" />
+                </Slide>
+                <Slide index={1}>
+                  <img src="home-page-banner-2.png" className="h-full w-full" />
+                </Slide>
+              </Slider>
+              <Dot slide={0}> . </Dot>
+              <Dot slide={1}> . </Dot>
+            </CarouselProvider> */}
 
             {/* <div className="h-[25%] flex-shrink"></div>
             <div className="h-[35%] flex-grow">
