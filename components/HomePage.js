@@ -3,31 +3,15 @@ import logo from "/assets/images/Institute-of-Technology.png";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import ReactTextTransition, { presets } from "react-text-transition";
-// import Carousel, { Dots, autoplayPlugin } from "@brainhubeu/react-carousel";
-import "@brainhubeu/react-carousel/lib/style.css";
-import dynamic from "next/dynamic";
-
-// import {
-//   CarouselProvider,
-//   Slider,
-//   Slide,
-//   ButtonBack,
-//   ButtonNext,
-//   DotGroup,
-//   Dot,
-// } from "pure-react-carousel";
-// import "pure-react-carousel/dist/react-carousel.es.css";
+import { EmblaCarousel } from "./Carousel";
 
 function HomePage({ latestNews, latestEvents }) {
-  const { default: Carousel, Dots } = dynamic(
-    () => require("@brainhubeu/react-carousel"),
-    { ssr: false }
-  );
   const [lnState, setLnState] = useState([...latestNews]);
   const [leState, setLeState] = useState([...latestEvents]);
   const [newsIndex, setNewsIndex] = useState(0);
   const [eventsIndex, setEventsIndex] = useState(0);
   const [menuItemCLicked, setMenuItemClicked] = useState(false);
+
   const [NewsItems, setNewsItems] = useState([
     "CHANGE OF BRANCH NOTIFICATION (III SEMESTER)",
     "Dept of Information Science and Engineering, RIT organizes Online Certification Course on Practical Approach of Deep Learning for Artificial Intelligence",
@@ -246,8 +230,9 @@ function HomePage({ latestNews, latestEvents }) {
               </div>
             </div>
           </div> */}
-          <div className="col-span-6 h-[100vh] min-w-[50vw]">
-            <Carousel
+          <div className="col-span-6 h-full min-w-[50vw]">
+            <EmblaCarousel className="min-w-full max-h-full max-w-full" />
+            {/* <Carousel
               plugins={[
                 "infinite",
                 {
@@ -260,7 +245,7 @@ function HomePage({ latestNews, latestEvents }) {
             >
               <img src="right-side.png" />
               <img src="home-page-banner-2.png" />
-            </Carousel>
+            </Carousel> */}
 
             {/* <CarouselProvider
               naturalSlideWidth={100}
