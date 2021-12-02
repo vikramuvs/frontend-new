@@ -391,14 +391,50 @@ function HomePage({ latestNews, latestEvents }) {
                 <div className="text-base cursor-default w-1/2 border-[0.5px] text-center border-white rounded flex flex-col">
                   <div className="bg-gradient-to-r from-pink-ramaiah to-orange-ramaiah rounded">
                     {" "}
-                    Circuit Branches{" "}
+                    Departments{" "}
                   </div>
                   <br />{" "}
                   <div className="flex flex-col border-t-2 flex-grow-0 text-sm">
-                    {" "}
+                    <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer">
+                      Architecture
+                    </a>
+                    <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer">
+                      Artificial Intelligence & Machine Learning
+                    </a>
+                    <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer">
+                      Artificial Intelligence & Data Science
+                    </a>
+                    <a
+                      className="lg:hover:text-blue-ramaiah lg:cursor-pointer"
+                      href="/"
+                    >
+                      Biotechnology
+                    </a>{" "}
+                    <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer">
+                      Chemical Engineering
+                    </a>
+                    <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer">
+                      Civil Engineering
+                    </a>
                     <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer">
                       Computer Science & Engg.
                     </a>{" "}
+                    <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer">
+                      Computer Science & Engg. (AI & ML)
+                    </a>
+                    <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer">
+                      Computer Science & Engg. (Cyber Security)
+                    </a>
+                  </div>{" "}
+                </div>
+                <div className="text-base cursor-default w-1/2 border-[0.5px] text-center border-white rounded flex flex-col">
+                  {" "}
+                  <div className="bg-gradient-to-r from-pink-ramaiah to-orange-ramaiah rounded">
+                    {" "}
+                    Departments{" "}
+                  </div>
+                  <br />{" "}
+                  <div className="flex flex-col border-t-2 border-white text-sm">
                     <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer">
                       Electrical & Electronics Engg.
                     </a>{" "}
@@ -416,78 +452,29 @@ function HomePage({ latestNews, latestEvents }) {
                       Information Science & Engg.
                     </a>{" "}
                     <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer">
+                      Industrial Engineering & Mgmt
+                    </a>{" "}
+                    <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer">
+                      Mechanical Engineering
+                    </a>
+                    <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer">
                       Medical Electronics Engg.
                     </a>{" "}
                   </div>{" "}
                 </div>
                 <div className="text-base cursor-default w-1/2 border-[0.5px] text-center border-white rounded flex flex-col">
-                  {" "}
                   <div className="bg-gradient-to-r from-pink-ramaiah to-orange-ramaiah rounded">
-                    {" "}
-                    Non-circuit Branches{" "}
+                    <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer">
+                      Centres of Excellence
+                    </a>{" "}
                   </div>
-                  <br />{" "}
-                  <div className="flex flex-col border-t-2 border-white text-sm">
-                    {" "}
-                    <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer">
-                      Architecture
-                    </a>{" "}
-                    <a
-                      className="lg:hover:text-blue-ramaiah lg:cursor-pointer"
-                      href="/"
-                    >
-                      Biotechnology
-                    </a>{" "}
-                    <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer">
-                      Civil Engineering
-                    </a>{" "}
-                    <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer">
-                      Industrial Engineering & Mgmt
-                    </a>{" "}
-                    <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer">
-                      Mechanical Engineering
-                    </a>{" "}
-                  </div>{" "}
                 </div>
                 <div className="text-base cursor-default w-1/2 border-[0.5px] text-center border-white rounded flex flex-col">
-                  {" "}
                   <div className="bg-gradient-to-r from-pink-ramaiah to-orange-ramaiah rounded">
-                    {" "}
-                    Research Programs{" "}
+                    <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer">
+                      Ph.D
+                    </a>{" "}
                   </div>
-                  <br />{" "}
-                  <div className="flex flex-col border-t-2 border-white text-sm">
-                    {" "}
-                    <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer">
-                      CAMFS
-                    </a>{" "}
-                    <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer">
-                      CFR
-                    </a>{" "}
-                    <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer">
-                      IRF
-                    </a>{" "}
-                    <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer">
-                      ISE
-                    </a>{" "}
-                  </div>{" "}
-                </div>
-                <div className="text-base cursor-default w-1/2 border-[0.5px] text-center border-white rounded flex flex-col">
-                  {" "}
-                  <div className="bg-gradient-to-r from-pink-ramaiah to-orange-ramaiah rounded">
-                    {" "}
-                    PhD{" "}
-                  </div>{" "}
-                  <br />{" "}
-                  <div className="flex flex-col border-t-2 border-white text-sm">
-                    {" "}
-                    <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer">
-                      ECE
-                    </a>{" "}
-                    <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer">
-                      EEE
-                    </a>{" "}
-                  </div>{" "}
                 </div>
               </div>
             </nav>
