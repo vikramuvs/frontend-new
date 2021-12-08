@@ -377,9 +377,20 @@ function HomePage({ latestNews, latestEvents }) {
                 </svg>
               </a>
               <a className="p-4 hover:font-bold cursor-pointer" href="">
-                Contact
+                Facilities
               </a>
-
+              <a className="p-4 hover:font-bold cursor-pointer" href="">
+                Examination
+              </a>
+              <a className="p-4 hover:font-bold cursor-pointer" href="">
+                Placement
+              </a>
+              <a className="p-4 hover:font-bold cursor-pointer" href="">
+                Skill Labs
+              </a>
+              <a className="p-4 hover:font-bold cursor-pointer" href="">
+                Others
+              </a>
               <div
                 className={`lg:absolute lg:top-10 lg:min-h-[100px] lg:bg-[#7c688d] lg:-left-10 lg:flex-wrap lg:text-white lg:w-full lg:p-4 lg:pt-0 lg:z-[5] lg:transform lg:transition-all lg:translate-x-4 lg:translate-y-4  lg:duration-100 ${
                   !menuItemCLicked ? "lg:hidden" : "lg:flex"
