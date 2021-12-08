@@ -340,21 +340,21 @@ function HomePage({ latestNews, latestEvents }) {
             <Image src={logo} alt="Logo" layout="fixed" className="absolute" />
           </div>
           <div className="text-white justify-end relative">
-            <nav className="space-x-6 bg-gray-menu bg-opacity-50 p-4 box-border ">
+            <nav className="space-x-6 bg-gray-menu bg-opacity-50 p-2 box-border ">
               <a
-                className="p-4 border-b-2 border-orange-ramaiah text-blue-ramaiah font-bold"
+                className="p-2 border-b-2 border-orange-ramaiah text-blue-ramaiah font-bold"
                 href="home"
               >
                 Home
               </a>
-              <a className="p-4 hover:font-bold cursor-pointer" href="">
+              <a className="p-2 hover:font-bold cursor-pointer" href="">
                 About Us
               </a>
-              <a className="p-4 hover:font-bold cursor-pointer" href="">
+              <a className="p-2 hover:font-bold cursor-pointer" href="">
                 Admissions
               </a>
               <a
-                className="p-4 hover:font-bold cursor-pointer"
+                className="p-2 hover:font-bold cursor-pointer"
                 href="#"
                 onClick={() => {
                   setMenuItemClicked(!menuItemCLicked);
@@ -376,23 +376,23 @@ function HomePage({ latestNews, latestEvents }) {
                   />
                 </svg>
               </a>
-              <a className="p-4 hover:font-bold cursor-pointer" href="">
+              <a className="p-2 hover:font-bold cursor-pointer" href="">
                 Facilities
               </a>
-              <a className="p-4 hover:font-bold cursor-pointer" href="">
+              <a className="p-2 hover:font-bold cursor-pointer" href="">
                 Examination
               </a>
-              <a className="p-4 hover:font-bold cursor-pointer" href="">
+              <a className="p-2 hover:font-bold cursor-pointer" href="">
                 Placement
               </a>
-              <a className="p-4 hover:font-bold cursor-pointer" href="">
+              <a className="p-2 hover:font-bold cursor-pointer" href="">
                 Skill Labs
               </a>
-              <a className="p-4 hover:font-bold cursor-pointer" href="">
+              <a className="p-2 hover:font-bold cursor-pointer" href="">
                 Others
               </a>
               <div
-                className={`lg:absolute lg:top-10 lg:min-h-[100px] lg:bg-[#7c688d] lg:-left-10 lg:flex-wrap lg:text-white lg:w-full lg:p-4 lg:pt-0 lg:z-[5] lg:transform lg:transition-all lg:translate-x-4 lg:translate-y-4  lg:duration-100 ${
+                className={`lg:absolute lg:top-10 lg:min-h-[100px] lg:bg-[#7c688d] lg:-left-10 lg:flex-wrap lg:text-white lg:w-full lg:p-2 lg:pt-0 lg:z-[5] lg:transform lg:transition-all lg:translate-x-4 lg:translate-y-4  lg:duration-100 ${
                   !menuItemCLicked ? "lg:hidden" : "lg:flex"
                 }`}
               >
@@ -525,7 +525,7 @@ function HomePage({ latestNews, latestEvents }) {
                 “What we have done for ourselves alone dies with us. What we
                 have done for others and the world remains and is immortal.”
               </div>
-              <button className="bg-orange-ramaiah p-4 text-white text-lg">
+              <button className="bg-orange-ramaiah p-2 text-white text-lg">
                 EXPLORE BOARD OF MANAGEMENT
               </button>
             </div>

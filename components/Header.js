@@ -57,9 +57,25 @@ export default function Header() {
                     </svg>
                   </a>
 
-                  <a className="sm:hover:font-bold p-2" href="/contact">
-                    Contact
+                  <a className="sm:hover:font-bold p-2" href="">
+                    Facilities
                   </a>
+                  <a className="sm:hover:font-bold p-2" href="">
+                    Examination
+                  </a>
+                  <a className="sm:hover:font-bold p-2" href="">
+                    Placement
+                  </a>
+                  <a className="sm:hover:font-bold p-2" href="">
+                    Skill Labs
+                  </a>
+                  <a className="sm:hover:font-bold p-2" href="">
+                    Others
+                  </a>
+
+                  {/* <a className="sm:hover:font-bold p-2" href="/contact">
+                    Contact
+                  </a> */}
 
                   <div
                     className={`lg:absolute lg:top-8 lg:min-h-[100px] lg:bg-[#7c688d] lg:-left-8 lg:flex-wrap lg:text-white lg:w-full lg:p-4 lg:pt-0 lg:z-[5] lg:transform lg:transition-all lg:translate-x-4 lg:translate-y-4  lg:duration-100 ${
