@@ -339,43 +339,48 @@ function HomePage({ latestNews, latestEvents }) {
           <div className="relative lg:h-5/6 lg:w-auto">
             <Image src={logo} alt="Logo" layout="fixed" className="absolute" />
           </div>
-          <div className="text-white justify-end relative">
+          <div className="text-white justify-end">
             <nav className="space-x-6 bg-gray-menu bg-opacity-50 p-2 box-border ">
-              <a
+              {/* <a
                 className="p-2 border-b-2 border-orange-ramaiah text-blue-ramaiah font-bold"
                 href="home"
               >
                 Home
-              </a>
+              </a> */}
               <a className="p-2 hover:font-bold cursor-pointer" href="">
                 About Us
               </a>
               <a className="p-2 hover:font-bold cursor-pointer" href="">
                 Admissions
               </a>
-              <a
-                className="p-2 hover:font-bold cursor-pointer"
-                href="#"
-                onClick={() => {
-                  setMenuItemClicked(!menuItemCLicked);
-                }}
-              >
-                Academics
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-4 w-4 inline-block ml-1"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
+              <div className="inline-block relative">
+                <a
+                  className="p-2 hover:font-bold cursor-pointer"
+                  href="#"
+                  onMouseOver={() => {
+                    setMenuItemClicked(!menuItemCLicked);
+                  }}
+                  // onMouseOut={() => {
+                  //   setMenuItemClicked(false);
+                  // }}
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
-              </a>
+                  Academics
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-4 w-4 inline-block ml-1"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </a>
+              </div>
               <a className="p-2 hover:font-bold cursor-pointer" href="">
                 Facilities
               </a>
@@ -392,14 +397,23 @@ function HomePage({ latestNews, latestEvents }) {
                 Others
               </a>
               <div
-                className={`lg:absolute lg:top-10 lg:min-h-[100px] lg:bg-[#7c688d] lg:-left-10 lg:flex-wrap lg:text-white lg:w-full lg:p-2 lg:pt-0 lg:z-[5] lg:transform lg:transition-all lg:translate-x-4 lg:translate-y-4  lg:duration-100 ${
+                className={`lg:absolute lg:top-20 lg:left-4 lg:min-h-[100px] lg:bg-[#7c688d] lg:flex-wrap lg:text-white lg:w-auto lg:p-2 lg:pt-0 lg:z-[5] ${
                   !menuItemCLicked ? "lg:hidden" : "lg:flex"
                 }`}
               >
                 {/* <div className="flex-grow w-full lg:border-t-8 lg:border-pink-ramaiah">
                   {" "}
                 </div> */}
-                <div className="text-base cursor-default w-1/2 border-[0.5px] text-center border-white rounded flex flex-col">
+
+                <div>
+                  <p className="p-2" onMouseOver="">
+                    Departments
+                  </p>
+                  <p className="p-2">Centres of Excellence</p>
+                  <p className="p-2">Research</p>
+                </div>
+
+                {/* <div className="text-base cursor-default w-1/2 border-[0.5px] text-center border-white rounded flex flex-col">
                   <div className="bg-gradient-to-r from-pink-ramaiah to-orange-ramaiah rounded">
                     {" "}
                     Departments{" "}
@@ -486,7 +500,7 @@ function HomePage({ latestNews, latestEvents }) {
                       Ph.D
                     </a>{" "}
                   </div>
-                </div>
+                </div> */}
               </div>
             </nav>
           </div>
