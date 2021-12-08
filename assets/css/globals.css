@@ -184,6 +184,10 @@
     position: relative;
     flex: 0 0 100%;
   }
+  .embla__slide > img {
+    height: 100vh;
+    width: 100%;
+  }
   .embla__viewport {
     overflow: hidden;
     width: 100%;

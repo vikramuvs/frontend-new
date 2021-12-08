@@ -2,14 +2,14 @@ export default function helloAPI(req, res) {
   const req1 = req.query;
 
   // const fetchedData = await fetch(
-  //   "http://ec2-34-215-195-143.us-west-2.compute.amazonaws.com:8080/api/v1/vision_mission/",
+  //   "http:///ec2-54-214-223-171.us-west-2.compute.amazonaws.com:8080/api/v1/vision_mission/",
   //   {
   //     method: "GET",
   //   }
   // );
 
   fetch(
-    "http://ec2-34-215-195-143.us-west-2.compute.amazonaws.com:8080/api/v1/sideheadings/" +
+    "http:///ec2-54-214-223-171.us-west-2.compute.amazonaws.com:8080/api/v1/sideheadings/" +
       req1,
     {
       method: "GET",
@@ -36,7 +36,7 @@ export default function helloAPI(req, res) {
 //   const deptId = context.params.deptId;
 
 //   const fetchedData = await fetch(
-//     "http://ec2-34-215-195-143.us-west-2.compute.amazonaws.com:8080/api/v1/vision_mission/",
+//     "http:///ec2-54-214-223-171.us-west-2.compute.amazonaws.com:8080/api/v1/vision_mission/",
 //     {
 //       method: "GET",
 //     }

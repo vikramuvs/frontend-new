@@ -11,6 +11,7 @@ function HomePage({ latestNews, latestEvents }) {
   const [newsIndex, setNewsIndex] = useState(0);
   const [eventsIndex, setEventsIndex] = useState(0);
   const [menuItemCLicked, setMenuItemClicked] = useState(false);
+  const [deptItemClicked, setDeptItemClicked] = useState(false);
 
   const [NewsItems, setNewsItems] = useState([
     "CHANGE OF BRANCH NOTIFICATION (III SEMESTER)",
@@ -63,7 +64,7 @@ function HomePage({ latestNews, latestEvents }) {
       <main className="relative">
         {/* Header */}
 
-        <div className="grid grid-cols-12 max-h-full z-0">
+        <div className="grid grid-cols-12 z-0">
           {/* left-half-div */}
           {/* <div className="col-span-6 bg-homeBanner bg-gray-100 bg-no-repeat bg-cover bg-top opacity-50 bg-blend-luminosity grid grid-rows-3">
             <div></div>
@@ -100,7 +101,7 @@ function HomePage({ latestNews, latestEvents }) {
               </div>
             </div>
           </div> */}
-          <div className="col-span-6 bg-homeBanner bg-gray-homeBannerGray bg-no-repeat bg-cover bg-top bg-blend-luminosity flex flex-col h-full">
+          <div className="col-span-6 bg-homeBanner bg-gray-homeBannerGray bg-no-repeat bg-cover bg-top bg-blend-luminosity flex flex-col h-[100vh]">
             <div className="h-[25%] flex-shrink"></div>
             <div className="h-[35%] flex-grow"></div>
             <div className="h-[40%] flex-grow">
@@ -230,8 +231,8 @@ function HomePage({ latestNews, latestEvents }) {
               </div>
             </div>
           </div> */}
-          <div className="col-span-6 h-full min-w-[50vw]">
-            <EmblaCarousel className="min-w-full max-h-full max-w-full" />
+          <div className="col-span-6 h-full">
+            <EmblaCarousel />
             {/* <Carousel
               plugins={[
                 "infinite",
@@ -355,10 +356,14 @@ function HomePage({ latestNews, latestEvents }) {
               </a>
               <div className="inline-block relative">
                 <a
-                  className="p-2 hover:font-bold cursor-pointer"
-                  href="#"
+                  className="p-2 hover:font-bold"
                   onMouseOver={() => {
                     setMenuItemClicked(!menuItemCLicked);
+                    setDeptItemClicked(false);
+                  }}
+                  onClick={() => {
+                    setMenuItemClicked(!menuItemCLicked);
+                    setDeptItemClicked(false);
                   }}
                   // onMouseOut={() => {
                   //   setMenuItemClicked(false);
@@ -380,6 +385,139 @@ function HomePage({ latestNews, latestEvents }) {
                     />
                   </svg>
                 </a>
+
+                <div
+                  className={`lg:absolute lg:top-10  lg:min-h-[100px] lg:bg-[#7c688d] lg:flex-wrap lg:text-white lg:w-auto lg:p-2 lg:pt-0 lg:z-[5] ${
+                    !menuItemCLicked ? "lg:hidden" : "lg:flex"
+                  }`}
+                >
+                  <div className="relative ">
+                    <div className="flex flex-row gap-0 items-center">
+                      <div>
+                        <a
+                          className="p-2 cursor-default"
+                          onMouseOver={() => {
+                            setDeptItemClicked(true);
+                          }}
+                          onClick={() => {
+                            setDeptItemClicked(!deptItemClicked);
+                          }}
+                        >
+                          Departments{" "}
+                        </a>{" "}
+                      </div>
+                      <div className="">
+                        <span>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="h-4 w-4"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M9 5l7 7-7 7"
+                            />
+                          </svg>{" "}
+                        </span>
+                      </div>
+                      {/* </p> */}
+                    </div>
+                    <div
+                      onMouseOver={() => {
+                        setDeptItemClicked(true);
+                      }}
+                      onMouseOut={() => {
+                        setDeptItemClicked(false);
+                      }}
+                      className={`lg:absolute lg:left-[110%] lg:top-0 lg:min-h-[100px] lg:bg-[#7c688d] lg:flex-wrap lg:text-white lg:min-w-[20vw] lg:p-2 lg:pt-0 lg:z-[5] ${
+                        !deptItemClicked ? "lg:hidden" : "lg:flex"
+                      }`}
+                    >
+                      {" "}
+                      <div>
+                        <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer lg:block lg:pb-2">
+                          Architecture
+                        </a>
+                        <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer lg:block lg:pb-2">
+                          Artificial Intelligence & Machine Learning
+                        </a>
+                        <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer lg:block lg:pb-2">
+                          Artificial Intelligence & Data Science
+                        </a>
+                        <a
+                          className="lg:hover:text-blue-ramaiah lg:cursor-pointer lg:block lg:pb-2"
+                          href="/"
+                        >
+                          Biotechnology
+                        </a>{" "}
+                        <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer lg:block lg:pb-2">
+                          Chemical Engineering
+                        </a>
+                        <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer lg:block lg:pb-2">
+                          Civil Engineering
+                        </a>
+                        <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer lg:block lg:pb-2">
+                          Computer Science & Engg.
+                        </a>{" "}
+                        <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer lg:block lg:pb-2">
+                          Computer Science & Engg. (AI & ML)
+                        </a>
+                        <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer lg:block lg:pb-2">
+                          Computer Science & Engg. (Cyber Security)
+                        </a>{" "}
+                        {/* </div>
+                      <div className="min-w-1/2"> */}{" "}
+                        <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer lg:block lg:pb-2">
+                          Electrical & Electronics Engg.
+                        </a>{" "}
+                        <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer lg:block lg:pb-2">
+                          {" "}
+                          Electronics & Communications Engg.
+                        </a>{" "}
+                        <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer lg:block lg:pb-2">
+                          Electronics & Instrumentation Engg.
+                        </a>{" "}
+                        <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer lg:block lg:pb-2">
+                          Electronics & Telecommunications Engg.
+                        </a>{" "}
+                        <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer lg:block lg:pb-2">
+                          Information Science & Engg.
+                        </a>{" "}
+                        <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer lg:block lg:pb-2">
+                          Industrial Engineering & Mgmt
+                        </a>{" "}
+                        <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer lg:block lg:pb-2">
+                          Mechanical Engineering
+                        </a>
+                        <a className="lg:hover:text-blue-ramaiah lg:cursor-pointer lg:block lg:pb-1">
+                          Medical Electronics Engg.
+                        </a>{" "}
+                      </div>
+                    </div>{" "}
+                  </div>
+                  <a
+                    href=""
+                    className="p-2"
+                    onMouseOver={() => {
+                      setDeptItemClicked(false);
+                    }}
+                  >
+                    Centres of Excellence
+                  </a>
+                  <a
+                    href=""
+                    className="p-2"
+                    onMouseOver={() => {
+                      setDeptItemClicked(false);
+                    }}
+                  >
+                    Research
+                  </a>
+                </div>
               </div>
               <a className="p-2 hover:font-bold cursor-pointer" href="">
                 Facilities
@@ -394,26 +532,18 @@ function HomePage({ latestNews, latestEvents }) {
                 Skill Labs
               </a>
               <a className="p-2 hover:font-bold cursor-pointer" href="">
-                Others
+                Contact
               </a>
-              <div
+              {/* <div
                 className={`lg:absolute lg:top-20 lg:left-4 lg:min-h-[100px] lg:bg-[#7c688d] lg:flex-wrap lg:text-white lg:w-auto lg:p-2 lg:pt-0 lg:z-[5] ${
                   !menuItemCLicked ? "lg:hidden" : "lg:flex"
                 }`}
-              >
-                {/* <div className="flex-grow w-full lg:border-t-8 lg:border-pink-ramaiah">
+              > */}
+              {/* <div className="flex-grow w-full lg:border-t-8 lg:border-pink-ramaiah">
                   {" "}
                 </div> */}
 
-                <div>
-                  <p className="p-2" onMouseOver="">
-                    Departments
-                  </p>
-                  <p className="p-2">Centres of Excellence</p>
-                  <p className="p-2">Research</p>
-                </div>
-
-                {/* <div className="text-base cursor-default w-1/2 border-[0.5px] text-center border-white rounded flex flex-col">
+              {/* <div className="text-base cursor-default w-1/2 border-[0.5px] text-center border-white rounded flex flex-col">
                   <div className="bg-gradient-to-r from-pink-ramaiah to-orange-ramaiah rounded">
                     {" "}
                     Departments{" "}
@@ -501,7 +631,7 @@ function HomePage({ latestNews, latestEvents }) {
                     </a>{" "}
                   </div>
                 </div> */}
-              </div>
+              {/* </div> */}
             </nav>
           </div>
         </section>

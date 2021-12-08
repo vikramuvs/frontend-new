@@ -35,10 +35,7 @@ export const EmblaCarousel = () => {
       <div className="embla__viewport" ref={emblaRef}>
         <div className="embla__container">
           <div className="embla__slide">
-            <img
-              src="right-side.png"
-              className="max-h-full max-w-full min-h-full min-w-full"
-            />
+            <img src="right-side.png" />
           </div>
           <div className="embla__slide">
             <img src="home-page-banner-2.png" />

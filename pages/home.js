@@ -17,12 +17,12 @@ export default function Home({ latestNews, latestEvents }) {
 
 export async function getStaticProps() {
   const l_e = await fetch(
-    "http://ec2-34-215-195-143.us-west-2.compute.amazonaws.com:8080/api/v1/latest_events/"
+    "http://ec2-54-214-223-171.us-west-2.compute.amazonaws.com:8080/api/v1/latest_events/"
   );
   const l_eJson = await l_e.json();
 
   const l_n = await fetch(
-    "http://ec2-34-215-195-143.us-west-2.compute.amazonaws.com:8080/api/v1/latest_news/"
+    "http://ec2-54-214-223-171.us-west-2.compute.amazonaws.com:8080/api/v1/latest_news/"
   );
   const l_nJson = await l_n.json();
 
