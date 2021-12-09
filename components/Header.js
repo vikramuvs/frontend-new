@@ -14,15 +14,19 @@ export default function Header() {
             <div className="col-start-2 col-end-12 bg-blue-ramaiah">
               <div className="flex flex-row justify-between items-center content-center">
                 <div className="hidden lg:inline-block lg:h-5/6 lg:w-auto ">
-                  <Image src={logo} alt="Logo" layout="fixed" />
+                  <a href="/home">
+                    <Image src={logo} alt="Logo" layout="fixed" />
+                  </a>
                 </div>
                 <div className="h-20 w-[10rem] lg:hidden relative">
-                  <Image
-                    src={logo}
-                    alt="Logo"
-                    layout="fill"
-                    className="absolute"
-                  />
+                  <a href="/home">
+                    <Image
+                      src={logo}
+                      alt="Logo"
+                      layout="fill"
+                      className="absolute"
+                    />
+                  </a>
                 </div>
                 {/* <nav className="w-auto p-2 bg-gray-menu bg-opacity-50 space-x-4 text-base text-white hidden lg:inline-flex lg:relative"> */}
                 <nav className="space-x-6 bg-gray-menu bg-opacity-50 p-2 box-border text-white  items-center hidden lg:inline-flex lg:relative ">

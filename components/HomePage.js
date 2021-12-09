@@ -338,7 +338,14 @@ function HomePage({ latestNews, latestEvents }) {
 
         <section className="min-w-[80%] flex items-center p-2 justify-between bg-transparent z-10 absolute top-0 left-[10%]">
           <div className="relative lg:h-5/6 lg:w-auto">
-            <Image src={logo} alt="Logo" layout="fixed" className="absolute" />
+            <a href="/home">
+              <Image
+                src={logo}
+                alt="Logo"
+                layout="fixed"
+                className="absolute"
+              />
+            </a>
           </div>
           <div className="text-white justify-end">
             <nav className="space-x-6 bg-gray-menu bg-opacity-50 p-2 box-border ">
